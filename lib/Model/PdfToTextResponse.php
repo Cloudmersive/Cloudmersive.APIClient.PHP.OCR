@@ -1,6 +1,6 @@
 <?php
 /**
- * ImageToTextResponse
+ * PdfToTextResponse
  *
  * PHP version 5
  *
@@ -33,7 +33,7 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * ImageToTextResponse Class Doc Comment
+ * PdfToTextResponse Class Doc Comment
  *
  * @category Class
  * @description Response from an OCR to text operation.  Includes the confience rating and converted text result.
@@ -41,7 +41,7 @@ use \Swagger\Client\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ImageToTextResponse implements ModelInterface, ArrayAccess
+class PdfToTextResponse implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class ImageToTextResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ImageToTextResponse';
+    protected static $swaggerModelName = 'PdfToTextResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,8 +58,8 @@ class ImageToTextResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'mean_confidence_level' => 'float',
-        'text_result' => 'string'
+        'successful' => 'bool',
+        'ocr_pages' => '\Swagger\Client\Model\OcrPageResult[]'
     ];
 
     /**
@@ -68,8 +68,8 @@ class ImageToTextResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'mean_confidence_level' => 'float',
-        'text_result' => null
+        'successful' => null,
+        'ocr_pages' => null
     ];
 
     /**
@@ -99,8 +99,8 @@ class ImageToTextResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'mean_confidence_level' => 'MeanConfidenceLevel',
-        'text_result' => 'TextResult'
+        'successful' => 'Successful',
+        'ocr_pages' => 'OcrPages'
     ];
 
     /**
@@ -109,8 +109,8 @@ class ImageToTextResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'mean_confidence_level' => 'setMeanConfidenceLevel',
-        'text_result' => 'setTextResult'
+        'successful' => 'setSuccessful',
+        'ocr_pages' => 'setOcrPages'
     ];
 
     /**
@@ -119,8 +119,8 @@ class ImageToTextResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'mean_confidence_level' => 'getMeanConfidenceLevel',
-        'text_result' => 'getTextResult'
+        'successful' => 'getSuccessful',
+        'ocr_pages' => 'getOcrPages'
     ];
 
     /**
@@ -183,8 +183,8 @@ class ImageToTextResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['mean_confidence_level'] = isset($data['mean_confidence_level']) ? $data['mean_confidence_level'] : null;
-        $this->container['text_result'] = isset($data['text_result']) ? $data['text_result'] : null;
+        $this->container['successful'] = isset($data['successful']) ? $data['successful'] : null;
+        $this->container['ocr_pages'] = isset($data['ocr_pages']) ? $data['ocr_pages'] : null;
     }
 
     /**
@@ -213,49 +213,49 @@ class ImageToTextResponse implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets mean_confidence_level
+     * Gets successful
      *
-     * @return float
+     * @return bool
      */
-    public function getMeanConfidenceLevel()
+    public function getSuccessful()
     {
-        return $this->container['mean_confidence_level'];
+        return $this->container['successful'];
     }
 
     /**
-     * Sets mean_confidence_level
+     * Sets successful
      *
-     * @param float $mean_confidence_level Confidence level rating of the OCR operation; ratings above 80% are strong.
+     * @param bool $successful successful
      *
      * @return $this
      */
-    public function setMeanConfidenceLevel($mean_confidence_level)
+    public function setSuccessful($successful)
     {
-        $this->container['mean_confidence_level'] = $mean_confidence_level;
+        $this->container['successful'] = $successful;
 
         return $this;
     }
 
     /**
-     * Gets text_result
+     * Gets ocr_pages
      *
-     * @return string
+     * @return \Swagger\Client\Model\OcrPageResult[]
      */
-    public function getTextResult()
+    public function getOcrPages()
     {
-        return $this->container['text_result'];
+        return $this->container['ocr_pages'];
     }
 
     /**
-     * Sets text_result
+     * Sets ocr_pages
      *
-     * @param string $text_result Converted text string from the image input.
+     * @param \Swagger\Client\Model\OcrPageResult[] $ocr_pages ocr_pages
      *
      * @return $this
      */
-    public function setTextResult($text_result)
+    public function setOcrPages($ocr_pages)
     {
-        $this->container['text_result'] = $text_result;
+        $this->container['ocr_pages'] = $ocr_pages;
 
         return $this;
     }

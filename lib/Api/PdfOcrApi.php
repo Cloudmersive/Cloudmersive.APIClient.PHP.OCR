@@ -1,6 +1,6 @@
 <?php
 /**
- * ImageOcrApi
+ * PdfOcrApi
  * PHP version 5
  *
  * @category Class
@@ -40,14 +40,14 @@ use Swagger\Client\HeaderSelector;
 use Swagger\Client\ObjectSerializer;
 
 /**
- * ImageOcrApi Class Doc Comment
+ * PdfOcrApi Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ImageOcrApi
+class PdfOcrApi
 {
     /**
      * @var ClientInterface
@@ -83,7 +83,7 @@ class ImageOcrApi
     }
 
     /**
-     * Operation imageOcrPost
+     * Operation pdfOcrPost
      *
      * Converts an uploaded image in common formats such as JPEG, PNG into text via Optical Character Recognition.
      *
@@ -92,16 +92,16 @@ class ImageOcrApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\ImageToTextResponse
+     * @return \Swagger\Client\Model\PdfToTextResponse
      */
-    public function imageOcrPost($image_file, $language = null)
+    public function pdfOcrPost($image_file, $language = null)
     {
-        list($response) = $this->imageOcrPostWithHttpInfo($image_file, $language);
+        list($response) = $this->pdfOcrPostWithHttpInfo($image_file, $language);
         return $response;
     }
 
     /**
-     * Operation imageOcrPostWithHttpInfo
+     * Operation pdfOcrPostWithHttpInfo
      *
      * Converts an uploaded image in common formats such as JPEG, PNG into text via Optical Character Recognition.
      *
@@ -110,12 +110,12 @@ class ImageOcrApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\ImageToTextResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\PdfToTextResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function imageOcrPostWithHttpInfo($image_file, $language = null)
+    public function pdfOcrPostWithHttpInfo($image_file, $language = null)
     {
-        $returnType = '\Swagger\Client\Model\ImageToTextResponse';
-        $request = $this->imageOcrPostRequest($image_file, $language);
+        $returnType = '\Swagger\Client\Model\PdfToTextResponse';
+        $request = $this->pdfOcrPostRequest($image_file, $language);
 
         try {
             $options = $this->createHttpClientOption();
@@ -166,7 +166,7 @@ class ImageOcrApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ImageToTextResponse',
+                        '\Swagger\Client\Model\PdfToTextResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -177,7 +177,7 @@ class ImageOcrApi
     }
 
     /**
-     * Operation imageOcrPostAsync
+     * Operation pdfOcrPostAsync
      *
      * Converts an uploaded image in common formats such as JPEG, PNG into text via Optical Character Recognition.
      *
@@ -187,9 +187,9 @@ class ImageOcrApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function imageOcrPostAsync($image_file, $language = null)
+    public function pdfOcrPostAsync($image_file, $language = null)
     {
-        return $this->imageOcrPostAsyncWithHttpInfo($image_file, $language)
+        return $this->pdfOcrPostAsyncWithHttpInfo($image_file, $language)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -198,7 +198,7 @@ class ImageOcrApi
     }
 
     /**
-     * Operation imageOcrPostAsyncWithHttpInfo
+     * Operation pdfOcrPostAsyncWithHttpInfo
      *
      * Converts an uploaded image in common formats such as JPEG, PNG into text via Optical Character Recognition.
      *
@@ -208,10 +208,10 @@ class ImageOcrApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function imageOcrPostAsyncWithHttpInfo($image_file, $language = null)
+    public function pdfOcrPostAsyncWithHttpInfo($image_file, $language = null)
     {
-        $returnType = '\Swagger\Client\Model\ImageToTextResponse';
-        $request = $this->imageOcrPostRequest($image_file, $language);
+        $returnType = '\Swagger\Client\Model\PdfToTextResponse';
+        $request = $this->pdfOcrPostRequest($image_file, $language);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -251,7 +251,7 @@ class ImageOcrApi
     }
 
     /**
-     * Create request for operation 'imageOcrPost'
+     * Create request for operation 'pdfOcrPost'
      *
      * @param  \SplFileObject $image_file Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported. (required)
      * @param  string $language Optional, language of the input document, default is English (ENG).  Possible values are ENG (English), ARA (Arabic), ZHO (Chinese - Simplified), ZHO-HANT (Chinese - Traditional), ASM (Assamese), AFR (Afrikaans), AMH (Amharic), AZE (Azerbaijani), AZE-CYRL (Azerbaijani - Cyrillic), BEL (Belarusian), BEN (Bengali), BOD (Tibetan), BOS (Bosnian), BUL (Bulgarian), CAT (Catalan; Valencian), CEB (Cebuano), CES (Czech), CHR (Cherokee), CYM (Welsh), DAN (Danish), DEU (German), DZO (Dzongkha), ELL (Greek), ENM (Archaic/Middle English), EPO (Esperanto), EST (Estonian), EUS (Basque), FAS (Persian), FIN (Finnish), FRA (French), FRK (Frankish), FRM (Middle-French), GLE (Irish), GLG (Galician), GRC (Ancient Greek), HAT (Hatian), HEB (Hebrew), HIN (Hindi), HRV (Croatian), HUN (Hungarian), IKU (Inuktitut), IND (Indonesian), ISL (Icelandic), ITA (Italian), ITA-OLD (Old - Italian), JAV (Javanese), JPN (Japanese), KAN (Kannada), KAT (Georgian), KAT-OLD (Old-Georgian), KAZ (Kazakh), KHM (Central Khmer), KIR (Kirghiz), KOR (Korean), KUR (Kurdish), LAO (Lao), LAT (Latin), LAV (Latvian), LIT (Lithuanian), MAL (Malayalam), MAR (Marathi), MKD (Macedonian), MLT (Maltese), MSA (Malay), MYA (Burmese), NEP (Nepali), NLD (Dutch), NOR (Norwegian), ORI (Oriya), PAN (Panjabi), POL (Polish), POR (Portuguese), PUS (Pushto), RON (Romanian), RUS (Russian), SAN (Sanskrit), SIN (Sinhala), SLK (Slovak), SLV (Slovenian), SPA (Spanish), SPA-OLD (Old Spanish), SQI (Albanian), SRP (Serbian), SRP-LAT (Latin Serbian), SWA (Swahili), SWE (Swedish), SYR (Syriac), TAM (Tamil), TEL (Telugu), TGK (Tajik), TGL (Tagalog), THA (Thai), TIR (Tigrinya), TUR (Turkish), UIG (Uighur), UKR (Ukrainian), URD (Urdu), UZB (Uzbek), UZB-CYR (Cyrillic Uzbek), VIE (Vietnamese), YID (Yiddish) (optional)
@@ -259,16 +259,16 @@ class ImageOcrApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function imageOcrPostRequest($image_file, $language = null)
+    protected function pdfOcrPostRequest($image_file, $language = null)
     {
         // verify the required parameter 'image_file' is set
         if ($image_file === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $image_file when calling imageOcrPost'
+                'Missing the required parameter $image_file when calling pdfOcrPost'
             );
         }
 
-        $resourcePath = '/ocr/image/toText';
+        $resourcePath = '/ocr/pdf/toText';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

@@ -1,6 +1,6 @@
 <?php
 /**
- * ImageToTextResponse
+ * OcrPageResult
  *
  * PHP version 5
  *
@@ -33,15 +33,14 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * ImageToTextResponse Class Doc Comment
+ * OcrPageResult Class Doc Comment
  *
  * @category Class
- * @description Response from an OCR to text operation.  Includes the confience rating and converted text result.
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ImageToTextResponse implements ModelInterface, ArrayAccess
+class OcrPageResult implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -50,7 +49,7 @@ class ImageToTextResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ImageToTextResponse';
+    protected static $swaggerModelName = 'OcrPageResult';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,6 +57,7 @@ class ImageToTextResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'page_number' => 'int',
         'mean_confidence_level' => 'float',
         'text_result' => 'string'
     ];
@@ -68,6 +68,7 @@ class ImageToTextResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'page_number' => 'int32',
         'mean_confidence_level' => 'float',
         'text_result' => null
     ];
@@ -99,6 +100,7 @@ class ImageToTextResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'page_number' => 'PageNumber',
         'mean_confidence_level' => 'MeanConfidenceLevel',
         'text_result' => 'TextResult'
     ];
@@ -109,6 +111,7 @@ class ImageToTextResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'page_number' => 'setPageNumber',
         'mean_confidence_level' => 'setMeanConfidenceLevel',
         'text_result' => 'setTextResult'
     ];
@@ -119,6 +122,7 @@ class ImageToTextResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'page_number' => 'getPageNumber',
         'mean_confidence_level' => 'getMeanConfidenceLevel',
         'text_result' => 'getTextResult'
     ];
@@ -183,6 +187,7 @@ class ImageToTextResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['page_number'] = isset($data['page_number']) ? $data['page_number'] : null;
         $this->container['mean_confidence_level'] = isset($data['mean_confidence_level']) ? $data['mean_confidence_level'] : null;
         $this->container['text_result'] = isset($data['text_result']) ? $data['text_result'] : null;
     }
@@ -211,6 +216,30 @@ class ImageToTextResponse implements ModelInterface, ArrayAccess
         return true;
     }
 
+
+    /**
+     * Gets page_number
+     *
+     * @return int
+     */
+    public function getPageNumber()
+    {
+        return $this->container['page_number'];
+    }
+
+    /**
+     * Sets page_number
+     *
+     * @param int $page_number Page number of the page that was OCR-ed, starting with 1 for the first page in the PDF file
+     *
+     * @return $this
+     */
+    public function setPageNumber($page_number)
+    {
+        $this->container['page_number'] = $page_number;
+
+        return $this;
+    }
 
     /**
      * Gets mean_confidence_level
