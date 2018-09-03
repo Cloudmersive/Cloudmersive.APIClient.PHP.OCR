@@ -1,6 +1,6 @@
 <?php
 /**
- * ImageOcrApiTest
+ * PreprocessingApiTest
  * PHP version 5
  *
  * @category Class
@@ -33,14 +33,14 @@ use \Swagger\Client\ApiException;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * ImageOcrApiTest Class Doc Comment
+ * PreprocessingApiTest Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ImageOcrApiTest extends \PHPUnit_Framework_TestCase
+class PreprocessingApiTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -72,22 +72,22 @@ class ImageOcrApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for imageOcrPhotoToText
+     * Test case for preprocessingUnrotate
      *
-     * Convert a photo of a document into text.
+     * Detect and unrotate a document image.
      *
      */
-    public function testImageOcrPhotoToText()
+    public function testPreprocessingUnrotate()
     {
     }
 
     /**
-     * Test case for imageOcrPost
+     * Test case for preprocessingUnskew
      *
-     * Convert a scanned image into text.
+     * Detect and unskew a photo of a document.
      *
      */
-    public function testImageOcrPost()
+    public function testPreprocessingUnskew()
     {
     }
 }
