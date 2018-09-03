@@ -4,8 +4,8 @@ The powerful Optical Character Recognition (OCR) APIs let you convert scanned im
 [Cloudmersive OCR API](https://www.cloudmersive.com/ocr-api) provides advanced machine learning capabilities for converting scanned documents and photos of documents and receipts to text.
 
 - API version: v1
-- Package version: 1.4.4
-- Build package: io.swagger.codegen.languages.PhpClientCodegen
+- Package version: 1.4.5
+
 
 ## Requirements
 
