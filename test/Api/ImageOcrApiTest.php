@@ -72,6 +72,26 @@ class ImageOcrApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for imageOcrImageLinesWithLocation
+     *
+     * Convert a scanned image into words with location.
+     *
+     */
+    public function testImageOcrImageLinesWithLocation()
+    {
+    }
+
+    /**
+     * Test case for imageOcrImageWordsWithLocation
+     *
+     * Convert a scanned image into words with location.
+     *
+     */
+    public function testImageOcrImageWordsWithLocation()
+    {
+    }
+
+    /**
      * Test case for imageOcrPhotoToText
      *
      * Convert a photo of a document into text.
