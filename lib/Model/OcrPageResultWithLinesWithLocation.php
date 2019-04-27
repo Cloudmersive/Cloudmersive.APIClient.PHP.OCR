@@ -1,6 +1,6 @@
 <?php
 /**
- * ImageToWordsWithLocationResult
+ * OcrPageResultWithLinesWithLocation
  *
  * PHP version 5
  *
@@ -33,15 +33,15 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * ImageToWordsWithLocationResult Class Doc Comment
+ * OcrPageResultWithLinesWithLocation Class Doc Comment
  *
  * @category Class
- * @description Result of an image to words-with-location OCR operation
+ * @description OCR results of a page, including lines of text and their location
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
+class OcrPageResultWithLinesWithLocation implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ImageToWordsWithLocationResult';
+    protected static $swaggerModelName = 'OcrPageResultWithLinesWithLocation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,7 +59,8 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'successful' => 'bool',
-        'words' => '\Swagger\Client\Model\OcrWordElement[]'
+        'page_number' => 'int',
+        'lines' => '\Swagger\Client\Model\OcrLineElement[]'
     ];
 
     /**
@@ -69,7 +70,8 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'successful' => null,
-        'words' => null
+        'page_number' => 'int32',
+        'lines' => null
     ];
 
     /**
@@ -100,7 +102,8 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'successful' => 'Successful',
-        'words' => 'Words'
+        'page_number' => 'PageNumber',
+        'lines' => 'Lines'
     ];
 
     /**
@@ -110,7 +113,8 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'successful' => 'setSuccessful',
-        'words' => 'setWords'
+        'page_number' => 'setPageNumber',
+        'lines' => 'setLines'
     ];
 
     /**
@@ -120,7 +124,8 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'successful' => 'getSuccessful',
-        'words' => 'getWords'
+        'page_number' => 'getPageNumber',
+        'lines' => 'getLines'
     ];
 
     /**
@@ -184,7 +189,8 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['successful'] = isset($data['successful']) ? $data['successful'] : null;
-        $this->container['words'] = isset($data['words']) ? $data['words'] : null;
+        $this->container['page_number'] = isset($data['page_number']) ? $data['page_number'] : null;
+        $this->container['lines'] = isset($data['lines']) ? $data['lines'] : null;
     }
 
     /**
@@ -237,25 +243,49 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets words
+     * Gets page_number
      *
-     * @return \Swagger\Client\Model\OcrWordElement[]
+     * @return int
      */
-    public function getWords()
+    public function getPageNumber()
     {
-        return $this->container['words'];
+        return $this->container['page_number'];
     }
 
     /**
-     * Sets words
+     * Sets page_number
      *
-     * @param \Swagger\Client\Model\OcrWordElement[] $words Word elements in the image
+     * @param int $page_number Page number of the page that was OCR-ed, starting with 1 for the first page in the PDF file
      *
      * @return $this
      */
-    public function setWords($words)
+    public function setPageNumber($page_number)
     {
-        $this->container['words'] = $words;
+        $this->container['page_number'] = $page_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets lines
+     *
+     * @return \Swagger\Client\Model\OcrLineElement[]
+     */
+    public function getLines()
+    {
+        return $this->container['lines'];
+    }
+
+    /**
+     * Sets lines
+     *
+     * @param \Swagger\Client\Model\OcrLineElement[] $lines Word elements in the image
+     *
+     * @return $this
+     */
+    public function setLines($lines)
+    {
+        $this->container['lines'] = $lines;
 
         return $this;
     }

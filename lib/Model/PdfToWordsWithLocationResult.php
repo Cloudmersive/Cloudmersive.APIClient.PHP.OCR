@@ -1,6 +1,6 @@
 <?php
 /**
- * ImageToWordsWithLocationResult
+ * PdfToWordsWithLocationResult
  *
  * PHP version 5
  *
@@ -33,15 +33,15 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * ImageToWordsWithLocationResult Class Doc Comment
+ * PdfToWordsWithLocationResult Class Doc Comment
  *
  * @category Class
- * @description Result of an image to words-with-location OCR operation
+ * @description Response from an OCR to words with location operation.  Includes the confience rating and converted text result, along with the locations of the words in the pages.
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
+class PdfToWordsWithLocationResult implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ImageToWordsWithLocationResult';
+    protected static $swaggerModelName = 'PdfToWordsWithLocationResult';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,7 +59,7 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'successful' => 'bool',
-        'words' => '\Swagger\Client\Model\OcrWordElement[]'
+        'ocr_pages' => '\Swagger\Client\Model\OcrPageResultWithWordsWithLocation[]'
     ];
 
     /**
@@ -69,7 +69,7 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'successful' => null,
-        'words' => null
+        'ocr_pages' => null
     ];
 
     /**
@@ -100,7 +100,7 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'successful' => 'Successful',
-        'words' => 'Words'
+        'ocr_pages' => 'OcrPages'
     ];
 
     /**
@@ -110,7 +110,7 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'successful' => 'setSuccessful',
-        'words' => 'setWords'
+        'ocr_pages' => 'setOcrPages'
     ];
 
     /**
@@ -120,7 +120,7 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'successful' => 'getSuccessful',
-        'words' => 'getWords'
+        'ocr_pages' => 'getOcrPages'
     ];
 
     /**
@@ -184,7 +184,7 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['successful'] = isset($data['successful']) ? $data['successful'] : null;
-        $this->container['words'] = isset($data['words']) ? $data['words'] : null;
+        $this->container['ocr_pages'] = isset($data['ocr_pages']) ? $data['ocr_pages'] : null;
     }
 
     /**
@@ -237,25 +237,25 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets words
+     * Gets ocr_pages
      *
-     * @return \Swagger\Client\Model\OcrWordElement[]
+     * @return \Swagger\Client\Model\OcrPageResultWithWordsWithLocation[]
      */
-    public function getWords()
+    public function getOcrPages()
     {
-        return $this->container['words'];
+        return $this->container['ocr_pages'];
     }
 
     /**
-     * Sets words
+     * Sets ocr_pages
      *
-     * @param \Swagger\Client\Model\OcrWordElement[] $words Word elements in the image
+     * @param \Swagger\Client\Model\OcrPageResultWithWordsWithLocation[] $ocr_pages ocr_pages
      *
      * @return $this
      */
-    public function setWords($words)
+    public function setOcrPages($ocr_pages)
     {
-        $this->container['words'] = $words;
+        $this->container['ocr_pages'] = $ocr_pages;
 
         return $this;
     }

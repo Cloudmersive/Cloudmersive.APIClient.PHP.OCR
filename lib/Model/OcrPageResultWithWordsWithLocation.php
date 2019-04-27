@@ -1,6 +1,6 @@
 <?php
 /**
- * ImageToWordsWithLocationResult
+ * OcrPageResultWithWordsWithLocation
  *
  * PHP version 5
  *
@@ -33,15 +33,15 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * ImageToWordsWithLocationResult Class Doc Comment
+ * OcrPageResultWithWordsWithLocation Class Doc Comment
  *
  * @category Class
- * @description Result of an image to words-with-location OCR operation
+ * @description OCR results of a page, including words of text and their location
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
+class OcrPageResultWithWordsWithLocation implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ImageToWordsWithLocationResult';
+    protected static $swaggerModelName = 'OcrPageResultWithWordsWithLocation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,6 +59,7 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'successful' => 'bool',
+        'page_number' => 'int',
         'words' => '\Swagger\Client\Model\OcrWordElement[]'
     ];
 
@@ -69,6 +70,7 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'successful' => null,
+        'page_number' => 'int32',
         'words' => null
     ];
 
@@ -100,6 +102,7 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'successful' => 'Successful',
+        'page_number' => 'PageNumber',
         'words' => 'Words'
     ];
 
@@ -110,6 +113,7 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'successful' => 'setSuccessful',
+        'page_number' => 'setPageNumber',
         'words' => 'setWords'
     ];
 
@@ -120,6 +124,7 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'successful' => 'getSuccessful',
+        'page_number' => 'getPageNumber',
         'words' => 'getWords'
     ];
 
@@ -184,6 +189,7 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['successful'] = isset($data['successful']) ? $data['successful'] : null;
+        $this->container['page_number'] = isset($data['page_number']) ? $data['page_number'] : null;
         $this->container['words'] = isset($data['words']) ? $data['words'] : null;
     }
 
@@ -232,6 +238,30 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
     public function setSuccessful($successful)
     {
         $this->container['successful'] = $successful;
+
+        return $this;
+    }
+
+    /**
+     * Gets page_number
+     *
+     * @return int
+     */
+    public function getPageNumber()
+    {
+        return $this->container['page_number'];
+    }
+
+    /**
+     * Sets page_number
+     *
+     * @param int $page_number Page number of the page that was OCR-ed, starting with 1 for the first page in the PDF file
+     *
+     * @return $this
+     */
+    public function setPageNumber($page_number)
+    {
+        $this->container['page_number'] = $page_number;
 
         return $this;
     }
