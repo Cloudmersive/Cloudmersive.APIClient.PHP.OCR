@@ -4,7 +4,7 @@ The powerful Optical Character Recognition (OCR) APIs let you convert scanned im
 [Cloudmersive OCR API](https://www.cloudmersive.com/ocr-api) provides advanced machine learning capabilities for converting scanned documents and photos of documents and receipts to text.
 
 - API version: v1
-- Package version: 1.5.0
+- Package version: 1.5.1
 
 
 ## Requirements
@@ -94,7 +94,7 @@ Class | Method | HTTP request | Description
 *ImageOcrApi* | [**imageOcrPost**](docs/Api/ImageOcrApi.md#imageocrpost) | **POST** /ocr/image/toText | Convert a scanned image into text
 *PdfOcrApi* | [**pdfOcrPdfToLinesWithLocation**](docs/Api/PdfOcrApi.md#pdfocrpdftolineswithlocation) | **POST** /ocr/pdf/to/lines-with-location | Convert a PDF into text lines with location
 *PdfOcrApi* | [**pdfOcrPdfToWordsWithLocation**](docs/Api/PdfOcrApi.md#pdfocrpdftowordswithlocation) | **POST** /ocr/pdf/to/words-with-location | Convert a PDF into words with location
-*PdfOcrApi* | [**pdfOcrPost**](docs/Api/PdfOcrApi.md#pdfocrpost) | **POST** /ocr/pdf/toText | Converts an uploaded image in common formats such as JPEG, PNG into text via Optical Character Recognition.
+*PdfOcrApi* | [**pdfOcrPost**](docs/Api/PdfOcrApi.md#pdfocrpost) | **POST** /ocr/pdf/toText | Converts an uploaded PDF file in common formats such as JPEG, PNG into text via Optical Character Recognition.
 *PreprocessingApi* | [**preprocessingUnrotate**](docs/Api/PreprocessingApi.md#preprocessingunrotate) | **POST** /ocr/preprocessing/image/unrotate | Detect and unrotate a document image
 *PreprocessingApi* | [**preprocessingUnskew**](docs/Api/PreprocessingApi.md#preprocessingunskew) | **POST** /ocr/preprocessing/image/unskew | Detect and unskew a photo of a document
 
