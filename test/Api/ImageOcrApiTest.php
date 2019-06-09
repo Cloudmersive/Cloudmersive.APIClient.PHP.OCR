@@ -102,6 +102,16 @@ class ImageOcrApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for imageOcrPhotoWordsWithLocation
+     *
+     * Convert a photo of a document or receipt into words with location.
+     *
+     */
+    public function testImageOcrPhotoWordsWithLocation()
+    {
+    }
+
+    /**
      * Test case for imageOcrPost
      *
      * Convert a scanned image into text.

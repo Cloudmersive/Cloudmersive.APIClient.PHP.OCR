@@ -4,7 +4,7 @@ The powerful Optical Character Recognition (OCR) APIs let you convert scanned im
 [Cloudmersive OCR API](https://www.cloudmersive.com/ocr-api) provides advanced machine learning capabilities for converting scanned documents and photos of documents and receipts to text.
 
 - API version: v1
-- Package version: 1.5.2
+- Package version: 1.5.3
 
 
 ## Requirements
@@ -91,10 +91,12 @@ Class | Method | HTTP request | Description
 *ImageOcrApi* | [**imageOcrImageLinesWithLocation**](docs/Api/ImageOcrApi.md#imageocrimagelineswithlocation) | **POST** /ocr/image/to/lines-with-location | Convert a scanned image into words with location
 *ImageOcrApi* | [**imageOcrImageWordsWithLocation**](docs/Api/ImageOcrApi.md#imageocrimagewordswithlocation) | **POST** /ocr/image/to/words-with-location | Convert a scanned image into words with location
 *ImageOcrApi* | [**imageOcrPhotoToText**](docs/Api/ImageOcrApi.md#imageocrphotototext) | **POST** /ocr/photo/toText | Convert a photo of a document into text
+*ImageOcrApi* | [**imageOcrPhotoWordsWithLocation**](docs/Api/ImageOcrApi.md#imageocrphotowordswithlocation) | **POST** /ocr/photo/to/words-with-location | Convert a photo of a document or receipt into words with location
 *ImageOcrApi* | [**imageOcrPost**](docs/Api/ImageOcrApi.md#imageocrpost) | **POST** /ocr/image/toText | Convert a scanned image into text
 *PdfOcrApi* | [**pdfOcrPdfToLinesWithLocation**](docs/Api/PdfOcrApi.md#pdfocrpdftolineswithlocation) | **POST** /ocr/pdf/to/lines-with-location | Convert a PDF into text lines with location
 *PdfOcrApi* | [**pdfOcrPdfToWordsWithLocation**](docs/Api/PdfOcrApi.md#pdfocrpdftowordswithlocation) | **POST** /ocr/pdf/to/words-with-location | Convert a PDF into words with location
-*PdfOcrApi* | [**pdfOcrPost**](docs/Api/PdfOcrApi.md#pdfocrpost) | **POST** /ocr/pdf/toText | Converts an uploaded PDF file in common formats such as JPEG, PNG into text via Optical Character Recognition.
+*PdfOcrApi* | [**pdfOcrPost**](docs/Api/PdfOcrApi.md#pdfocrpost) | **POST** /ocr/pdf/toText | Converts an uploaded PDF file into text via Optical Character Recognition.
+*PreprocessingApi* | [**preprocessingBinarize**](docs/Api/PreprocessingApi.md#preprocessingbinarize) | **POST** /ocr/preprocessing/image/binarize | Convert an image of text into a binary (light and dark) view
 *PreprocessingApi* | [**preprocessingUnrotate**](docs/Api/PreprocessingApi.md#preprocessingunrotate) | **POST** /ocr/preprocessing/image/unrotate | Detect and unrotate a document image
 *PreprocessingApi* | [**preprocessingUnskew**](docs/Api/PreprocessingApi.md#preprocessingunskew) | **POST** /ocr/preprocessing/image/unskew | Detect and unskew a photo of a document
 
@@ -108,10 +110,12 @@ Class | Method | HTTP request | Description
  - [OcrPageResult](docs/Model/OcrPageResult.md)
  - [OcrPageResultWithLinesWithLocation](docs/Model/OcrPageResultWithLinesWithLocation.md)
  - [OcrPageResultWithWordsWithLocation](docs/Model/OcrPageResultWithWordsWithLocation.md)
+ - [OcrPhotoTextElement](docs/Model/OcrPhotoTextElement.md)
  - [OcrWordElement](docs/Model/OcrWordElement.md)
  - [PdfToLinesWithLocationResult](docs/Model/PdfToLinesWithLocationResult.md)
  - [PdfToTextResponse](docs/Model/PdfToTextResponse.md)
  - [PdfToWordsWithLocationResult](docs/Model/PdfToWordsWithLocationResult.md)
+ - [PhotoToWordsWithLocationResult](docs/Model/PhotoToWordsWithLocationResult.md)
 
 
 ## Documentation For Authorization

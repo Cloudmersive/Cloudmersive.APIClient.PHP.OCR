@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**pdfOcrPdfToLinesWithLocation**](PdfOcrApi.md#pdfOcrPdfToLinesWithLocation) | **POST** /ocr/pdf/to/lines-with-location | Convert a PDF into text lines with location
 [**pdfOcrPdfToWordsWithLocation**](PdfOcrApi.md#pdfOcrPdfToWordsWithLocation) | **POST** /ocr/pdf/to/words-with-location | Convert a PDF into words with location
-[**pdfOcrPost**](PdfOcrApi.md#pdfOcrPost) | **POST** /ocr/pdf/toText | Converts an uploaded PDF file in common formats such as JPEG, PNG into text via Optical Character Recognition.
+[**pdfOcrPost**](PdfOcrApi.md#pdfOcrPost) | **POST** /ocr/pdf/toText | Converts an uploaded PDF file into text via Optical Character Recognition.
 
 
 # **pdfOcrPdfToLinesWithLocation**
@@ -130,7 +130,7 @@ Name | Type | Description  | Notes
 # **pdfOcrPost**
 > \Swagger\Client\Model\PdfToTextResponse pdfOcrPost($image_file, $language, $preprocessing)
 
-Converts an uploaded PDF file in common formats such as JPEG, PNG into text via Optical Character Recognition.
+Converts an uploaded PDF file into text via Optical Character Recognition.
 
 ### Example
 ```php

@@ -72,6 +72,16 @@ class PreprocessingApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for preprocessingBinarize
+     *
+     * Convert an image of text into a binary (light and dark) view.
+     *
+     */
+    public function testPreprocessingBinarize()
+    {
+    }
+
+    /**
      * Test case for preprocessingUnrotate
      *
      * Detect and unrotate a document image.
