@@ -91,7 +91,7 @@ class PreprocessingApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return object
+     * @return string
      */
     public function preprocessingBinarize($image_file)
     {
@@ -108,11 +108,11 @@ class PreprocessingApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of object, HTTP status code, HTTP response headers (array of strings)
+     * @return array of string, HTTP status code, HTTP response headers (array of strings)
      */
     public function preprocessingBinarizeWithHttpInfo($image_file)
     {
-        $returnType = 'object';
+        $returnType = 'string';
         $request = $this->preprocessingBinarizeRequest($image_file);
 
         try {
@@ -164,7 +164,7 @@ class PreprocessingApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        'object',
+                        'string',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -206,7 +206,7 @@ class PreprocessingApi
      */
     public function preprocessingBinarizeAsyncWithHttpInfo($image_file)
     {
-        $returnType = 'object';
+        $returnType = 'string';
         $request = $this->preprocessingBinarizeRequest($image_file);
 
         return $this->client
@@ -355,7 +355,7 @@ class PreprocessingApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return object
+     * @return string
      */
     public function preprocessingBinarizeAdvanced($image_file)
     {
@@ -372,11 +372,11 @@ class PreprocessingApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of object, HTTP status code, HTTP response headers (array of strings)
+     * @return array of string, HTTP status code, HTTP response headers (array of strings)
      */
     public function preprocessingBinarizeAdvancedWithHttpInfo($image_file)
     {
-        $returnType = 'object';
+        $returnType = 'string';
         $request = $this->preprocessingBinarizeAdvancedRequest($image_file);
 
         try {
@@ -428,7 +428,7 @@ class PreprocessingApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        'object',
+                        'string',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -470,7 +470,7 @@ class PreprocessingApi
      */
     public function preprocessingBinarizeAdvancedAsyncWithHttpInfo($image_file)
     {
-        $returnType = 'object';
+        $returnType = 'string';
         $request = $this->preprocessingBinarizeAdvancedRequest($image_file);
 
         return $this->client
@@ -883,7 +883,7 @@ class PreprocessingApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return object
+     * @return string
      */
     public function preprocessingUnrotate($image_file)
     {
@@ -900,11 +900,11 @@ class PreprocessingApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of object, HTTP status code, HTTP response headers (array of strings)
+     * @return array of string, HTTP status code, HTTP response headers (array of strings)
      */
     public function preprocessingUnrotateWithHttpInfo($image_file)
     {
-        $returnType = 'object';
+        $returnType = 'string';
         $request = $this->preprocessingUnrotateRequest($image_file);
 
         try {
@@ -956,7 +956,7 @@ class PreprocessingApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        'object',
+                        'string',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -998,7 +998,7 @@ class PreprocessingApi
      */
     public function preprocessingUnrotateAsyncWithHttpInfo($image_file)
     {
-        $returnType = 'object';
+        $returnType = 'string';
         $request = $this->preprocessingUnrotateRequest($image_file);
 
         return $this->client
@@ -1147,7 +1147,7 @@ class PreprocessingApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return object
+     * @return string
      */
     public function preprocessingUnskew($image_file)
     {
@@ -1164,11 +1164,11 @@ class PreprocessingApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of object, HTTP status code, HTTP response headers (array of strings)
+     * @return array of string, HTTP status code, HTTP response headers (array of strings)
      */
     public function preprocessingUnskewWithHttpInfo($image_file)
     {
-        $returnType = 'object';
+        $returnType = 'string';
         $request = $this->preprocessingUnskewRequest($image_file);
 
         try {
@@ -1220,7 +1220,7 @@ class PreprocessingApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        'object',
+                        'string',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1262,7 +1262,7 @@ class PreprocessingApi
      */
     public function preprocessingUnskewAsyncWithHttpInfo($image_file)
     {
-        $returnType = 'object';
+        $returnType = 'string';
         $request = $this->preprocessingUnskewRequest($image_file);
 
         return $this->client
