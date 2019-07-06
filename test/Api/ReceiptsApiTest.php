@@ -1,6 +1,6 @@
 <?php
 /**
- * PreprocessingApiTest
+ * ReceiptsApiTest
  * PHP version 5
  *
  * @category Class
@@ -33,14 +33,14 @@ use \Swagger\Client\ApiException;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * PreprocessingApiTest Class Doc Comment
+ * ReceiptsApiTest Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class PreprocessingApiTest extends \PHPUnit_Framework_TestCase
+class ReceiptsApiTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -72,52 +72,12 @@ class PreprocessingApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for preprocessingBinarize
+     * Test case for receiptsPhotoToCSV
      *
-     * Convert an image of text into a binarized (light and dark) view.
-     *
-     */
-    public function testPreprocessingBinarize()
-    {
-    }
-
-    /**
-     * Test case for preprocessingBinarizeAdvanced
-     *
-     * Convert an image of text into a binary (light and dark) view with ML.
+     * Convert a photo of a receipt into a CSV file containing structured information from the receipt.
      *
      */
-    public function testPreprocessingBinarizeAdvanced()
-    {
-    }
-
-    /**
-     * Test case for preprocessingGetPageAngle
-     *
-     * Get the angle of the page / document / receipt.
-     *
-     */
-    public function testPreprocessingGetPageAngle()
-    {
-    }
-
-    /**
-     * Test case for preprocessingUnrotate
-     *
-     * Detect and unrotate a document image.
-     *
-     */
-    public function testPreprocessingUnrotate()
-    {
-    }
-
-    /**
-     * Test case for preprocessingUnskew
-     *
-     * Detect and unskew a photo of a document.
-     *
-     */
-    public function testPreprocessingUnskew()
+    public function testReceiptsPhotoToCSV()
     {
     }
 }
