@@ -90,4 +90,11 @@ class PhotoToWordsWithLocationResultTest extends \PHPUnit_Framework_TestCase
     public function testPropertyTextElements()
     {
     }
+
+    /**
+     * Test attribute "diagnostic_image"
+     */
+    public function testPropertyDiagnosticImage()
+    {
+    }
 }

@@ -59,7 +59,8 @@ class PhotoToWordsWithLocationResult implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'successful' => 'bool',
-        'text_elements' => '\Swagger\Client\Model\OcrPhotoTextElement[]'
+        'text_elements' => '\Swagger\Client\Model\OcrPhotoTextElement[]',
+        'diagnostic_image' => 'string'
     ];
 
     /**
@@ -69,7 +70,8 @@ class PhotoToWordsWithLocationResult implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'successful' => null,
-        'text_elements' => null
+        'text_elements' => null,
+        'diagnostic_image' => 'byte'
     ];
 
     /**
@@ -100,7 +102,8 @@ class PhotoToWordsWithLocationResult implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'successful' => 'Successful',
-        'text_elements' => 'TextElements'
+        'text_elements' => 'TextElements',
+        'diagnostic_image' => 'DiagnosticImage'
     ];
 
     /**
@@ -110,7 +113,8 @@ class PhotoToWordsWithLocationResult implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'successful' => 'setSuccessful',
-        'text_elements' => 'setTextElements'
+        'text_elements' => 'setTextElements',
+        'diagnostic_image' => 'setDiagnosticImage'
     ];
 
     /**
@@ -120,7 +124,8 @@ class PhotoToWordsWithLocationResult implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'successful' => 'getSuccessful',
-        'text_elements' => 'getTextElements'
+        'text_elements' => 'getTextElements',
+        'diagnostic_image' => 'getDiagnosticImage'
     ];
 
     /**
@@ -185,6 +190,7 @@ class PhotoToWordsWithLocationResult implements ModelInterface, ArrayAccess
     {
         $this->container['successful'] = isset($data['successful']) ? $data['successful'] : null;
         $this->container['text_elements'] = isset($data['text_elements']) ? $data['text_elements'] : null;
+        $this->container['diagnostic_image'] = isset($data['diagnostic_image']) ? $data['diagnostic_image'] : null;
     }
 
     /**
@@ -195,6 +201,10 @@ class PhotoToWordsWithLocationResult implements ModelInterface, ArrayAccess
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        if (!is_null($this->container['diagnostic_image']) && !preg_match("/^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$/", $this->container['diagnostic_image'])) {
+            $invalidProperties[] = "invalid value for 'diagnostic_image', must be conform to the pattern /^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$/.";
+        }
 
         return $invalidProperties;
     }
@@ -208,6 +218,9 @@ class PhotoToWordsWithLocationResult implements ModelInterface, ArrayAccess
     public function valid()
     {
 
+        if (!preg_match("/^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$/", $this->container['diagnostic_image'])) {
+            return false;
+        }
         return true;
     }
 
@@ -256,6 +269,35 @@ class PhotoToWordsWithLocationResult implements ModelInterface, ArrayAccess
     public function setTextElements($text_elements)
     {
         $this->container['text_elements'] = $text_elements;
+
+        return $this;
+    }
+
+    /**
+     * Gets diagnostic_image
+     *
+     * @return string
+     */
+    public function getDiagnosticImage()
+    {
+        return $this->container['diagnostic_image'];
+    }
+
+    /**
+     * Sets diagnostic_image
+     *
+     * @param string $diagnostic_image Typically null.  To analyze OCR performance, enable diagnostic mode by adding the HTTP header \"DiagnosticMode\" with the value \"true\".  When this is true, a diagnostic image showing the details of the OCR result will be set in PNG format into DiagnosticImage.
+     *
+     * @return $this
+     */
+    public function setDiagnosticImage($diagnostic_image)
+    {
+
+        if (!is_null($diagnostic_image) && (!preg_match("/^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$/", $diagnostic_image))) {
+            throw new \InvalidArgumentException("invalid value for $diagnostic_image when calling PhotoToWordsWithLocationResult., must conform to the pattern /^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$/.");
+        }
+
+        $this->container['diagnostic_image'] = $diagnostic_image;
 
         return $this;
     }
