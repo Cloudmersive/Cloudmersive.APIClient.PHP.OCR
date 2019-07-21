@@ -92,6 +92,16 @@ class ImageOcrApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for imageOcrPhotoRecognizeBusinessCard
+     *
+     * Recognize a photo of a business card, extract key business information.
+     *
+     */
+    public function testImageOcrPhotoRecognizeBusinessCard()
+    {
+    }
+
+    /**
      * Test case for imageOcrPhotoRecognizeReceipt
      *
      * Recognize a photo of a receipt, extract key business information.

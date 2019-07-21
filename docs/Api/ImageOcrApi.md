@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**imageOcrImageLinesWithLocation**](ImageOcrApi.md#imageOcrImageLinesWithLocation) | **POST** /ocr/image/to/lines-with-location | Convert a scanned image into words with location
 [**imageOcrImageWordsWithLocation**](ImageOcrApi.md#imageOcrImageWordsWithLocation) | **POST** /ocr/image/to/words-with-location | Convert a scanned image into words with location
+[**imageOcrPhotoRecognizeBusinessCard**](ImageOcrApi.md#imageOcrPhotoRecognizeBusinessCard) | **POST** /ocr/photo/recognize/business-card | Recognize a photo of a business card, extract key business information
 [**imageOcrPhotoRecognizeReceipt**](ImageOcrApi.md#imageOcrPhotoRecognizeReceipt) | **POST** /ocr/photo/recognize/receipt | Recognize a photo of a receipt, extract key business information
 [**imageOcrPhotoToText**](ImageOcrApi.md#imageOcrPhotoToText) | **POST** /ocr/photo/toText | Convert a photo of a document into text
 [**imageOcrPhotoWordsWithLocation**](ImageOcrApi.md#imageOcrPhotoWordsWithLocation) | **POST** /ocr/photo/to/words-with-location | Convert a photo of a document or receipt into words with location
@@ -118,6 +119,61 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Swagger\Client\Model\ImageToWordsWithLocationResult**](../Model/ImageToWordsWithLocationResult.md)
+
+### Authorization
+
+[Apikey](../../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **imageOcrPhotoRecognizeBusinessCard**
+> \Swagger\Client\Model\BusinessCardRecognitionResult imageOcrPhotoRecognizeBusinessCard($image_file)
+
+Recognize a photo of a business card, extract key business information
+
+Analyzes a photograph of a business card as input, and outputs key business information such as the name of the person, name of the business, the address of the business, the phone number, the email address and more.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: Apikey
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Apikey', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Apikey', 'Bearer');
+
+$apiInstance = new Swagger\Client\Api\ImageOcrApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$image_file = "/path/to/file.txt"; // \SplFileObject | Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.
+
+try {
+    $result = $apiInstance->imageOcrPhotoRecognizeBusinessCard($image_file);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ImageOcrApi->imageOcrPhotoRecognizeBusinessCard: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **image_file** | **\SplFileObject**| Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported. |
+
+### Return type
+
+[**\Swagger\Client\Model\BusinessCardRecognitionResult**](../Model/BusinessCardRecognitionResult.md)
 
 ### Authorization
 
