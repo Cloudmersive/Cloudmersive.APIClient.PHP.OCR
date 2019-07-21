@@ -4,7 +4,7 @@ The powerful Optical Character Recognition (OCR) APIs let you convert scanned im
 [Cloudmersive OCR API](https://www.cloudmersive.com/ocr-api) provides advanced machine learning capabilities for converting scanned documents and photos of documents and receipts to text.
 
 - API version: v1
-- Package version: 1.5.6
+- Package version: 1.5.7
 
 
 ## Requirements
@@ -90,6 +90,7 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *ImageOcrApi* | [**imageOcrImageLinesWithLocation**](docs/Api/ImageOcrApi.md#imageocrimagelineswithlocation) | **POST** /ocr/image/to/lines-with-location | Convert a scanned image into words with location
 *ImageOcrApi* | [**imageOcrImageWordsWithLocation**](docs/Api/ImageOcrApi.md#imageocrimagewordswithlocation) | **POST** /ocr/image/to/words-with-location | Convert a scanned image into words with location
+*ImageOcrApi* | [**imageOcrPhotoRecognizeReceipt**](docs/Api/ImageOcrApi.md#imageocrphotorecognizereceipt) | **POST** /ocr/photo/recognize/receipt | Recognize a photo of a receipt, extract key business information
 *ImageOcrApi* | [**imageOcrPhotoToText**](docs/Api/ImageOcrApi.md#imageocrphotototext) | **POST** /ocr/photo/toText | Convert a photo of a document into text
 *ImageOcrApi* | [**imageOcrPhotoWordsWithLocation**](docs/Api/ImageOcrApi.md#imageocrphotowordswithlocation) | **POST** /ocr/photo/to/words-with-location | Convert a photo of a document or receipt into words with location
 *ImageOcrApi* | [**imageOcrPost**](docs/Api/ImageOcrApi.md#imageocrpost) | **POST** /ocr/image/toText | Convert a scanned image into text
@@ -120,6 +121,7 @@ Class | Method | HTTP request | Description
  - [PdfToTextResponse](docs/Model/PdfToTextResponse.md)
  - [PdfToWordsWithLocationResult](docs/Model/PdfToWordsWithLocationResult.md)
  - [PhotoToWordsWithLocationResult](docs/Model/PhotoToWordsWithLocationResult.md)
+ - [ReceiptRecognitionResult](docs/Model/ReceiptRecognitionResult.md)
 
 
 ## Documentation For Authorization
