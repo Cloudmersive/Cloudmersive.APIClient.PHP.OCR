@@ -1,6 +1,6 @@
 <?php
 /**
- * ReceiptRecognitionResultTest
+ * FormDefinitionTemplateTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace Swagger\Client;
 
 /**
- * ReceiptRecognitionResultTest Class Doc Comment
+ * FormDefinitionTemplateTest Class Doc Comment
  *
  * @category    Class */
-// * @description Result of recognizing a receipt, to extract the key information from the receipt
+// * @description Definition of a form template; use a form template definition to recognize the fields in a form with Cloudmersive OCR
 /**
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class ReceiptRecognitionResultTest extends \PHPUnit_Framework_TestCase
+class FormDefinitionTemplateTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,65 +71,16 @@ class ReceiptRecognitionResultTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "ReceiptRecognitionResult"
+     * Test "FormDefinitionTemplate"
      */
-    public function testReceiptRecognitionResult()
+    public function testFormDefinitionTemplate()
     {
     }
 
     /**
-     * Test attribute "successful"
+     * Test attribute "field_definitions"
      */
-    public function testPropertySuccessful()
-    {
-    }
-
-    /**
-     * Test attribute "timestamp"
-     */
-    public function testPropertyTimestamp()
-    {
-    }
-
-    /**
-     * Test attribute "business_name"
-     */
-    public function testPropertyBusinessName()
-    {
-    }
-
-    /**
-     * Test attribute "business_website"
-     */
-    public function testPropertyBusinessWebsite()
-    {
-    }
-
-    /**
-     * Test attribute "address_string"
-     */
-    public function testPropertyAddressString()
-    {
-    }
-
-    /**
-     * Test attribute "phone_number"
-     */
-    public function testPropertyPhoneNumber()
-    {
-    }
-
-    /**
-     * Test attribute "receipt_items"
-     */
-    public function testPropertyReceiptItems()
-    {
-    }
-
-    /**
-     * Test attribute "receipt_total"
-     */
-    public function testPropertyReceiptTotal()
+    public function testPropertyFieldDefinitions()
     {
     }
 }

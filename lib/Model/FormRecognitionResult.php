@@ -1,6 +1,6 @@
 <?php
 /**
- * ReceiptRecognitionResult
+ * FormRecognitionResult
  *
  * PHP version 5
  *
@@ -33,15 +33,15 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * ReceiptRecognitionResult Class Doc Comment
+ * FormRecognitionResult Class Doc Comment
  *
  * @category Class
- * @description Result of recognizing a receipt, to extract the key information from the receipt
+ * @description The result of extracting form field values
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ReceiptRecognitionResult implements ModelInterface, ArrayAccess
+class FormRecognitionResult implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class ReceiptRecognitionResult implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ReceiptRecognitionResult';
+    protected static $swaggerModelName = 'FormRecognitionResult';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,13 +59,7 @@ class ReceiptRecognitionResult implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'successful' => 'bool',
-        'timestamp' => '\DateTime',
-        'business_name' => 'string',
-        'business_website' => 'string',
-        'address_string' => 'string',
-        'phone_number' => 'string',
-        'receipt_items' => '\Swagger\Client\Model\ReceiptLineItem[]',
-        'receipt_total' => 'double'
+        'field_value_extraction_result' => '\Swagger\Client\Model\FieldResult[]'
     ];
 
     /**
@@ -75,13 +69,7 @@ class ReceiptRecognitionResult implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'successful' => null,
-        'timestamp' => 'date-time',
-        'business_name' => null,
-        'business_website' => null,
-        'address_string' => null,
-        'phone_number' => null,
-        'receipt_items' => null,
-        'receipt_total' => 'double'
+        'field_value_extraction_result' => null
     ];
 
     /**
@@ -112,13 +100,7 @@ class ReceiptRecognitionResult implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'successful' => 'Successful',
-        'timestamp' => 'Timestamp',
-        'business_name' => 'BusinessName',
-        'business_website' => 'BusinessWebsite',
-        'address_string' => 'AddressString',
-        'phone_number' => 'PhoneNumber',
-        'receipt_items' => 'ReceiptItems',
-        'receipt_total' => 'ReceiptTotal'
+        'field_value_extraction_result' => 'FieldValueExtractionResult'
     ];
 
     /**
@@ -128,13 +110,7 @@ class ReceiptRecognitionResult implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'successful' => 'setSuccessful',
-        'timestamp' => 'setTimestamp',
-        'business_name' => 'setBusinessName',
-        'business_website' => 'setBusinessWebsite',
-        'address_string' => 'setAddressString',
-        'phone_number' => 'setPhoneNumber',
-        'receipt_items' => 'setReceiptItems',
-        'receipt_total' => 'setReceiptTotal'
+        'field_value_extraction_result' => 'setFieldValueExtractionResult'
     ];
 
     /**
@@ -144,13 +120,7 @@ class ReceiptRecognitionResult implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'successful' => 'getSuccessful',
-        'timestamp' => 'getTimestamp',
-        'business_name' => 'getBusinessName',
-        'business_website' => 'getBusinessWebsite',
-        'address_string' => 'getAddressString',
-        'phone_number' => 'getPhoneNumber',
-        'receipt_items' => 'getReceiptItems',
-        'receipt_total' => 'getReceiptTotal'
+        'field_value_extraction_result' => 'getFieldValueExtractionResult'
     ];
 
     /**
@@ -214,13 +184,7 @@ class ReceiptRecognitionResult implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['successful'] = isset($data['successful']) ? $data['successful'] : null;
-        $this->container['timestamp'] = isset($data['timestamp']) ? $data['timestamp'] : null;
-        $this->container['business_name'] = isset($data['business_name']) ? $data['business_name'] : null;
-        $this->container['business_website'] = isset($data['business_website']) ? $data['business_website'] : null;
-        $this->container['address_string'] = isset($data['address_string']) ? $data['address_string'] : null;
-        $this->container['phone_number'] = isset($data['phone_number']) ? $data['phone_number'] : null;
-        $this->container['receipt_items'] = isset($data['receipt_items']) ? $data['receipt_items'] : null;
-        $this->container['receipt_total'] = isset($data['receipt_total']) ? $data['receipt_total'] : null;
+        $this->container['field_value_extraction_result'] = isset($data['field_value_extraction_result']) ? $data['field_value_extraction_result'] : null;
     }
 
     /**
@@ -273,169 +237,25 @@ class ReceiptRecognitionResult implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets timestamp
+     * Gets field_value_extraction_result
      *
-     * @return \DateTime
+     * @return \Swagger\Client\Model\FieldResult[]
      */
-    public function getTimestamp()
+    public function getFieldValueExtractionResult()
     {
-        return $this->container['timestamp'];
+        return $this->container['field_value_extraction_result'];
     }
 
     /**
-     * Sets timestamp
+     * Sets field_value_extraction_result
      *
-     * @param \DateTime $timestamp timestamp
+     * @param \Swagger\Client\Model\FieldResult[] $field_value_extraction_result field_value_extraction_result
      *
      * @return $this
      */
-    public function setTimestamp($timestamp)
+    public function setFieldValueExtractionResult($field_value_extraction_result)
     {
-        $this->container['timestamp'] = $timestamp;
-
-        return $this;
-    }
-
-    /**
-     * Gets business_name
-     *
-     * @return string
-     */
-    public function getBusinessName()
-    {
-        return $this->container['business_name'];
-    }
-
-    /**
-     * Sets business_name
-     *
-     * @param string $business_name business_name
-     *
-     * @return $this
-     */
-    public function setBusinessName($business_name)
-    {
-        $this->container['business_name'] = $business_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets business_website
-     *
-     * @return string
-     */
-    public function getBusinessWebsite()
-    {
-        return $this->container['business_website'];
-    }
-
-    /**
-     * Sets business_website
-     *
-     * @param string $business_website business_website
-     *
-     * @return $this
-     */
-    public function setBusinessWebsite($business_website)
-    {
-        $this->container['business_website'] = $business_website;
-
-        return $this;
-    }
-
-    /**
-     * Gets address_string
-     *
-     * @return string
-     */
-    public function getAddressString()
-    {
-        return $this->container['address_string'];
-    }
-
-    /**
-     * Sets address_string
-     *
-     * @param string $address_string address_string
-     *
-     * @return $this
-     */
-    public function setAddressString($address_string)
-    {
-        $this->container['address_string'] = $address_string;
-
-        return $this;
-    }
-
-    /**
-     * Gets phone_number
-     *
-     * @return string
-     */
-    public function getPhoneNumber()
-    {
-        return $this->container['phone_number'];
-    }
-
-    /**
-     * Sets phone_number
-     *
-     * @param string $phone_number phone_number
-     *
-     * @return $this
-     */
-    public function setPhoneNumber($phone_number)
-    {
-        $this->container['phone_number'] = $phone_number;
-
-        return $this;
-    }
-
-    /**
-     * Gets receipt_items
-     *
-     * @return \Swagger\Client\Model\ReceiptLineItem[]
-     */
-    public function getReceiptItems()
-    {
-        return $this->container['receipt_items'];
-    }
-
-    /**
-     * Sets receipt_items
-     *
-     * @param \Swagger\Client\Model\ReceiptLineItem[] $receipt_items receipt_items
-     *
-     * @return $this
-     */
-    public function setReceiptItems($receipt_items)
-    {
-        $this->container['receipt_items'] = $receipt_items;
-
-        return $this;
-    }
-
-    /**
-     * Gets receipt_total
-     *
-     * @return double
-     */
-    public function getReceiptTotal()
-    {
-        return $this->container['receipt_total'];
-    }
-
-    /**
-     * Sets receipt_total
-     *
-     * @param double $receipt_total receipt_total
-     *
-     * @return $this
-     */
-    public function setReceiptTotal($receipt_total)
-    {
-        $this->container['receipt_total'] = $receipt_total;
+        $this->container['field_value_extraction_result'] = $field_value_extraction_result;
 
         return $this;
     }

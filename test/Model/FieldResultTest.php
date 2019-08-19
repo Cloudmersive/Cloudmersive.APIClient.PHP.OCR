@@ -1,6 +1,6 @@
 <?php
 /**
- * ReceiptRecognitionResultTest
+ * FieldResultTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace Swagger\Client;
 
 /**
- * ReceiptRecognitionResultTest Class Doc Comment
+ * FieldResultTest Class Doc Comment
  *
  * @category    Class */
-// * @description Result of recognizing a receipt, to extract the key information from the receipt
+// * @description A pairing target field and actual value read from form
 /**
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class ReceiptRecognitionResultTest extends \PHPUnit_Framework_TestCase
+class FieldResultTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,65 +71,23 @@ class ReceiptRecognitionResultTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "ReceiptRecognitionResult"
+     * Test "FieldResult"
      */
-    public function testReceiptRecognitionResult()
+    public function testFieldResult()
     {
     }
 
     /**
-     * Test attribute "successful"
+     * Test attribute "target_field"
      */
-    public function testPropertySuccessful()
+    public function testPropertyTargetField()
     {
     }
 
     /**
-     * Test attribute "timestamp"
+     * Test attribute "field_values"
      */
-    public function testPropertyTimestamp()
-    {
-    }
-
-    /**
-     * Test attribute "business_name"
-     */
-    public function testPropertyBusinessName()
-    {
-    }
-
-    /**
-     * Test attribute "business_website"
-     */
-    public function testPropertyBusinessWebsite()
-    {
-    }
-
-    /**
-     * Test attribute "address_string"
-     */
-    public function testPropertyAddressString()
-    {
-    }
-
-    /**
-     * Test attribute "phone_number"
-     */
-    public function testPropertyPhoneNumber()
-    {
-    }
-
-    /**
-     * Test attribute "receipt_items"
-     */
-    public function testPropertyReceiptItems()
-    {
-    }
-
-    /**
-     * Test attribute "receipt_total"
-     */
-    public function testPropertyReceiptTotal()
+    public function testPropertyFieldValues()
     {
     }
 }
