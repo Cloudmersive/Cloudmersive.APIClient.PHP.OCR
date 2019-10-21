@@ -58,8 +58,8 @@ class OcrPageResultWithLinesWithLocation implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'successful' => 'bool',
         'page_number' => 'int',
+        'successful' => 'bool',
         'lines' => '\Swagger\Client\Model\OcrLineElement[]'
     ];
 
@@ -69,8 +69,8 @@ class OcrPageResultWithLinesWithLocation implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'successful' => null,
         'page_number' => 'int32',
+        'successful' => null,
         'lines' => null
     ];
 
@@ -101,8 +101,8 @@ class OcrPageResultWithLinesWithLocation implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'successful' => 'Successful',
         'page_number' => 'PageNumber',
+        'successful' => 'Successful',
         'lines' => 'Lines'
     ];
 
@@ -112,8 +112,8 @@ class OcrPageResultWithLinesWithLocation implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'successful' => 'setSuccessful',
         'page_number' => 'setPageNumber',
+        'successful' => 'setSuccessful',
         'lines' => 'setLines'
     ];
 
@@ -123,8 +123,8 @@ class OcrPageResultWithLinesWithLocation implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'successful' => 'getSuccessful',
         'page_number' => 'getPageNumber',
+        'successful' => 'getSuccessful',
         'lines' => 'getLines'
     ];
 
@@ -188,8 +188,8 @@ class OcrPageResultWithLinesWithLocation implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['successful'] = isset($data['successful']) ? $data['successful'] : null;
         $this->container['page_number'] = isset($data['page_number']) ? $data['page_number'] : null;
+        $this->container['successful'] = isset($data['successful']) ? $data['successful'] : null;
         $this->container['lines'] = isset($data['lines']) ? $data['lines'] : null;
     }
 
@@ -219,30 +219,6 @@ class OcrPageResultWithLinesWithLocation implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets successful
-     *
-     * @return bool
-     */
-    public function getSuccessful()
-    {
-        return $this->container['successful'];
-    }
-
-    /**
-     * Sets successful
-     *
-     * @param bool $successful successful
-     *
-     * @return $this
-     */
-    public function setSuccessful($successful)
-    {
-        $this->container['successful'] = $successful;
-
-        return $this;
-    }
-
-    /**
      * Gets page_number
      *
      * @return int
@@ -262,6 +238,30 @@ class OcrPageResultWithLinesWithLocation implements ModelInterface, ArrayAccess
     public function setPageNumber($page_number)
     {
         $this->container['page_number'] = $page_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets successful
+     *
+     * @return bool
+     */
+    public function getSuccessful()
+    {
+        return $this->container['successful'];
+    }
+
+    /**
+     * Sets successful
+     *
+     * @param bool $successful True if successful, false otherwise
+     *
+     * @return $this
+     */
+    public function setSuccessful($successful)
+    {
+        $this->container['successful'] = $successful;
 
         return $this;
     }

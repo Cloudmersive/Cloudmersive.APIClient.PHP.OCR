@@ -1,6 +1,6 @@
 <?php
 /**
- * FormDefinitionTemplateTest
+ * FormTableDefinitionTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace Swagger\Client;
 
 /**
- * FormDefinitionTemplateTest Class Doc Comment
+ * FormTableDefinitionTest Class Doc Comment
  *
  * @category    Class */
-// * @description Definition of a form template; use a form template definition to recognize the fields in a form with Cloudmersive OCR
+// * @description Definition of a form table for OCR data extraction from images
 /**
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class FormDefinitionTemplateTest extends \PHPUnit_Framework_TestCase
+class FormTableDefinitionTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,23 +71,37 @@ class FormDefinitionTemplateTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "FormDefinitionTemplate"
+     * Test "FormTableDefinition"
      */
-    public function testFormDefinitionTemplate()
+    public function testFormTableDefinition()
     {
     }
 
     /**
-     * Test attribute "field_definitions"
+     * Test attribute "table_id"
      */
-    public function testPropertyFieldDefinitions()
+    public function testPropertyTableId()
     {
     }
 
     /**
-     * Test attribute "table_definitions"
+     * Test attribute "column_definitions"
      */
-    public function testPropertyTableDefinitions()
+    public function testPropertyColumnDefinitions()
+    {
+    }
+
+    /**
+     * Test attribute "target_table_height_relative"
+     */
+    public function testPropertyTargetTableHeightRelative()
+    {
+    }
+
+    /**
+     * Test attribute "target_row_height_relative"
+     */
+    public function testPropertyTargetRowHeightRelative()
     {
     }
 }

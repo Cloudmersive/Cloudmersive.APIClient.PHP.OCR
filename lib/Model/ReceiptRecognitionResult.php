@@ -261,7 +261,7 @@ class ReceiptRecognitionResult implements ModelInterface, ArrayAccess
     /**
      * Sets successful
      *
-     * @param bool $successful successful
+     * @param bool $successful True if the operation was successful, false otherwise
      *
      * @return $this
      */
@@ -285,7 +285,7 @@ class ReceiptRecognitionResult implements ModelInterface, ArrayAccess
     /**
      * Sets timestamp
      *
-     * @param \DateTime $timestamp timestamp
+     * @param \DateTime $timestamp The date and time printed on the receipt (if included on the receipt)
      *
      * @return $this
      */
@@ -309,7 +309,7 @@ class ReceiptRecognitionResult implements ModelInterface, ArrayAccess
     /**
      * Sets business_name
      *
-     * @param string $business_name business_name
+     * @param string $business_name The name of the business printed on the receipt (if included on the receipt)
      *
      * @return $this
      */
@@ -333,7 +333,7 @@ class ReceiptRecognitionResult implements ModelInterface, ArrayAccess
     /**
      * Sets business_website
      *
-     * @param string $business_website business_website
+     * @param string $business_website The website URL of the business printed on the receipt (if included on the receipt)
      *
      * @return $this
      */
@@ -357,7 +357,7 @@ class ReceiptRecognitionResult implements ModelInterface, ArrayAccess
     /**
      * Sets address_string
      *
-     * @param string $address_string address_string
+     * @param string $address_string The address of the business printed on the receipt (if included on the receipt)
      *
      * @return $this
      */
@@ -381,7 +381,7 @@ class ReceiptRecognitionResult implements ModelInterface, ArrayAccess
     /**
      * Sets phone_number
      *
-     * @param string $phone_number phone_number
+     * @param string $phone_number The phone number printed on the receipt (if included on the receipt)
      *
      * @return $this
      */
@@ -405,7 +405,7 @@ class ReceiptRecognitionResult implements ModelInterface, ArrayAccess
     /**
      * Sets receipt_items
      *
-     * @param \Swagger\Client\Model\ReceiptLineItem[] $receipt_items receipt_items
+     * @param \Swagger\Client\Model\ReceiptLineItem[] $receipt_items The individual line items comprising the order; does not include total (see ReceiptTotal)
      *
      * @return $this
      */
@@ -429,7 +429,7 @@ class ReceiptRecognitionResult implements ModelInterface, ArrayAccess
     /**
      * Sets receipt_total
      *
-     * @param double $receipt_total receipt_total
+     * @param double $receipt_total The total monetary value of the receipt (if included on the receipt)
      *
      * @return $this
      */

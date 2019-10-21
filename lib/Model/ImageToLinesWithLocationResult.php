@@ -225,7 +225,7 @@ class ImageToLinesWithLocationResult implements ModelInterface, ArrayAccess
     /**
      * Sets successful
      *
-     * @param bool $successful successful
+     * @param bool $successful True if successful, false otherwise
      *
      * @return $this
      */

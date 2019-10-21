@@ -1,6 +1,6 @@
 <?php
 /**
- * ImageToWordsWithLocationResult
+ * FormTableColumnDefinition
  *
  * PHP version 5
  *
@@ -33,15 +33,15 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * ImageToWordsWithLocationResult Class Doc Comment
+ * FormTableColumnDefinition Class Doc Comment
  *
  * @category Class
- * @description Result of an image to words-with-location OCR operation
+ * @description Definition of a column within a table for OCR data extraction from images
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
+class FormTableColumnDefinition implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ImageToWordsWithLocationResult';
+    protected static $swaggerModelName = 'FormTableColumnDefinition';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,8 +58,12 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'successful' => 'bool',
-        'words' => '\Swagger\Client\Model\OcrWordElement[]'
+        'column_id' => 'string',
+        'top_anchor' => 'string',
+        'anchor_mode' => 'string',
+        'data_type' => 'string',
+        'minimum_character_count' => 'int',
+        'allow_numeric_digits' => 'bool'
     ];
 
     /**
@@ -68,8 +72,12 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'successful' => null,
-        'words' => null
+        'column_id' => null,
+        'top_anchor' => null,
+        'anchor_mode' => null,
+        'data_type' => null,
+        'minimum_character_count' => 'int32',
+        'allow_numeric_digits' => null
     ];
 
     /**
@@ -99,8 +107,12 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'successful' => 'Successful',
-        'words' => 'Words'
+        'column_id' => 'ColumnID',
+        'top_anchor' => 'TopAnchor',
+        'anchor_mode' => 'AnchorMode',
+        'data_type' => 'DataType',
+        'minimum_character_count' => 'MinimumCharacterCount',
+        'allow_numeric_digits' => 'AllowNumericDigits'
     ];
 
     /**
@@ -109,8 +121,12 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'successful' => 'setSuccessful',
-        'words' => 'setWords'
+        'column_id' => 'setColumnId',
+        'top_anchor' => 'setTopAnchor',
+        'anchor_mode' => 'setAnchorMode',
+        'data_type' => 'setDataType',
+        'minimum_character_count' => 'setMinimumCharacterCount',
+        'allow_numeric_digits' => 'setAllowNumericDigits'
     ];
 
     /**
@@ -119,8 +135,12 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'successful' => 'getSuccessful',
-        'words' => 'getWords'
+        'column_id' => 'getColumnId',
+        'top_anchor' => 'getTopAnchor',
+        'anchor_mode' => 'getAnchorMode',
+        'data_type' => 'getDataType',
+        'minimum_character_count' => 'getMinimumCharacterCount',
+        'allow_numeric_digits' => 'getAllowNumericDigits'
     ];
 
     /**
@@ -183,8 +203,12 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['successful'] = isset($data['successful']) ? $data['successful'] : null;
-        $this->container['words'] = isset($data['words']) ? $data['words'] : null;
+        $this->container['column_id'] = isset($data['column_id']) ? $data['column_id'] : null;
+        $this->container['top_anchor'] = isset($data['top_anchor']) ? $data['top_anchor'] : null;
+        $this->container['anchor_mode'] = isset($data['anchor_mode']) ? $data['anchor_mode'] : null;
+        $this->container['data_type'] = isset($data['data_type']) ? $data['data_type'] : null;
+        $this->container['minimum_character_count'] = isset($data['minimum_character_count']) ? $data['minimum_character_count'] : null;
+        $this->container['allow_numeric_digits'] = isset($data['allow_numeric_digits']) ? $data['allow_numeric_digits'] : null;
     }
 
     /**
@@ -213,49 +237,145 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets successful
+     * Gets column_id
      *
-     * @return bool
+     * @return string
      */
-    public function getSuccessful()
+    public function getColumnId()
     {
-        return $this->container['successful'];
+        return $this->container['column_id'];
     }
 
     /**
-     * Sets successful
+     * Sets column_id
      *
-     * @param bool $successful True if successful, false otherwise
+     * @param string $column_id The identifier of the field; use this to identify which field is being referenced
      *
      * @return $this
      */
-    public function setSuccessful($successful)
+    public function setColumnId($column_id)
     {
-        $this->container['successful'] = $successful;
+        $this->container['column_id'] = $column_id;
 
         return $this;
     }
 
     /**
-     * Gets words
+     * Gets top_anchor
      *
-     * @return \Swagger\Client\Model\OcrWordElement[]
+     * @return string
      */
-    public function getWords()
+    public function getTopAnchor()
     {
-        return $this->container['words'];
+        return $this->container['top_anchor'];
     }
 
     /**
-     * Sets words
+     * Sets top_anchor
      *
-     * @param \Swagger\Client\Model\OcrWordElement[] $words Word elements in the image
+     * @param string $top_anchor Optional - the top anchor of the column heading
      *
      * @return $this
      */
-    public function setWords($words)
+    public function setTopAnchor($top_anchor)
     {
-        $this->container['words'] = $words;
+        $this->container['top_anchor'] = $top_anchor;
+
+        return $this;
+    }
+
+    /**
+     * Gets anchor_mode
+     *
+     * @return string
+     */
+    public function getAnchorMode()
+    {
+        return $this->container['anchor_mode'];
+    }
+
+    /**
+     * Sets anchor_mode
+     *
+     * @param string $anchor_mode Optional - the matching mode for the anchor.  Possible values are Complete (requires the entire anchor to match) and Partial (allows only part of the anchor to match).  Default is Partial.
+     *
+     * @return $this
+     */
+    public function setAnchorMode($anchor_mode)
+    {
+        $this->container['anchor_mode'] = $anchor_mode;
+
+        return $this;
+    }
+
+    /**
+     * Gets data_type
+     *
+     * @return string
+     */
+    public function getDataType()
+    {
+        return $this->container['data_type'];
+    }
+
+    /**
+     * Sets data_type
+     *
+     * @param string $data_type The data type of the field; possible values are INTEGER (Integer value), STRING (Arbitrary string value, spaces are permitted), DATE (Date in a structured format), DECIMAL (Decimal number), ALPHANUMERIC (Continuous alphanumeric string with no spaces), STRINGNOWHITESPACE (A string that contains no whitespace characters), SERIALNUMBER (A serial-number style string that contains letters and numbers, and certain symbols; must contain at least one number), ALPHAONLY (Alphabet characters only, no numbers or symbols or whitespace)
+     *
+     * @return $this
+     */
+    public function setDataType($data_type)
+    {
+        $this->container['data_type'] = $data_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets minimum_character_count
+     *
+     * @return int
+     */
+    public function getMinimumCharacterCount()
+    {
+        return $this->container['minimum_character_count'];
+    }
+
+    /**
+     * Sets minimum_character_count
+     *
+     * @param int $minimum_character_count Optional - the target number of digits in the field; useful for fixed-length fields
+     *
+     * @return $this
+     */
+    public function setMinimumCharacterCount($minimum_character_count)
+    {
+        $this->container['minimum_character_count'] = $minimum_character_count;
+
+        return $this;
+    }
+
+    /**
+     * Gets allow_numeric_digits
+     *
+     * @return bool
+     */
+    public function getAllowNumericDigits()
+    {
+        return $this->container['allow_numeric_digits'];
+    }
+
+    /**
+     * Sets allow_numeric_digits
+     *
+     * @param bool $allow_numeric_digits Optional - set to false to block values that contain numeric digits, set to true to allow numeric digits
+     *
+     * @return $this
+     */
+    public function setAllowNumericDigits($allow_numeric_digits)
+    {
+        $this->container['allow_numeric_digits'] = $allow_numeric_digits;
 
         return $this;
     }

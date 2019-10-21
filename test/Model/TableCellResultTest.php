@@ -1,6 +1,6 @@
 <?php
 /**
- * FormDefinitionTemplateTest
+ * TableCellResultTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace Swagger\Client;
 
 /**
- * FormDefinitionTemplateTest Class Doc Comment
+ * TableCellResultTest Class Doc Comment
  *
  * @category    Class */
-// * @description Definition of a form template; use a form template definition to recognize the fields in a form with Cloudmersive OCR
+// * @description The recognition result of one cell in one row in a table of a form
 /**
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class FormDefinitionTemplateTest extends \PHPUnit_Framework_TestCase
+class TableCellResultTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,23 +71,23 @@ class FormDefinitionTemplateTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "FormDefinitionTemplate"
+     * Test "TableCellResult"
      */
-    public function testFormDefinitionTemplate()
+    public function testTableCellResult()
     {
     }
 
     /**
-     * Test attribute "field_definitions"
+     * Test attribute "column_id"
      */
-    public function testPropertyFieldDefinitions()
+    public function testPropertyColumnId()
     {
     }
 
     /**
-     * Test attribute "table_definitions"
+     * Test attribute "cell_values"
      */
-    public function testPropertyTableDefinitions()
+    public function testPropertyCellValues()
     {
     }
 }

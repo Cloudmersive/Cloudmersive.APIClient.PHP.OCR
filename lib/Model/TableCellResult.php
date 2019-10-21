@@ -1,6 +1,6 @@
 <?php
 /**
- * ImageToWordsWithLocationResult
+ * TableCellResult
  *
  * PHP version 5
  *
@@ -33,15 +33,15 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * ImageToWordsWithLocationResult Class Doc Comment
+ * TableCellResult Class Doc Comment
  *
  * @category Class
- * @description Result of an image to words-with-location OCR operation
+ * @description The recognition result of one cell in one row in a table of a form
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
+class TableCellResult implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ImageToWordsWithLocationResult';
+    protected static $swaggerModelName = 'TableCellResult';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,8 +58,8 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'successful' => 'bool',
-        'words' => '\Swagger\Client\Model\OcrWordElement[]'
+        'column_id' => 'string',
+        'cell_values' => '\Swagger\Client\Model\OcrPhotoTextElement[]'
     ];
 
     /**
@@ -68,8 +68,8 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'successful' => null,
-        'words' => null
+        'column_id' => null,
+        'cell_values' => null
     ];
 
     /**
@@ -99,8 +99,8 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'successful' => 'Successful',
-        'words' => 'Words'
+        'column_id' => 'ColumnID',
+        'cell_values' => 'CellValues'
     ];
 
     /**
@@ -109,8 +109,8 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'successful' => 'setSuccessful',
-        'words' => 'setWords'
+        'column_id' => 'setColumnId',
+        'cell_values' => 'setCellValues'
     ];
 
     /**
@@ -119,8 +119,8 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'successful' => 'getSuccessful',
-        'words' => 'getWords'
+        'column_id' => 'getColumnId',
+        'cell_values' => 'getCellValues'
     ];
 
     /**
@@ -183,8 +183,8 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['successful'] = isset($data['successful']) ? $data['successful'] : null;
-        $this->container['words'] = isset($data['words']) ? $data['words'] : null;
+        $this->container['column_id'] = isset($data['column_id']) ? $data['column_id'] : null;
+        $this->container['cell_values'] = isset($data['cell_values']) ? $data['cell_values'] : null;
     }
 
     /**
@@ -213,49 +213,49 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets successful
+     * Gets column_id
      *
-     * @return bool
+     * @return string
      */
-    public function getSuccessful()
+    public function getColumnId()
     {
-        return $this->container['successful'];
+        return $this->container['column_id'];
     }
 
     /**
-     * Sets successful
+     * Sets column_id
      *
-     * @param bool $successful True if successful, false otherwise
+     * @param string $column_id The ID of the column
      *
      * @return $this
      */
-    public function setSuccessful($successful)
+    public function setColumnId($column_id)
     {
-        $this->container['successful'] = $successful;
+        $this->container['column_id'] = $column_id;
 
         return $this;
     }
 
     /**
-     * Gets words
+     * Gets cell_values
      *
-     * @return \Swagger\Client\Model\OcrWordElement[]
+     * @return \Swagger\Client\Model\OcrPhotoTextElement[]
      */
-    public function getWords()
+    public function getCellValues()
     {
-        return $this->container['words'];
+        return $this->container['cell_values'];
     }
 
     /**
-     * Sets words
+     * Sets cell_values
      *
-     * @param \Swagger\Client\Model\OcrWordElement[] $words Word elements in the image
+     * @param \Swagger\Client\Model\OcrPhotoTextElement[] $cell_values Result cell value(s) extracted
      *
      * @return $this
      */
-    public function setWords($words)
+    public function setCellValues($cell_values)
     {
-        $this->container['words'] = $words;
+        $this->container['cell_values'] = $cell_values;
 
         return $this;
     }

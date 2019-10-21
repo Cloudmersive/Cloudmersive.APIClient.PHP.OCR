@@ -1,6 +1,6 @@
 <?php
 /**
- * ImageToWordsWithLocationResult
+ * FormTableDefinition
  *
  * PHP version 5
  *
@@ -33,15 +33,15 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * ImageToWordsWithLocationResult Class Doc Comment
+ * FormTableDefinition Class Doc Comment
  *
  * @category Class
- * @description Result of an image to words-with-location OCR operation
+ * @description Definition of a form table for OCR data extraction from images
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
+class FormTableDefinition implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ImageToWordsWithLocationResult';
+    protected static $swaggerModelName = 'FormTableDefinition';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,8 +58,10 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'successful' => 'bool',
-        'words' => '\Swagger\Client\Model\OcrWordElement[]'
+        'table_id' => 'string',
+        'column_definitions' => '\Swagger\Client\Model\FormTableColumnDefinition[]',
+        'target_table_height_relative' => 'double',
+        'target_row_height_relative' => 'double'
     ];
 
     /**
@@ -68,8 +70,10 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'successful' => null,
-        'words' => null
+        'table_id' => null,
+        'column_definitions' => null,
+        'target_table_height_relative' => 'double',
+        'target_row_height_relative' => 'double'
     ];
 
     /**
@@ -99,8 +103,10 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'successful' => 'Successful',
-        'words' => 'Words'
+        'table_id' => 'TableID',
+        'column_definitions' => 'ColumnDefinitions',
+        'target_table_height_relative' => 'TargetTableHeight_Relative',
+        'target_row_height_relative' => 'TargetRowHeight_Relative'
     ];
 
     /**
@@ -109,8 +115,10 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'successful' => 'setSuccessful',
-        'words' => 'setWords'
+        'table_id' => 'setTableId',
+        'column_definitions' => 'setColumnDefinitions',
+        'target_table_height_relative' => 'setTargetTableHeightRelative',
+        'target_row_height_relative' => 'setTargetRowHeightRelative'
     ];
 
     /**
@@ -119,8 +127,10 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'successful' => 'getSuccessful',
-        'words' => 'getWords'
+        'table_id' => 'getTableId',
+        'column_definitions' => 'getColumnDefinitions',
+        'target_table_height_relative' => 'getTargetTableHeightRelative',
+        'target_row_height_relative' => 'getTargetRowHeightRelative'
     ];
 
     /**
@@ -183,8 +193,10 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['successful'] = isset($data['successful']) ? $data['successful'] : null;
-        $this->container['words'] = isset($data['words']) ? $data['words'] : null;
+        $this->container['table_id'] = isset($data['table_id']) ? $data['table_id'] : null;
+        $this->container['column_definitions'] = isset($data['column_definitions']) ? $data['column_definitions'] : null;
+        $this->container['target_table_height_relative'] = isset($data['target_table_height_relative']) ? $data['target_table_height_relative'] : null;
+        $this->container['target_row_height_relative'] = isset($data['target_row_height_relative']) ? $data['target_row_height_relative'] : null;
     }
 
     /**
@@ -213,49 +225,97 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets successful
+     * Gets table_id
      *
-     * @return bool
+     * @return string
      */
-    public function getSuccessful()
+    public function getTableId()
     {
-        return $this->container['successful'];
+        return $this->container['table_id'];
     }
 
     /**
-     * Sets successful
+     * Sets table_id
      *
-     * @param bool $successful True if successful, false otherwise
+     * @param string $table_id Optional; the ID of the table
      *
      * @return $this
      */
-    public function setSuccessful($successful)
+    public function setTableId($table_id)
     {
-        $this->container['successful'] = $successful;
+        $this->container['table_id'] = $table_id;
 
         return $this;
     }
 
     /**
-     * Gets words
+     * Gets column_definitions
      *
-     * @return \Swagger\Client\Model\OcrWordElement[]
+     * @return \Swagger\Client\Model\FormTableColumnDefinition[]
      */
-    public function getWords()
+    public function getColumnDefinitions()
     {
-        return $this->container['words'];
+        return $this->container['column_definitions'];
     }
 
     /**
-     * Sets words
+     * Sets column_definitions
      *
-     * @param \Swagger\Client\Model\OcrWordElement[] $words Word elements in the image
+     * @param \Swagger\Client\Model\FormTableColumnDefinition[] $column_definitions Definition of the columns in the table
      *
      * @return $this
      */
-    public function setWords($words)
+    public function setColumnDefinitions($column_definitions)
     {
-        $this->container['words'] = $words;
+        $this->container['column_definitions'] = $column_definitions;
+
+        return $this;
+    }
+
+    /**
+     * Gets target_table_height_relative
+     *
+     * @return double
+     */
+    public function getTargetTableHeightRelative()
+    {
+        return $this->container['target_table_height_relative'];
+    }
+
+    /**
+     * Sets target_table_height_relative
+     *
+     * @param double $target_table_height_relative Optional - scale factor for target table height - relative to maximum height of headers of columns
+     *
+     * @return $this
+     */
+    public function setTargetTableHeightRelative($target_table_height_relative)
+    {
+        $this->container['target_table_height_relative'] = $target_table_height_relative;
+
+        return $this;
+    }
+
+    /**
+     * Gets target_row_height_relative
+     *
+     * @return double
+     */
+    public function getTargetRowHeightRelative()
+    {
+        return $this->container['target_row_height_relative'];
+    }
+
+    /**
+     * Sets target_row_height_relative
+     *
+     * @param double $target_row_height_relative Optional - scale factor for target row height - relative to height of column header
+     *
+     * @return $this
+     */
+    public function setTargetRowHeightRelative($target_row_height_relative)
+    {
+        $this->container['target_row_height_relative'] = $target_row_height_relative;
 
         return $this;
     }

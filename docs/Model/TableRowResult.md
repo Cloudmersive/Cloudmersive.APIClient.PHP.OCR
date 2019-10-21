@@ -1,10 +1,9 @@
-# PdfToTextResponse
+# TableRowResult
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**successful** | **bool** | True if successful, false otherwise | [optional] 
-**ocr_pages** | [**\Swagger\Client\Model\OcrPageResult[]**](OcrPageResult.md) | Page OCR results | [optional] 
+**table_row_cells_result** | [**\Swagger\Client\Model\TableCellResult[]**](TableCellResult.md) | Table cells in this row result | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -90,4 +90,11 @@ class FormRecognitionResultTest extends \PHPUnit_Framework_TestCase
     public function testPropertyFieldValueExtractionResult()
     {
     }
+
+    /**
+     * Test attribute "table_value_extraction_results"
+     */
+    public function testPropertyTableValueExtractionResults()
+    {
+    }
 }

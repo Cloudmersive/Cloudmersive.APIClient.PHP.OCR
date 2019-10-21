@@ -113,6 +113,13 @@ class OcrPhotoTextElementTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "bounding_points"
+     */
+    public function testPropertyBoundingPoints()
+    {
+    }
+
+    /**
      * Test attribute "confidence_level"
      */
     public function testPropertyConfidenceLevel()

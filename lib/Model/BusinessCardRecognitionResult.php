@@ -261,7 +261,7 @@ class BusinessCardRecognitionResult implements ModelInterface, ArrayAccess
     /**
      * Sets successful
      *
-     * @param bool $successful successful
+     * @param bool $successful True if the operation was successful, false otherwise
      *
      * @return $this
      */
@@ -285,7 +285,7 @@ class BusinessCardRecognitionResult implements ModelInterface, ArrayAccess
     /**
      * Sets person_name
      *
-     * @param string $person_name person_name
+     * @param string $person_name The name of the person printed on the business card (if included on the business card)
      *
      * @return $this
      */
@@ -309,7 +309,7 @@ class BusinessCardRecognitionResult implements ModelInterface, ArrayAccess
     /**
      * Sets person_title
      *
-     * @param string $person_title person_title
+     * @param string $person_title The title of the person printed on the business card (if included on the business card)
      *
      * @return $this
      */
@@ -333,7 +333,7 @@ class BusinessCardRecognitionResult implements ModelInterface, ArrayAccess
     /**
      * Sets business_name
      *
-     * @param string $business_name business_name
+     * @param string $business_name The name of the business printed on the business card (if included on the business card)
      *
      * @return $this
      */
@@ -357,7 +357,7 @@ class BusinessCardRecognitionResult implements ModelInterface, ArrayAccess
     /**
      * Sets address_string
      *
-     * @param string $address_string address_string
+     * @param string $address_string The address printed on the business card (if included on the business card)
      *
      * @return $this
      */
@@ -381,7 +381,7 @@ class BusinessCardRecognitionResult implements ModelInterface, ArrayAccess
     /**
      * Sets phone_number
      *
-     * @param string $phone_number phone_number
+     * @param string $phone_number The phone number printed on the business card (if included on the business card)
      *
      * @return $this
      */
@@ -405,7 +405,7 @@ class BusinessCardRecognitionResult implements ModelInterface, ArrayAccess
     /**
      * Sets email_address
      *
-     * @param string $email_address email_address
+     * @param string $email_address The email address printed on the business card (if included on the business card)
      *
      * @return $this
      */
@@ -429,7 +429,7 @@ class BusinessCardRecognitionResult implements ModelInterface, ArrayAccess
     /**
      * Sets timestamp
      *
-     * @param \DateTime $timestamp timestamp
+     * @param \DateTime $timestamp The date and time printed on the business card (if included on the business card)
      *
      * @return $this
      */

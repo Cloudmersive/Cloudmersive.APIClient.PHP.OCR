@@ -291,7 +291,7 @@ class FormFieldDefinition implements ModelInterface, ArrayAccess
     /**
      * Sets field_id
      *
-     * @param string $field_id field_id
+     * @param string $field_id The identifier of the field; use this to identify which field is being referenced
      *
      * @return $this
      */
@@ -315,7 +315,7 @@ class FormFieldDefinition implements ModelInterface, ArrayAccess
     /**
      * Sets left_anchor
      *
-     * @param string $left_anchor left_anchor
+     * @param string $left_anchor Optional - the left-hand anchor of the field
      *
      * @return $this
      */
@@ -339,7 +339,7 @@ class FormFieldDefinition implements ModelInterface, ArrayAccess
     /**
      * Sets top_anchor
      *
-     * @param string $top_anchor top_anchor
+     * @param string $top_anchor Optional - the top anchor of the field
      *
      * @return $this
      */
@@ -363,7 +363,7 @@ class FormFieldDefinition implements ModelInterface, ArrayAccess
     /**
      * Sets anchor_mode
      *
-     * @param string $anchor_mode anchor_mode
+     * @param string $anchor_mode Optional - the matching mode for the anchor.  Possible values are Complete (requires the entire anchor to match) and Partial (allows only part of the anchor to match).  Default is Partial.
      *
      * @return $this
      */
@@ -387,7 +387,7 @@ class FormFieldDefinition implements ModelInterface, ArrayAccess
     /**
      * Sets data_type
      *
-     * @param string $data_type data_type
+     * @param string $data_type The data type of the field; possible values are INTEGER (Integer value), STRING (Arbitrary string value, spaces are permitted), DATE (Date in a structured format), DECIMAL (Decimal number), ALPHANUMERIC (Continuous alphanumeric string with no spaces), STRINGNOWHITESPACE (A string that contains no whitespace characters), SERIALNUMBER (A serial-number style string that contains letters and numbers, and certain symbols; must contain at least one number), ALPHAONLY (Alphabet characters only, no numbers or symbols or whitespace)
      *
      * @return $this
      */
@@ -411,7 +411,7 @@ class FormFieldDefinition implements ModelInterface, ArrayAccess
     /**
      * Sets target_digit_count
      *
-     * @param int $target_digit_count target_digit_count
+     * @param int $target_digit_count Optional - the target number of digits in the field; useful for fixed-length fields
      *
      * @return $this
      */
@@ -435,7 +435,7 @@ class FormFieldDefinition implements ModelInterface, ArrayAccess
     /**
      * Sets minimum_character_count
      *
-     * @param int $minimum_character_count minimum_character_count
+     * @param int $minimum_character_count Optional - the target number of digits in the field; useful for fixed-length fields
      *
      * @return $this
      */
@@ -459,7 +459,7 @@ class FormFieldDefinition implements ModelInterface, ArrayAccess
     /**
      * Sets allow_numeric_digits
      *
-     * @param bool $allow_numeric_digits allow_numeric_digits
+     * @param bool $allow_numeric_digits Optional - set to false to block values that contain numeric digits, set to true to allow numeric digits
      *
      * @return $this
      */
@@ -483,7 +483,7 @@ class FormFieldDefinition implements ModelInterface, ArrayAccess
     /**
      * Sets vertical_alignment_type
      *
-     * @param string $vertical_alignment_type vertical_alignment_type
+     * @param string $vertical_alignment_type Vertical alignment of target value area relative to the field anchor; Possible values are VCenter, Top, Bottom
      *
      * @return $this
      */
@@ -507,7 +507,7 @@ class FormFieldDefinition implements ModelInterface, ArrayAccess
     /**
      * Sets horizontal_alignment_type
      *
-     * @param string $horizontal_alignment_type horizontal_alignment_type
+     * @param string $horizontal_alignment_type Horizontal alignment of target value area relative to the field anchor; Possible values are Left, Right
      *
      * @return $this
      */
@@ -531,7 +531,7 @@ class FormFieldDefinition implements ModelInterface, ArrayAccess
     /**
      * Sets target_field_width_relative
      *
-     * @param double $target_field_width_relative target_field_width_relative
+     * @param double $target_field_width_relative Optional - scale factor for target field width - relative to width of field title; a value of 1.0 indicates the target value area has the same width as the field value as occurring in the image; a value of 2.0 would indicate that the target value area has 2 times the width of the field value as occurring in the image.
      *
      * @return $this
      */
@@ -555,7 +555,7 @@ class FormFieldDefinition implements ModelInterface, ArrayAccess
     /**
      * Sets target_field_height_relative
      *
-     * @param double $target_field_height_relative target_field_height_relative
+     * @param double $target_field_height_relative Optional - scale factor for target field height - relative to height of field title
      *
      * @return $this
      */
@@ -579,7 +579,7 @@ class FormFieldDefinition implements ModelInterface, ArrayAccess
     /**
      * Sets ignore
      *
-     * @param string[] $ignore ignore
+     * @param string[] $ignore Optional - Ignore any result items that contain a partial or complete match with these text strings
      *
      * @return $this
      */

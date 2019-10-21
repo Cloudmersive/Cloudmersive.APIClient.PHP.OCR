@@ -918,15 +918,16 @@ class ImageOcrApi
      * @param  \SplFileObject $image_file Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported. (required)
      * @param  string $form_template_definition Form field definitions (optional)
      * @param  string $recognition_mode Optional, enable advanced recognition mode by specifying &#39;Advanced&#39;, enable handwriting recognition by specifying &#39;EnableHandwriting&#39;.  Default is disabled. (optional)
+     * @param  string $preprocessing Optional, preprocessing mode, default is &#39;Auto&#39;.  Possible values are None (no preprocessing of the image), and Auto (automatic image enhancement of the image - including automatic unrotation of the image - before OCR is applied; this is recommended).  Set this to &#39;None&#39; if you do not want to use automatic image unrotation and enhancement. (optional)
      * @param  string $language Optional, language of the input document, default is English (ENG).  Possible values are ENG (English), ARA (Arabic), ZHO (Chinese - Simplified), ZHO-HANT (Chinese - Traditional), ASM (Assamese), AFR (Afrikaans), AMH (Amharic), AZE (Azerbaijani), AZE-CYRL (Azerbaijani - Cyrillic), BEL (Belarusian), BEN (Bengali), BOD (Tibetan), BOS (Bosnian), BUL (Bulgarian), CAT (Catalan; Valencian), CEB (Cebuano), CES (Czech), CHR (Cherokee), CYM (Welsh), DAN (Danish), DEU (German), DZO (Dzongkha), ELL (Greek), ENM (Archaic/Middle English), EPO (Esperanto), EST (Estonian), EUS (Basque), FAS (Persian), FIN (Finnish), FRA (French), FRK (Frankish), FRM (Middle-French), GLE (Irish), GLG (Galician), GRC (Ancient Greek), HAT (Hatian), HEB (Hebrew), HIN (Hindi), HRV (Croatian), HUN (Hungarian), IKU (Inuktitut), IND (Indonesian), ISL (Icelandic), ITA (Italian), ITA-OLD (Old - Italian), JAV (Javanese), JPN (Japanese), KAN (Kannada), KAT (Georgian), KAT-OLD (Old-Georgian), KAZ (Kazakh), KHM (Central Khmer), KIR (Kirghiz), KOR (Korean), KUR (Kurdish), LAO (Lao), LAT (Latin), LAV (Latvian), LIT (Lithuanian), MAL (Malayalam), MAR (Marathi), MKD (Macedonian), MLT (Maltese), MSA (Malay), MYA (Burmese), NEP (Nepali), NLD (Dutch), NOR (Norwegian), ORI (Oriya), PAN (Panjabi), POL (Polish), POR (Portuguese), PUS (Pushto), RON (Romanian), RUS (Russian), SAN (Sanskrit), SIN (Sinhala), SLK (Slovak), SLV (Slovenian), SPA (Spanish), SPA-OLD (Old Spanish), SQI (Albanian), SRP (Serbian), SRP-LAT (Latin Serbian), SWA (Swahili), SWE (Swedish), SYR (Syriac), TAM (Tamil), TEL (Telugu), TGK (Tajik), TGL (Tagalog), THA (Thai), TIR (Tigrinya), TUR (Turkish), UIG (Uighur), UKR (Ukrainian), URD (Urdu), UZB (Uzbek), UZB-CYR (Cyrillic Uzbek), VIE (Vietnamese), YID (Yiddish) (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\FormRecognitionResult
      */
-    public function imageOcrPhotoRecognizeForm($image_file, $form_template_definition = null, $recognition_mode = null, $language = null)
+    public function imageOcrPhotoRecognizeForm($image_file, $form_template_definition = null, $recognition_mode = null, $preprocessing = null, $language = null)
     {
-        list($response) = $this->imageOcrPhotoRecognizeFormWithHttpInfo($image_file, $form_template_definition, $recognition_mode, $language);
+        list($response) = $this->imageOcrPhotoRecognizeFormWithHttpInfo($image_file, $form_template_definition, $recognition_mode, $preprocessing, $language);
         return $response;
     }
 
@@ -938,16 +939,17 @@ class ImageOcrApi
      * @param  \SplFileObject $image_file Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported. (required)
      * @param  string $form_template_definition Form field definitions (optional)
      * @param  string $recognition_mode Optional, enable advanced recognition mode by specifying &#39;Advanced&#39;, enable handwriting recognition by specifying &#39;EnableHandwriting&#39;.  Default is disabled. (optional)
+     * @param  string $preprocessing Optional, preprocessing mode, default is &#39;Auto&#39;.  Possible values are None (no preprocessing of the image), and Auto (automatic image enhancement of the image - including automatic unrotation of the image - before OCR is applied; this is recommended).  Set this to &#39;None&#39; if you do not want to use automatic image unrotation and enhancement. (optional)
      * @param  string $language Optional, language of the input document, default is English (ENG).  Possible values are ENG (English), ARA (Arabic), ZHO (Chinese - Simplified), ZHO-HANT (Chinese - Traditional), ASM (Assamese), AFR (Afrikaans), AMH (Amharic), AZE (Azerbaijani), AZE-CYRL (Azerbaijani - Cyrillic), BEL (Belarusian), BEN (Bengali), BOD (Tibetan), BOS (Bosnian), BUL (Bulgarian), CAT (Catalan; Valencian), CEB (Cebuano), CES (Czech), CHR (Cherokee), CYM (Welsh), DAN (Danish), DEU (German), DZO (Dzongkha), ELL (Greek), ENM (Archaic/Middle English), EPO (Esperanto), EST (Estonian), EUS (Basque), FAS (Persian), FIN (Finnish), FRA (French), FRK (Frankish), FRM (Middle-French), GLE (Irish), GLG (Galician), GRC (Ancient Greek), HAT (Hatian), HEB (Hebrew), HIN (Hindi), HRV (Croatian), HUN (Hungarian), IKU (Inuktitut), IND (Indonesian), ISL (Icelandic), ITA (Italian), ITA-OLD (Old - Italian), JAV (Javanese), JPN (Japanese), KAN (Kannada), KAT (Georgian), KAT-OLD (Old-Georgian), KAZ (Kazakh), KHM (Central Khmer), KIR (Kirghiz), KOR (Korean), KUR (Kurdish), LAO (Lao), LAT (Latin), LAV (Latvian), LIT (Lithuanian), MAL (Malayalam), MAR (Marathi), MKD (Macedonian), MLT (Maltese), MSA (Malay), MYA (Burmese), NEP (Nepali), NLD (Dutch), NOR (Norwegian), ORI (Oriya), PAN (Panjabi), POL (Polish), POR (Portuguese), PUS (Pushto), RON (Romanian), RUS (Russian), SAN (Sanskrit), SIN (Sinhala), SLK (Slovak), SLV (Slovenian), SPA (Spanish), SPA-OLD (Old Spanish), SQI (Albanian), SRP (Serbian), SRP-LAT (Latin Serbian), SWA (Swahili), SWE (Swedish), SYR (Syriac), TAM (Tamil), TEL (Telugu), TGK (Tajik), TGL (Tagalog), THA (Thai), TIR (Tigrinya), TUR (Turkish), UIG (Uighur), UKR (Ukrainian), URD (Urdu), UZB (Uzbek), UZB-CYR (Cyrillic Uzbek), VIE (Vietnamese), YID (Yiddish) (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\FormRecognitionResult, HTTP status code, HTTP response headers (array of strings)
      */
-    public function imageOcrPhotoRecognizeFormWithHttpInfo($image_file, $form_template_definition = null, $recognition_mode = null, $language = null)
+    public function imageOcrPhotoRecognizeFormWithHttpInfo($image_file, $form_template_definition = null, $recognition_mode = null, $preprocessing = null, $language = null)
     {
         $returnType = '\Swagger\Client\Model\FormRecognitionResult';
-        $request = $this->imageOcrPhotoRecognizeFormRequest($image_file, $form_template_definition, $recognition_mode, $language);
+        $request = $this->imageOcrPhotoRecognizeFormRequest($image_file, $form_template_definition, $recognition_mode, $preprocessing, $language);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1016,14 +1018,15 @@ class ImageOcrApi
      * @param  \SplFileObject $image_file Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported. (required)
      * @param  string $form_template_definition Form field definitions (optional)
      * @param  string $recognition_mode Optional, enable advanced recognition mode by specifying &#39;Advanced&#39;, enable handwriting recognition by specifying &#39;EnableHandwriting&#39;.  Default is disabled. (optional)
+     * @param  string $preprocessing Optional, preprocessing mode, default is &#39;Auto&#39;.  Possible values are None (no preprocessing of the image), and Auto (automatic image enhancement of the image - including automatic unrotation of the image - before OCR is applied; this is recommended).  Set this to &#39;None&#39; if you do not want to use automatic image unrotation and enhancement. (optional)
      * @param  string $language Optional, language of the input document, default is English (ENG).  Possible values are ENG (English), ARA (Arabic), ZHO (Chinese - Simplified), ZHO-HANT (Chinese - Traditional), ASM (Assamese), AFR (Afrikaans), AMH (Amharic), AZE (Azerbaijani), AZE-CYRL (Azerbaijani - Cyrillic), BEL (Belarusian), BEN (Bengali), BOD (Tibetan), BOS (Bosnian), BUL (Bulgarian), CAT (Catalan; Valencian), CEB (Cebuano), CES (Czech), CHR (Cherokee), CYM (Welsh), DAN (Danish), DEU (German), DZO (Dzongkha), ELL (Greek), ENM (Archaic/Middle English), EPO (Esperanto), EST (Estonian), EUS (Basque), FAS (Persian), FIN (Finnish), FRA (French), FRK (Frankish), FRM (Middle-French), GLE (Irish), GLG (Galician), GRC (Ancient Greek), HAT (Hatian), HEB (Hebrew), HIN (Hindi), HRV (Croatian), HUN (Hungarian), IKU (Inuktitut), IND (Indonesian), ISL (Icelandic), ITA (Italian), ITA-OLD (Old - Italian), JAV (Javanese), JPN (Japanese), KAN (Kannada), KAT (Georgian), KAT-OLD (Old-Georgian), KAZ (Kazakh), KHM (Central Khmer), KIR (Kirghiz), KOR (Korean), KUR (Kurdish), LAO (Lao), LAT (Latin), LAV (Latvian), LIT (Lithuanian), MAL (Malayalam), MAR (Marathi), MKD (Macedonian), MLT (Maltese), MSA (Malay), MYA (Burmese), NEP (Nepali), NLD (Dutch), NOR (Norwegian), ORI (Oriya), PAN (Panjabi), POL (Polish), POR (Portuguese), PUS (Pushto), RON (Romanian), RUS (Russian), SAN (Sanskrit), SIN (Sinhala), SLK (Slovak), SLV (Slovenian), SPA (Spanish), SPA-OLD (Old Spanish), SQI (Albanian), SRP (Serbian), SRP-LAT (Latin Serbian), SWA (Swahili), SWE (Swedish), SYR (Syriac), TAM (Tamil), TEL (Telugu), TGK (Tajik), TGL (Tagalog), THA (Thai), TIR (Tigrinya), TUR (Turkish), UIG (Uighur), UKR (Ukrainian), URD (Urdu), UZB (Uzbek), UZB-CYR (Cyrillic Uzbek), VIE (Vietnamese), YID (Yiddish) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function imageOcrPhotoRecognizeFormAsync($image_file, $form_template_definition = null, $recognition_mode = null, $language = null)
+    public function imageOcrPhotoRecognizeFormAsync($image_file, $form_template_definition = null, $recognition_mode = null, $preprocessing = null, $language = null)
     {
-        return $this->imageOcrPhotoRecognizeFormAsyncWithHttpInfo($image_file, $form_template_definition, $recognition_mode, $language)
+        return $this->imageOcrPhotoRecognizeFormAsyncWithHttpInfo($image_file, $form_template_definition, $recognition_mode, $preprocessing, $language)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1039,15 +1042,16 @@ class ImageOcrApi
      * @param  \SplFileObject $image_file Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported. (required)
      * @param  string $form_template_definition Form field definitions (optional)
      * @param  string $recognition_mode Optional, enable advanced recognition mode by specifying &#39;Advanced&#39;, enable handwriting recognition by specifying &#39;EnableHandwriting&#39;.  Default is disabled. (optional)
+     * @param  string $preprocessing Optional, preprocessing mode, default is &#39;Auto&#39;.  Possible values are None (no preprocessing of the image), and Auto (automatic image enhancement of the image - including automatic unrotation of the image - before OCR is applied; this is recommended).  Set this to &#39;None&#39; if you do not want to use automatic image unrotation and enhancement. (optional)
      * @param  string $language Optional, language of the input document, default is English (ENG).  Possible values are ENG (English), ARA (Arabic), ZHO (Chinese - Simplified), ZHO-HANT (Chinese - Traditional), ASM (Assamese), AFR (Afrikaans), AMH (Amharic), AZE (Azerbaijani), AZE-CYRL (Azerbaijani - Cyrillic), BEL (Belarusian), BEN (Bengali), BOD (Tibetan), BOS (Bosnian), BUL (Bulgarian), CAT (Catalan; Valencian), CEB (Cebuano), CES (Czech), CHR (Cherokee), CYM (Welsh), DAN (Danish), DEU (German), DZO (Dzongkha), ELL (Greek), ENM (Archaic/Middle English), EPO (Esperanto), EST (Estonian), EUS (Basque), FAS (Persian), FIN (Finnish), FRA (French), FRK (Frankish), FRM (Middle-French), GLE (Irish), GLG (Galician), GRC (Ancient Greek), HAT (Hatian), HEB (Hebrew), HIN (Hindi), HRV (Croatian), HUN (Hungarian), IKU (Inuktitut), IND (Indonesian), ISL (Icelandic), ITA (Italian), ITA-OLD (Old - Italian), JAV (Javanese), JPN (Japanese), KAN (Kannada), KAT (Georgian), KAT-OLD (Old-Georgian), KAZ (Kazakh), KHM (Central Khmer), KIR (Kirghiz), KOR (Korean), KUR (Kurdish), LAO (Lao), LAT (Latin), LAV (Latvian), LIT (Lithuanian), MAL (Malayalam), MAR (Marathi), MKD (Macedonian), MLT (Maltese), MSA (Malay), MYA (Burmese), NEP (Nepali), NLD (Dutch), NOR (Norwegian), ORI (Oriya), PAN (Panjabi), POL (Polish), POR (Portuguese), PUS (Pushto), RON (Romanian), RUS (Russian), SAN (Sanskrit), SIN (Sinhala), SLK (Slovak), SLV (Slovenian), SPA (Spanish), SPA-OLD (Old Spanish), SQI (Albanian), SRP (Serbian), SRP-LAT (Latin Serbian), SWA (Swahili), SWE (Swedish), SYR (Syriac), TAM (Tamil), TEL (Telugu), TGK (Tajik), TGL (Tagalog), THA (Thai), TIR (Tigrinya), TUR (Turkish), UIG (Uighur), UKR (Ukrainian), URD (Urdu), UZB (Uzbek), UZB-CYR (Cyrillic Uzbek), VIE (Vietnamese), YID (Yiddish) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function imageOcrPhotoRecognizeFormAsyncWithHttpInfo($image_file, $form_template_definition = null, $recognition_mode = null, $language = null)
+    public function imageOcrPhotoRecognizeFormAsyncWithHttpInfo($image_file, $form_template_definition = null, $recognition_mode = null, $preprocessing = null, $language = null)
     {
         $returnType = '\Swagger\Client\Model\FormRecognitionResult';
-        $request = $this->imageOcrPhotoRecognizeFormRequest($image_file, $form_template_definition, $recognition_mode, $language);
+        $request = $this->imageOcrPhotoRecognizeFormRequest($image_file, $form_template_definition, $recognition_mode, $preprocessing, $language);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1092,12 +1096,13 @@ class ImageOcrApi
      * @param  \SplFileObject $image_file Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported. (required)
      * @param  string $form_template_definition Form field definitions (optional)
      * @param  string $recognition_mode Optional, enable advanced recognition mode by specifying &#39;Advanced&#39;, enable handwriting recognition by specifying &#39;EnableHandwriting&#39;.  Default is disabled. (optional)
+     * @param  string $preprocessing Optional, preprocessing mode, default is &#39;Auto&#39;.  Possible values are None (no preprocessing of the image), and Auto (automatic image enhancement of the image - including automatic unrotation of the image - before OCR is applied; this is recommended).  Set this to &#39;None&#39; if you do not want to use automatic image unrotation and enhancement. (optional)
      * @param  string $language Optional, language of the input document, default is English (ENG).  Possible values are ENG (English), ARA (Arabic), ZHO (Chinese - Simplified), ZHO-HANT (Chinese - Traditional), ASM (Assamese), AFR (Afrikaans), AMH (Amharic), AZE (Azerbaijani), AZE-CYRL (Azerbaijani - Cyrillic), BEL (Belarusian), BEN (Bengali), BOD (Tibetan), BOS (Bosnian), BUL (Bulgarian), CAT (Catalan; Valencian), CEB (Cebuano), CES (Czech), CHR (Cherokee), CYM (Welsh), DAN (Danish), DEU (German), DZO (Dzongkha), ELL (Greek), ENM (Archaic/Middle English), EPO (Esperanto), EST (Estonian), EUS (Basque), FAS (Persian), FIN (Finnish), FRA (French), FRK (Frankish), FRM (Middle-French), GLE (Irish), GLG (Galician), GRC (Ancient Greek), HAT (Hatian), HEB (Hebrew), HIN (Hindi), HRV (Croatian), HUN (Hungarian), IKU (Inuktitut), IND (Indonesian), ISL (Icelandic), ITA (Italian), ITA-OLD (Old - Italian), JAV (Javanese), JPN (Japanese), KAN (Kannada), KAT (Georgian), KAT-OLD (Old-Georgian), KAZ (Kazakh), KHM (Central Khmer), KIR (Kirghiz), KOR (Korean), KUR (Kurdish), LAO (Lao), LAT (Latin), LAV (Latvian), LIT (Lithuanian), MAL (Malayalam), MAR (Marathi), MKD (Macedonian), MLT (Maltese), MSA (Malay), MYA (Burmese), NEP (Nepali), NLD (Dutch), NOR (Norwegian), ORI (Oriya), PAN (Panjabi), POL (Polish), POR (Portuguese), PUS (Pushto), RON (Romanian), RUS (Russian), SAN (Sanskrit), SIN (Sinhala), SLK (Slovak), SLV (Slovenian), SPA (Spanish), SPA-OLD (Old Spanish), SQI (Albanian), SRP (Serbian), SRP-LAT (Latin Serbian), SWA (Swahili), SWE (Swedish), SYR (Syriac), TAM (Tamil), TEL (Telugu), TGK (Tajik), TGL (Tagalog), THA (Thai), TIR (Tigrinya), TUR (Turkish), UIG (Uighur), UKR (Ukrainian), URD (Urdu), UZB (Uzbek), UZB-CYR (Cyrillic Uzbek), VIE (Vietnamese), YID (Yiddish) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function imageOcrPhotoRecognizeFormRequest($image_file, $form_template_definition = null, $recognition_mode = null, $language = null)
+    protected function imageOcrPhotoRecognizeFormRequest($image_file, $form_template_definition = null, $recognition_mode = null, $preprocessing = null, $language = null)
     {
         // verify the required parameter 'image_file' is set
         if ($image_file === null) {
@@ -1122,8 +1127,312 @@ class ImageOcrApi
             $headerParams['recognitionMode'] = ObjectSerializer::toHeaderValue($recognition_mode);
         }
         // header params
+        if ($preprocessing !== null) {
+            $headerParams['preprocessing'] = ObjectSerializer::toHeaderValue($preprocessing);
+        }
+        // header params
         if ($language !== null) {
             $headerParams['language'] = ObjectSerializer::toHeaderValue($language);
+        }
+
+
+        // form params
+        if ($image_file !== null) {
+            $multipart = true;
+            $formParams['imageFile'] = \GuzzleHttp\Psr7\try_fopen(ObjectSerializer::toFormValue($image_file), 'rb');
+        }
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json', 'text/json', 'application/xml', 'text/xml']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json', 'text/json', 'application/xml', 'text/xml'],
+                ['multipart/form-data']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Apikey');
+        if ($apiKey !== null) {
+            $headers['Apikey'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation imageOcrPhotoRecognizeFormAdvanced
+     *
+     * Recognize a photo of a form, extract key fields using stored templates
+     *
+     * @param  \SplFileObject $image_file Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported. (required)
+     * @param  string $bucket_id Bucket ID of the Configuration Bucket storing the form templates (optional)
+     * @param  string $bucket_secret_key Bucket Secret Key of the Configuration Bucket storing the form templates (optional)
+     * @param  string $recognition_mode Optional, enable advanced recognition mode by specifying &#39;Advanced&#39;, enable handwriting recognition by specifying &#39;EnableHandwriting&#39;.  Default is disabled. (optional)
+     * @param  string $preprocessing Optional, preprocessing mode, default is &#39;Auto&#39;.  Possible values are None (no preprocessing of the image), and Auto (automatic image enhancement of the image - including automatic unrotation of the image - before OCR is applied; this is recommended).  Set this to &#39;None&#39; if you do not want to use automatic image unrotation and enhancement. (optional)
+     *
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Swagger\Client\Model\FormRecognitionResult
+     */
+    public function imageOcrPhotoRecognizeFormAdvanced($image_file, $bucket_id = null, $bucket_secret_key = null, $recognition_mode = null, $preprocessing = null)
+    {
+        list($response) = $this->imageOcrPhotoRecognizeFormAdvancedWithHttpInfo($image_file, $bucket_id, $bucket_secret_key, $recognition_mode, $preprocessing);
+        return $response;
+    }
+
+    /**
+     * Operation imageOcrPhotoRecognizeFormAdvancedWithHttpInfo
+     *
+     * Recognize a photo of a form, extract key fields using stored templates
+     *
+     * @param  \SplFileObject $image_file Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported. (required)
+     * @param  string $bucket_id Bucket ID of the Configuration Bucket storing the form templates (optional)
+     * @param  string $bucket_secret_key Bucket Secret Key of the Configuration Bucket storing the form templates (optional)
+     * @param  string $recognition_mode Optional, enable advanced recognition mode by specifying &#39;Advanced&#39;, enable handwriting recognition by specifying &#39;EnableHandwriting&#39;.  Default is disabled. (optional)
+     * @param  string $preprocessing Optional, preprocessing mode, default is &#39;Auto&#39;.  Possible values are None (no preprocessing of the image), and Auto (automatic image enhancement of the image - including automatic unrotation of the image - before OCR is applied; this is recommended).  Set this to &#39;None&#39; if you do not want to use automatic image unrotation and enhancement. (optional)
+     *
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Swagger\Client\Model\FormRecognitionResult, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function imageOcrPhotoRecognizeFormAdvancedWithHttpInfo($image_file, $bucket_id = null, $bucket_secret_key = null, $recognition_mode = null, $preprocessing = null)
+    {
+        $returnType = '\Swagger\Client\Model\FormRecognitionResult';
+        $request = $this->imageOcrPhotoRecognizeFormAdvancedRequest($image_file, $bucket_id, $bucket_secret_key, $recognition_mode, $preprocessing);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\FormRecognitionResult',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation imageOcrPhotoRecognizeFormAdvancedAsync
+     *
+     * Recognize a photo of a form, extract key fields using stored templates
+     *
+     * @param  \SplFileObject $image_file Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported. (required)
+     * @param  string $bucket_id Bucket ID of the Configuration Bucket storing the form templates (optional)
+     * @param  string $bucket_secret_key Bucket Secret Key of the Configuration Bucket storing the form templates (optional)
+     * @param  string $recognition_mode Optional, enable advanced recognition mode by specifying &#39;Advanced&#39;, enable handwriting recognition by specifying &#39;EnableHandwriting&#39;.  Default is disabled. (optional)
+     * @param  string $preprocessing Optional, preprocessing mode, default is &#39;Auto&#39;.  Possible values are None (no preprocessing of the image), and Auto (automatic image enhancement of the image - including automatic unrotation of the image - before OCR is applied; this is recommended).  Set this to &#39;None&#39; if you do not want to use automatic image unrotation and enhancement. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function imageOcrPhotoRecognizeFormAdvancedAsync($image_file, $bucket_id = null, $bucket_secret_key = null, $recognition_mode = null, $preprocessing = null)
+    {
+        return $this->imageOcrPhotoRecognizeFormAdvancedAsyncWithHttpInfo($image_file, $bucket_id, $bucket_secret_key, $recognition_mode, $preprocessing)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation imageOcrPhotoRecognizeFormAdvancedAsyncWithHttpInfo
+     *
+     * Recognize a photo of a form, extract key fields using stored templates
+     *
+     * @param  \SplFileObject $image_file Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported. (required)
+     * @param  string $bucket_id Bucket ID of the Configuration Bucket storing the form templates (optional)
+     * @param  string $bucket_secret_key Bucket Secret Key of the Configuration Bucket storing the form templates (optional)
+     * @param  string $recognition_mode Optional, enable advanced recognition mode by specifying &#39;Advanced&#39;, enable handwriting recognition by specifying &#39;EnableHandwriting&#39;.  Default is disabled. (optional)
+     * @param  string $preprocessing Optional, preprocessing mode, default is &#39;Auto&#39;.  Possible values are None (no preprocessing of the image), and Auto (automatic image enhancement of the image - including automatic unrotation of the image - before OCR is applied; this is recommended).  Set this to &#39;None&#39; if you do not want to use automatic image unrotation and enhancement. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function imageOcrPhotoRecognizeFormAdvancedAsyncWithHttpInfo($image_file, $bucket_id = null, $bucket_secret_key = null, $recognition_mode = null, $preprocessing = null)
+    {
+        $returnType = '\Swagger\Client\Model\FormRecognitionResult';
+        $request = $this->imageOcrPhotoRecognizeFormAdvancedRequest($image_file, $bucket_id, $bucket_secret_key, $recognition_mode, $preprocessing);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'imageOcrPhotoRecognizeFormAdvanced'
+     *
+     * @param  \SplFileObject $image_file Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported. (required)
+     * @param  string $bucket_id Bucket ID of the Configuration Bucket storing the form templates (optional)
+     * @param  string $bucket_secret_key Bucket Secret Key of the Configuration Bucket storing the form templates (optional)
+     * @param  string $recognition_mode Optional, enable advanced recognition mode by specifying &#39;Advanced&#39;, enable handwriting recognition by specifying &#39;EnableHandwriting&#39;.  Default is disabled. (optional)
+     * @param  string $preprocessing Optional, preprocessing mode, default is &#39;Auto&#39;.  Possible values are None (no preprocessing of the image), and Auto (automatic image enhancement of the image - including automatic unrotation of the image - before OCR is applied; this is recommended).  Set this to &#39;None&#39; if you do not want to use automatic image unrotation and enhancement. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function imageOcrPhotoRecognizeFormAdvancedRequest($image_file, $bucket_id = null, $bucket_secret_key = null, $recognition_mode = null, $preprocessing = null)
+    {
+        // verify the required parameter 'image_file' is set
+        if ($image_file === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $image_file when calling imageOcrPhotoRecognizeFormAdvanced'
+            );
+        }
+
+        $resourcePath = '/ocr/photo/recognize/form/advanced';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // header params
+        if ($bucket_id !== null) {
+            $headerParams['bucketID'] = ObjectSerializer::toHeaderValue($bucket_id);
+        }
+        // header params
+        if ($bucket_secret_key !== null) {
+            $headerParams['bucketSecretKey'] = ObjectSerializer::toHeaderValue($bucket_secret_key);
+        }
+        // header params
+        if ($recognition_mode !== null) {
+            $headerParams['recognitionMode'] = ObjectSerializer::toHeaderValue($recognition_mode);
+        }
+        // header params
+        if ($preprocessing !== null) {
+            $headerParams['preprocessing'] = ObjectSerializer::toHeaderValue($preprocessing);
         }
 
 
@@ -1207,17 +1516,17 @@ class ImageOcrApi
      * Recognize a photo of a receipt, extract key business information
      *
      * @param  \SplFileObject $image_file Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported. (required)
-     * @param  string $form_template_definition Form field definitions (optional)
      * @param  string $recognition_mode Optional, enable advanced recognition mode by specifying &#39;Advanced&#39;, enable handwriting recognition by specifying &#39;EnableHandwriting&#39;.  Default is disabled. (optional)
      * @param  string $language Optional, language of the input document, default is English (ENG).  Possible values are ENG (English), ARA (Arabic), ZHO (Chinese - Simplified), ZHO-HANT (Chinese - Traditional), ASM (Assamese), AFR (Afrikaans), AMH (Amharic), AZE (Azerbaijani), AZE-CYRL (Azerbaijani - Cyrillic), BEL (Belarusian), BEN (Bengali), BOD (Tibetan), BOS (Bosnian), BUL (Bulgarian), CAT (Catalan; Valencian), CEB (Cebuano), CES (Czech), CHR (Cherokee), CYM (Welsh), DAN (Danish), DEU (German), DZO (Dzongkha), ELL (Greek), ENM (Archaic/Middle English), EPO (Esperanto), EST (Estonian), EUS (Basque), FAS (Persian), FIN (Finnish), FRA (French), FRK (Frankish), FRM (Middle-French), GLE (Irish), GLG (Galician), GRC (Ancient Greek), HAT (Hatian), HEB (Hebrew), HIN (Hindi), HRV (Croatian), HUN (Hungarian), IKU (Inuktitut), IND (Indonesian), ISL (Icelandic), ITA (Italian), ITA-OLD (Old - Italian), JAV (Javanese), JPN (Japanese), KAN (Kannada), KAT (Georgian), KAT-OLD (Old-Georgian), KAZ (Kazakh), KHM (Central Khmer), KIR (Kirghiz), KOR (Korean), KUR (Kurdish), LAO (Lao), LAT (Latin), LAV (Latvian), LIT (Lithuanian), MAL (Malayalam), MAR (Marathi), MKD (Macedonian), MLT (Maltese), MSA (Malay), MYA (Burmese), NEP (Nepali), NLD (Dutch), NOR (Norwegian), ORI (Oriya), PAN (Panjabi), POL (Polish), POR (Portuguese), PUS (Pushto), RON (Romanian), RUS (Russian), SAN (Sanskrit), SIN (Sinhala), SLK (Slovak), SLV (Slovenian), SPA (Spanish), SPA-OLD (Old Spanish), SQI (Albanian), SRP (Serbian), SRP-LAT (Latin Serbian), SWA (Swahili), SWE (Swedish), SYR (Syriac), TAM (Tamil), TEL (Telugu), TGK (Tajik), TGL (Tagalog), THA (Thai), TIR (Tigrinya), TUR (Turkish), UIG (Uighur), UKR (Ukrainian), URD (Urdu), UZB (Uzbek), UZB-CYR (Cyrillic Uzbek), VIE (Vietnamese), YID (Yiddish) (optional)
+     * @param  string $preprocessing Optional, preprocessing mode, default is &#39;None&#39;.  Possible values are None (no preprocessing of the image), and &#39;Advanced&#39; (automatic image enhancement of the image before OCR is applied; this is recommended and needed to handle rotated receipts). (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\ReceiptRecognitionResult
      */
-    public function imageOcrPhotoRecognizeReceipt($image_file, $form_template_definition = null, $recognition_mode = null, $language = null)
+    public function imageOcrPhotoRecognizeReceipt($image_file, $recognition_mode = null, $language = null, $preprocessing = null)
     {
-        list($response) = $this->imageOcrPhotoRecognizeReceiptWithHttpInfo($image_file, $form_template_definition, $recognition_mode, $language);
+        list($response) = $this->imageOcrPhotoRecognizeReceiptWithHttpInfo($image_file, $recognition_mode, $language, $preprocessing);
         return $response;
     }
 
@@ -1227,18 +1536,18 @@ class ImageOcrApi
      * Recognize a photo of a receipt, extract key business information
      *
      * @param  \SplFileObject $image_file Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported. (required)
-     * @param  string $form_template_definition Form field definitions (optional)
      * @param  string $recognition_mode Optional, enable advanced recognition mode by specifying &#39;Advanced&#39;, enable handwriting recognition by specifying &#39;EnableHandwriting&#39;.  Default is disabled. (optional)
      * @param  string $language Optional, language of the input document, default is English (ENG).  Possible values are ENG (English), ARA (Arabic), ZHO (Chinese - Simplified), ZHO-HANT (Chinese - Traditional), ASM (Assamese), AFR (Afrikaans), AMH (Amharic), AZE (Azerbaijani), AZE-CYRL (Azerbaijani - Cyrillic), BEL (Belarusian), BEN (Bengali), BOD (Tibetan), BOS (Bosnian), BUL (Bulgarian), CAT (Catalan; Valencian), CEB (Cebuano), CES (Czech), CHR (Cherokee), CYM (Welsh), DAN (Danish), DEU (German), DZO (Dzongkha), ELL (Greek), ENM (Archaic/Middle English), EPO (Esperanto), EST (Estonian), EUS (Basque), FAS (Persian), FIN (Finnish), FRA (French), FRK (Frankish), FRM (Middle-French), GLE (Irish), GLG (Galician), GRC (Ancient Greek), HAT (Hatian), HEB (Hebrew), HIN (Hindi), HRV (Croatian), HUN (Hungarian), IKU (Inuktitut), IND (Indonesian), ISL (Icelandic), ITA (Italian), ITA-OLD (Old - Italian), JAV (Javanese), JPN (Japanese), KAN (Kannada), KAT (Georgian), KAT-OLD (Old-Georgian), KAZ (Kazakh), KHM (Central Khmer), KIR (Kirghiz), KOR (Korean), KUR (Kurdish), LAO (Lao), LAT (Latin), LAV (Latvian), LIT (Lithuanian), MAL (Malayalam), MAR (Marathi), MKD (Macedonian), MLT (Maltese), MSA (Malay), MYA (Burmese), NEP (Nepali), NLD (Dutch), NOR (Norwegian), ORI (Oriya), PAN (Panjabi), POL (Polish), POR (Portuguese), PUS (Pushto), RON (Romanian), RUS (Russian), SAN (Sanskrit), SIN (Sinhala), SLK (Slovak), SLV (Slovenian), SPA (Spanish), SPA-OLD (Old Spanish), SQI (Albanian), SRP (Serbian), SRP-LAT (Latin Serbian), SWA (Swahili), SWE (Swedish), SYR (Syriac), TAM (Tamil), TEL (Telugu), TGK (Tajik), TGL (Tagalog), THA (Thai), TIR (Tigrinya), TUR (Turkish), UIG (Uighur), UKR (Ukrainian), URD (Urdu), UZB (Uzbek), UZB-CYR (Cyrillic Uzbek), VIE (Vietnamese), YID (Yiddish) (optional)
+     * @param  string $preprocessing Optional, preprocessing mode, default is &#39;None&#39;.  Possible values are None (no preprocessing of the image), and &#39;Advanced&#39; (automatic image enhancement of the image before OCR is applied; this is recommended and needed to handle rotated receipts). (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\ReceiptRecognitionResult, HTTP status code, HTTP response headers (array of strings)
      */
-    public function imageOcrPhotoRecognizeReceiptWithHttpInfo($image_file, $form_template_definition = null, $recognition_mode = null, $language = null)
+    public function imageOcrPhotoRecognizeReceiptWithHttpInfo($image_file, $recognition_mode = null, $language = null, $preprocessing = null)
     {
         $returnType = '\Swagger\Client\Model\ReceiptRecognitionResult';
-        $request = $this->imageOcrPhotoRecognizeReceiptRequest($image_file, $form_template_definition, $recognition_mode, $language);
+        $request = $this->imageOcrPhotoRecognizeReceiptRequest($image_file, $recognition_mode, $language, $preprocessing);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1305,16 +1614,16 @@ class ImageOcrApi
      * Recognize a photo of a receipt, extract key business information
      *
      * @param  \SplFileObject $image_file Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported. (required)
-     * @param  string $form_template_definition Form field definitions (optional)
      * @param  string $recognition_mode Optional, enable advanced recognition mode by specifying &#39;Advanced&#39;, enable handwriting recognition by specifying &#39;EnableHandwriting&#39;.  Default is disabled. (optional)
      * @param  string $language Optional, language of the input document, default is English (ENG).  Possible values are ENG (English), ARA (Arabic), ZHO (Chinese - Simplified), ZHO-HANT (Chinese - Traditional), ASM (Assamese), AFR (Afrikaans), AMH (Amharic), AZE (Azerbaijani), AZE-CYRL (Azerbaijani - Cyrillic), BEL (Belarusian), BEN (Bengali), BOD (Tibetan), BOS (Bosnian), BUL (Bulgarian), CAT (Catalan; Valencian), CEB (Cebuano), CES (Czech), CHR (Cherokee), CYM (Welsh), DAN (Danish), DEU (German), DZO (Dzongkha), ELL (Greek), ENM (Archaic/Middle English), EPO (Esperanto), EST (Estonian), EUS (Basque), FAS (Persian), FIN (Finnish), FRA (French), FRK (Frankish), FRM (Middle-French), GLE (Irish), GLG (Galician), GRC (Ancient Greek), HAT (Hatian), HEB (Hebrew), HIN (Hindi), HRV (Croatian), HUN (Hungarian), IKU (Inuktitut), IND (Indonesian), ISL (Icelandic), ITA (Italian), ITA-OLD (Old - Italian), JAV (Javanese), JPN (Japanese), KAN (Kannada), KAT (Georgian), KAT-OLD (Old-Georgian), KAZ (Kazakh), KHM (Central Khmer), KIR (Kirghiz), KOR (Korean), KUR (Kurdish), LAO (Lao), LAT (Latin), LAV (Latvian), LIT (Lithuanian), MAL (Malayalam), MAR (Marathi), MKD (Macedonian), MLT (Maltese), MSA (Malay), MYA (Burmese), NEP (Nepali), NLD (Dutch), NOR (Norwegian), ORI (Oriya), PAN (Panjabi), POL (Polish), POR (Portuguese), PUS (Pushto), RON (Romanian), RUS (Russian), SAN (Sanskrit), SIN (Sinhala), SLK (Slovak), SLV (Slovenian), SPA (Spanish), SPA-OLD (Old Spanish), SQI (Albanian), SRP (Serbian), SRP-LAT (Latin Serbian), SWA (Swahili), SWE (Swedish), SYR (Syriac), TAM (Tamil), TEL (Telugu), TGK (Tajik), TGL (Tagalog), THA (Thai), TIR (Tigrinya), TUR (Turkish), UIG (Uighur), UKR (Ukrainian), URD (Urdu), UZB (Uzbek), UZB-CYR (Cyrillic Uzbek), VIE (Vietnamese), YID (Yiddish) (optional)
+     * @param  string $preprocessing Optional, preprocessing mode, default is &#39;None&#39;.  Possible values are None (no preprocessing of the image), and &#39;Advanced&#39; (automatic image enhancement of the image before OCR is applied; this is recommended and needed to handle rotated receipts). (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function imageOcrPhotoRecognizeReceiptAsync($image_file, $form_template_definition = null, $recognition_mode = null, $language = null)
+    public function imageOcrPhotoRecognizeReceiptAsync($image_file, $recognition_mode = null, $language = null, $preprocessing = null)
     {
-        return $this->imageOcrPhotoRecognizeReceiptAsyncWithHttpInfo($image_file, $form_template_definition, $recognition_mode, $language)
+        return $this->imageOcrPhotoRecognizeReceiptAsyncWithHttpInfo($image_file, $recognition_mode, $language, $preprocessing)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1328,17 +1637,17 @@ class ImageOcrApi
      * Recognize a photo of a receipt, extract key business information
      *
      * @param  \SplFileObject $image_file Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported. (required)
-     * @param  string $form_template_definition Form field definitions (optional)
      * @param  string $recognition_mode Optional, enable advanced recognition mode by specifying &#39;Advanced&#39;, enable handwriting recognition by specifying &#39;EnableHandwriting&#39;.  Default is disabled. (optional)
      * @param  string $language Optional, language of the input document, default is English (ENG).  Possible values are ENG (English), ARA (Arabic), ZHO (Chinese - Simplified), ZHO-HANT (Chinese - Traditional), ASM (Assamese), AFR (Afrikaans), AMH (Amharic), AZE (Azerbaijani), AZE-CYRL (Azerbaijani - Cyrillic), BEL (Belarusian), BEN (Bengali), BOD (Tibetan), BOS (Bosnian), BUL (Bulgarian), CAT (Catalan; Valencian), CEB (Cebuano), CES (Czech), CHR (Cherokee), CYM (Welsh), DAN (Danish), DEU (German), DZO (Dzongkha), ELL (Greek), ENM (Archaic/Middle English), EPO (Esperanto), EST (Estonian), EUS (Basque), FAS (Persian), FIN (Finnish), FRA (French), FRK (Frankish), FRM (Middle-French), GLE (Irish), GLG (Galician), GRC (Ancient Greek), HAT (Hatian), HEB (Hebrew), HIN (Hindi), HRV (Croatian), HUN (Hungarian), IKU (Inuktitut), IND (Indonesian), ISL (Icelandic), ITA (Italian), ITA-OLD (Old - Italian), JAV (Javanese), JPN (Japanese), KAN (Kannada), KAT (Georgian), KAT-OLD (Old-Georgian), KAZ (Kazakh), KHM (Central Khmer), KIR (Kirghiz), KOR (Korean), KUR (Kurdish), LAO (Lao), LAT (Latin), LAV (Latvian), LIT (Lithuanian), MAL (Malayalam), MAR (Marathi), MKD (Macedonian), MLT (Maltese), MSA (Malay), MYA (Burmese), NEP (Nepali), NLD (Dutch), NOR (Norwegian), ORI (Oriya), PAN (Panjabi), POL (Polish), POR (Portuguese), PUS (Pushto), RON (Romanian), RUS (Russian), SAN (Sanskrit), SIN (Sinhala), SLK (Slovak), SLV (Slovenian), SPA (Spanish), SPA-OLD (Old Spanish), SQI (Albanian), SRP (Serbian), SRP-LAT (Latin Serbian), SWA (Swahili), SWE (Swedish), SYR (Syriac), TAM (Tamil), TEL (Telugu), TGK (Tajik), TGL (Tagalog), THA (Thai), TIR (Tigrinya), TUR (Turkish), UIG (Uighur), UKR (Ukrainian), URD (Urdu), UZB (Uzbek), UZB-CYR (Cyrillic Uzbek), VIE (Vietnamese), YID (Yiddish) (optional)
+     * @param  string $preprocessing Optional, preprocessing mode, default is &#39;None&#39;.  Possible values are None (no preprocessing of the image), and &#39;Advanced&#39; (automatic image enhancement of the image before OCR is applied; this is recommended and needed to handle rotated receipts). (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function imageOcrPhotoRecognizeReceiptAsyncWithHttpInfo($image_file, $form_template_definition = null, $recognition_mode = null, $language = null)
+    public function imageOcrPhotoRecognizeReceiptAsyncWithHttpInfo($image_file, $recognition_mode = null, $language = null, $preprocessing = null)
     {
         $returnType = '\Swagger\Client\Model\ReceiptRecognitionResult';
-        $request = $this->imageOcrPhotoRecognizeReceiptRequest($image_file, $form_template_definition, $recognition_mode, $language);
+        $request = $this->imageOcrPhotoRecognizeReceiptRequest($image_file, $recognition_mode, $language, $preprocessing);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1381,14 +1690,14 @@ class ImageOcrApi
      * Create request for operation 'imageOcrPhotoRecognizeReceipt'
      *
      * @param  \SplFileObject $image_file Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported. (required)
-     * @param  string $form_template_definition Form field definitions (optional)
      * @param  string $recognition_mode Optional, enable advanced recognition mode by specifying &#39;Advanced&#39;, enable handwriting recognition by specifying &#39;EnableHandwriting&#39;.  Default is disabled. (optional)
      * @param  string $language Optional, language of the input document, default is English (ENG).  Possible values are ENG (English), ARA (Arabic), ZHO (Chinese - Simplified), ZHO-HANT (Chinese - Traditional), ASM (Assamese), AFR (Afrikaans), AMH (Amharic), AZE (Azerbaijani), AZE-CYRL (Azerbaijani - Cyrillic), BEL (Belarusian), BEN (Bengali), BOD (Tibetan), BOS (Bosnian), BUL (Bulgarian), CAT (Catalan; Valencian), CEB (Cebuano), CES (Czech), CHR (Cherokee), CYM (Welsh), DAN (Danish), DEU (German), DZO (Dzongkha), ELL (Greek), ENM (Archaic/Middle English), EPO (Esperanto), EST (Estonian), EUS (Basque), FAS (Persian), FIN (Finnish), FRA (French), FRK (Frankish), FRM (Middle-French), GLE (Irish), GLG (Galician), GRC (Ancient Greek), HAT (Hatian), HEB (Hebrew), HIN (Hindi), HRV (Croatian), HUN (Hungarian), IKU (Inuktitut), IND (Indonesian), ISL (Icelandic), ITA (Italian), ITA-OLD (Old - Italian), JAV (Javanese), JPN (Japanese), KAN (Kannada), KAT (Georgian), KAT-OLD (Old-Georgian), KAZ (Kazakh), KHM (Central Khmer), KIR (Kirghiz), KOR (Korean), KUR (Kurdish), LAO (Lao), LAT (Latin), LAV (Latvian), LIT (Lithuanian), MAL (Malayalam), MAR (Marathi), MKD (Macedonian), MLT (Maltese), MSA (Malay), MYA (Burmese), NEP (Nepali), NLD (Dutch), NOR (Norwegian), ORI (Oriya), PAN (Panjabi), POL (Polish), POR (Portuguese), PUS (Pushto), RON (Romanian), RUS (Russian), SAN (Sanskrit), SIN (Sinhala), SLK (Slovak), SLV (Slovenian), SPA (Spanish), SPA-OLD (Old Spanish), SQI (Albanian), SRP (Serbian), SRP-LAT (Latin Serbian), SWA (Swahili), SWE (Swedish), SYR (Syriac), TAM (Tamil), TEL (Telugu), TGK (Tajik), TGL (Tagalog), THA (Thai), TIR (Tigrinya), TUR (Turkish), UIG (Uighur), UKR (Ukrainian), URD (Urdu), UZB (Uzbek), UZB-CYR (Cyrillic Uzbek), VIE (Vietnamese), YID (Yiddish) (optional)
+     * @param  string $preprocessing Optional, preprocessing mode, default is &#39;None&#39;.  Possible values are None (no preprocessing of the image), and &#39;Advanced&#39; (automatic image enhancement of the image before OCR is applied; this is recommended and needed to handle rotated receipts). (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function imageOcrPhotoRecognizeReceiptRequest($image_file, $form_template_definition = null, $recognition_mode = null, $language = null)
+    protected function imageOcrPhotoRecognizeReceiptRequest($image_file, $recognition_mode = null, $language = null, $preprocessing = null)
     {
         // verify the required parameter 'image_file' is set
         if ($image_file === null) {
@@ -1405,16 +1714,16 @@ class ImageOcrApi
         $multipart = false;
 
         // header params
-        if ($form_template_definition !== null) {
-            $headerParams['formTemplateDefinition'] = ObjectSerializer::toHeaderValue($form_template_definition);
-        }
-        // header params
         if ($recognition_mode !== null) {
             $headerParams['recognitionMode'] = ObjectSerializer::toHeaderValue($recognition_mode);
         }
         // header params
         if ($language !== null) {
             $headerParams['language'] = ObjectSerializer::toHeaderValue($language);
+        }
+        // header params
+        if ($preprocessing !== null) {
+            $headerParams['preprocessing'] = ObjectSerializer::toHeaderValue($preprocessing);
         }
 
 

@@ -4,7 +4,7 @@ The powerful Optical Character Recognition (OCR) APIs let you convert scanned im
 [Cloudmersive OCR API](https://www.cloudmersive.com/ocr-api) provides advanced machine learning capabilities for converting scanned documents and photos of documents and receipts to text.
 
 - API version: v1
-- Package version: 1.5.9
+- Package version: 1.6.0
 
 
 ## Requirements
@@ -92,6 +92,7 @@ Class | Method | HTTP request | Description
 *ImageOcrApi* | [**imageOcrImageWordsWithLocation**](docs/Api/ImageOcrApi.md#imageocrimagewordswithlocation) | **POST** /ocr/image/to/words-with-location | Convert a scanned image into words with location
 *ImageOcrApi* | [**imageOcrPhotoRecognizeBusinessCard**](docs/Api/ImageOcrApi.md#imageocrphotorecognizebusinesscard) | **POST** /ocr/photo/recognize/business-card | Recognize a photo of a business card, extract key business information
 *ImageOcrApi* | [**imageOcrPhotoRecognizeForm**](docs/Api/ImageOcrApi.md#imageocrphotorecognizeform) | **POST** /ocr/photo/recognize/form | Recognize a photo of a form, extract key fields and business information
+*ImageOcrApi* | [**imageOcrPhotoRecognizeFormAdvanced**](docs/Api/ImageOcrApi.md#imageocrphotorecognizeformadvanced) | **POST** /ocr/photo/recognize/form/advanced | Recognize a photo of a form, extract key fields using stored templates
 *ImageOcrApi* | [**imageOcrPhotoRecognizeReceipt**](docs/Api/ImageOcrApi.md#imageocrphotorecognizereceipt) | **POST** /ocr/photo/recognize/receipt | Recognize a photo of a receipt, extract key business information
 *ImageOcrApi* | [**imageOcrPhotoToText**](docs/Api/ImageOcrApi.md#imageocrphotototext) | **POST** /ocr/photo/toText | Convert a photo of a document into text
 *ImageOcrApi* | [**imageOcrPhotoWordsWithLocation**](docs/Api/ImageOcrApi.md#imageocrphotowordswithlocation) | **POST** /ocr/photo/to/words-with-location | Convert a photo of a document or receipt into words with location
@@ -103,6 +104,7 @@ Class | Method | HTTP request | Description
 *PreprocessingApi* | [**preprocessingBinarizeAdvanced**](docs/Api/PreprocessingApi.md#preprocessingbinarizeadvanced) | **POST** /ocr/preprocessing/image/binarize/advanced | Convert an image of text into a binary (light and dark) view with ML
 *PreprocessingApi* | [**preprocessingGetPageAngle**](docs/Api/PreprocessingApi.md#preprocessinggetpageangle) | **POST** /ocr/preprocessing/image/get-page-angle | Get the angle of the page / document / receipt
 *PreprocessingApi* | [**preprocessingUnrotate**](docs/Api/PreprocessingApi.md#preprocessingunrotate) | **POST** /ocr/preprocessing/image/unrotate | Detect and unrotate a document image
+*PreprocessingApi* | [**preprocessingUnrotateAdvanced**](docs/Api/PreprocessingApi.md#preprocessingunrotateadvanced) | **POST** /ocr/preprocessing/image/unrotate/advanced | Detect and unrotate a document image (advanced)
 *PreprocessingApi* | [**preprocessingUnskew**](docs/Api/PreprocessingApi.md#preprocessingunskew) | **POST** /ocr/preprocessing/image/unskew | Detect and unskew a photo of a document
 *ReceiptsApi* | [**receiptsPhotoToCSV**](docs/Api/ReceiptsApi.md#receiptsphototocsv) | **POST** /ocr/receipts/photo/to/csv | Convert a photo of a receipt into a CSV file containing structured information from the receipt
 
@@ -114,6 +116,8 @@ Class | Method | HTTP request | Description
  - [FormDefinitionTemplate](docs/Model/FormDefinitionTemplate.md)
  - [FormFieldDefinition](docs/Model/FormFieldDefinition.md)
  - [FormRecognitionResult](docs/Model/FormRecognitionResult.md)
+ - [FormTableColumnDefinition](docs/Model/FormTableColumnDefinition.md)
+ - [FormTableDefinition](docs/Model/FormTableDefinition.md)
  - [GetPageAngleResult](docs/Model/GetPageAngleResult.md)
  - [ImageToLinesWithLocationResult](docs/Model/ImageToLinesWithLocationResult.md)
  - [ImageToTextResponse](docs/Model/ImageToTextResponse.md)
@@ -128,8 +132,12 @@ Class | Method | HTTP request | Description
  - [PdfToTextResponse](docs/Model/PdfToTextResponse.md)
  - [PdfToWordsWithLocationResult](docs/Model/PdfToWordsWithLocationResult.md)
  - [PhotoToWordsWithLocationResult](docs/Model/PhotoToWordsWithLocationResult.md)
+ - [Point](docs/Model/Point.md)
  - [ReceiptLineItem](docs/Model/ReceiptLineItem.md)
  - [ReceiptRecognitionResult](docs/Model/ReceiptRecognitionResult.md)
+ - [TableCellResult](docs/Model/TableCellResult.md)
+ - [TableResult](docs/Model/TableResult.md)
+ - [TableRowResult](docs/Model/TableRowResult.md)
 
 
 ## Documentation For Authorization

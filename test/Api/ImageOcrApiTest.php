@@ -112,6 +112,16 @@ class ImageOcrApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for imageOcrPhotoRecognizeFormAdvanced
+     *
+     * Recognize a photo of a form, extract key fields using stored templates.
+     *
+     */
+    public function testImageOcrPhotoRecognizeFormAdvanced()
+    {
+    }
+
+    /**
      * Test case for imageOcrPhotoRecognizeReceipt
      *
      * Recognize a photo of a receipt, extract key business information.

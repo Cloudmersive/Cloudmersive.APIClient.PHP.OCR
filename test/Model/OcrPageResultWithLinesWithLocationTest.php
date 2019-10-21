@@ -78,16 +78,16 @@ class OcrPageResultWithLinesWithLocationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "successful"
+     * Test attribute "page_number"
      */
-    public function testPropertySuccessful()
+    public function testPropertyPageNumber()
     {
     }
 
     /**
-     * Test attribute "page_number"
+     * Test attribute "successful"
      */
-    public function testPropertyPageNumber()
+    public function testPropertySuccessful()
     {
     }
 

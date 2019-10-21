@@ -1,10 +1,10 @@
-# PdfToTextResponse
+# TableCellResult
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**successful** | **bool** | True if successful, false otherwise | [optional] 
-**ocr_pages** | [**\Swagger\Client\Model\OcrPageResult[]**](OcrPageResult.md) | Page OCR results | [optional] 
+**column_id** | **string** | The ID of the column | [optional] 
+**cell_values** | [**\Swagger\Client\Model\OcrPhotoTextElement[]**](OcrPhotoTextElement.md) | Result cell value(s) extracted | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

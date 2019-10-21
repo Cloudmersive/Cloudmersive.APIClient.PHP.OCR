@@ -1,6 +1,6 @@
 <?php
 /**
- * ImageToWordsWithLocationResult
+ * TableRowResult
  *
  * PHP version 5
  *
@@ -33,15 +33,15 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * ImageToWordsWithLocationResult Class Doc Comment
+ * TableRowResult Class Doc Comment
  *
  * @category Class
- * @description Result of an image to words-with-location OCR operation
+ * @description One row of data in the resulting table
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
+class TableRowResult implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ImageToWordsWithLocationResult';
+    protected static $swaggerModelName = 'TableRowResult';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,8 +58,7 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'successful' => 'bool',
-        'words' => '\Swagger\Client\Model\OcrWordElement[]'
+        'table_row_cells_result' => '\Swagger\Client\Model\TableCellResult[]'
     ];
 
     /**
@@ -68,8 +67,7 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'successful' => null,
-        'words' => null
+        'table_row_cells_result' => null
     ];
 
     /**
@@ -99,8 +97,7 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'successful' => 'Successful',
-        'words' => 'Words'
+        'table_row_cells_result' => 'TableRowCellsResult'
     ];
 
     /**
@@ -109,8 +106,7 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'successful' => 'setSuccessful',
-        'words' => 'setWords'
+        'table_row_cells_result' => 'setTableRowCellsResult'
     ];
 
     /**
@@ -119,8 +115,7 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'successful' => 'getSuccessful',
-        'words' => 'getWords'
+        'table_row_cells_result' => 'getTableRowCellsResult'
     ];
 
     /**
@@ -183,8 +178,7 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['successful'] = isset($data['successful']) ? $data['successful'] : null;
-        $this->container['words'] = isset($data['words']) ? $data['words'] : null;
+        $this->container['table_row_cells_result'] = isset($data['table_row_cells_result']) ? $data['table_row_cells_result'] : null;
     }
 
     /**
@@ -213,49 +207,25 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets successful
+     * Gets table_row_cells_result
      *
-     * @return bool
+     * @return \Swagger\Client\Model\TableCellResult[]
      */
-    public function getSuccessful()
+    public function getTableRowCellsResult()
     {
-        return $this->container['successful'];
+        return $this->container['table_row_cells_result'];
     }
 
     /**
-     * Sets successful
+     * Sets table_row_cells_result
      *
-     * @param bool $successful True if successful, false otherwise
+     * @param \Swagger\Client\Model\TableCellResult[] $table_row_cells_result Table cells in this row result
      *
      * @return $this
      */
-    public function setSuccessful($successful)
+    public function setTableRowCellsResult($table_row_cells_result)
     {
-        $this->container['successful'] = $successful;
-
-        return $this;
-    }
-
-    /**
-     * Gets words
-     *
-     * @return \Swagger\Client\Model\OcrWordElement[]
-     */
-    public function getWords()
-    {
-        return $this->container['words'];
-    }
-
-    /**
-     * Sets words
-     *
-     * @param \Swagger\Client\Model\OcrWordElement[] $words Word elements in the image
-     *
-     * @return $this
-     */
-    public function setWords($words)
-    {
-        $this->container['words'] = $words;
+        $this->container['table_row_cells_result'] = $table_row_cells_result;
 
         return $this;
     }

@@ -112,6 +112,16 @@ class PreprocessingApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for preprocessingUnrotateAdvanced
+     *
+     * Detect and unrotate a document image (advanced).
+     *
+     */
+    public function testPreprocessingUnrotateAdvanced()
+    {
+    }
+
+    /**
      * Test case for preprocessingUnskew
      *
      * Detect and unskew a photo of a document.

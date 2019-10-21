@@ -225,7 +225,7 @@ class FieldResult implements ModelInterface, ArrayAccess
     /**
      * Sets target_field
      *
-     * @param \Swagger\Client\Model\FormFieldDefinition $target_field target_field
+     * @param \Swagger\Client\Model\FormFieldDefinition $target_field Target field to extract from the form
      *
      * @return $this
      */
@@ -249,7 +249,7 @@ class FieldResult implements ModelInterface, ArrayAccess
     /**
      * Sets field_values
      *
-     * @param \Swagger\Client\Model\OcrPhotoTextElement[] $field_values field_values
+     * @param \Swagger\Client\Model\OcrPhotoTextElement[] $field_values Result field value(s) extracted
      *
      * @return $this
      */

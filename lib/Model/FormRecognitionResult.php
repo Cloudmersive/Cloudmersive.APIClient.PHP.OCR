@@ -59,7 +59,8 @@ class FormRecognitionResult implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'successful' => 'bool',
-        'field_value_extraction_result' => '\Swagger\Client\Model\FieldResult[]'
+        'field_value_extraction_result' => '\Swagger\Client\Model\FieldResult[]',
+        'table_value_extraction_results' => '\Swagger\Client\Model\TableResult[]'
     ];
 
     /**
@@ -69,7 +70,8 @@ class FormRecognitionResult implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'successful' => null,
-        'field_value_extraction_result' => null
+        'field_value_extraction_result' => null,
+        'table_value_extraction_results' => null
     ];
 
     /**
@@ -100,7 +102,8 @@ class FormRecognitionResult implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'successful' => 'Successful',
-        'field_value_extraction_result' => 'FieldValueExtractionResult'
+        'field_value_extraction_result' => 'FieldValueExtractionResult',
+        'table_value_extraction_results' => 'TableValueExtractionResults'
     ];
 
     /**
@@ -110,7 +113,8 @@ class FormRecognitionResult implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'successful' => 'setSuccessful',
-        'field_value_extraction_result' => 'setFieldValueExtractionResult'
+        'field_value_extraction_result' => 'setFieldValueExtractionResult',
+        'table_value_extraction_results' => 'setTableValueExtractionResults'
     ];
 
     /**
@@ -120,7 +124,8 @@ class FormRecognitionResult implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'successful' => 'getSuccessful',
-        'field_value_extraction_result' => 'getFieldValueExtractionResult'
+        'field_value_extraction_result' => 'getFieldValueExtractionResult',
+        'table_value_extraction_results' => 'getTableValueExtractionResults'
     ];
 
     /**
@@ -185,6 +190,7 @@ class FormRecognitionResult implements ModelInterface, ArrayAccess
     {
         $this->container['successful'] = isset($data['successful']) ? $data['successful'] : null;
         $this->container['field_value_extraction_result'] = isset($data['field_value_extraction_result']) ? $data['field_value_extraction_result'] : null;
+        $this->container['table_value_extraction_results'] = isset($data['table_value_extraction_results']) ? $data['table_value_extraction_results'] : null;
     }
 
     /**
@@ -225,7 +231,7 @@ class FormRecognitionResult implements ModelInterface, ArrayAccess
     /**
      * Sets successful
      *
-     * @param bool $successful successful
+     * @param bool $successful True if the operation was successful, false otherwise
      *
      * @return $this
      */
@@ -249,13 +255,37 @@ class FormRecognitionResult implements ModelInterface, ArrayAccess
     /**
      * Sets field_value_extraction_result
      *
-     * @param \Swagger\Client\Model\FieldResult[] $field_value_extraction_result field_value_extraction_result
+     * @param \Swagger\Client\Model\FieldResult[] $field_value_extraction_result Result of form field OCR data extraction
      *
      * @return $this
      */
     public function setFieldValueExtractionResult($field_value_extraction_result)
     {
         $this->container['field_value_extraction_result'] = $field_value_extraction_result;
+
+        return $this;
+    }
+
+    /**
+     * Gets table_value_extraction_results
+     *
+     * @return \Swagger\Client\Model\TableResult[]
+     */
+    public function getTableValueExtractionResults()
+    {
+        return $this->container['table_value_extraction_results'];
+    }
+
+    /**
+     * Sets table_value_extraction_results
+     *
+     * @param \Swagger\Client\Model\TableResult[] $table_value_extraction_results Result of form table OCR data extraction
+     *
+     * @return $this
+     */
+    public function setTableValueExtractionResults($table_value_extraction_results)
+    {
+        $this->container['table_value_extraction_results'] = $table_value_extraction_results;
 
         return $this;
     }

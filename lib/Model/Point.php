@@ -1,6 +1,6 @@
 <?php
 /**
- * ImageToWordsWithLocationResult
+ * Point
  *
  * PHP version 5
  *
@@ -33,15 +33,15 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * ImageToWordsWithLocationResult Class Doc Comment
+ * Point Class Doc Comment
  *
  * @category Class
- * @description Result of an image to words-with-location OCR operation
+ * @description Point location in 2D in an image, where 0, 0 represents the top/left corner of the image
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
+class Point implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ImageToWordsWithLocationResult';
+    protected static $swaggerModelName = 'Point';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,8 +58,8 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'successful' => 'bool',
-        'words' => '\Swagger\Client\Model\OcrWordElement[]'
+        'x' => 'int',
+        'y' => 'int'
     ];
 
     /**
@@ -68,8 +68,8 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'successful' => null,
-        'words' => null
+        'x' => 'int32',
+        'y' => 'int32'
     ];
 
     /**
@@ -99,8 +99,8 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'successful' => 'Successful',
-        'words' => 'Words'
+        'x' => 'X',
+        'y' => 'Y'
     ];
 
     /**
@@ -109,8 +109,8 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'successful' => 'setSuccessful',
-        'words' => 'setWords'
+        'x' => 'setX',
+        'y' => 'setY'
     ];
 
     /**
@@ -119,8 +119,8 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'successful' => 'getSuccessful',
-        'words' => 'getWords'
+        'x' => 'getX',
+        'y' => 'getY'
     ];
 
     /**
@@ -183,8 +183,8 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['successful'] = isset($data['successful']) ? $data['successful'] : null;
-        $this->container['words'] = isset($data['words']) ? $data['words'] : null;
+        $this->container['x'] = isset($data['x']) ? $data['x'] : null;
+        $this->container['y'] = isset($data['y']) ? $data['y'] : null;
     }
 
     /**
@@ -213,49 +213,49 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets successful
+     * Gets x
      *
-     * @return bool
+     * @return int
      */
-    public function getSuccessful()
+    public function getX()
     {
-        return $this->container['successful'];
+        return $this->container['x'];
     }
 
     /**
-     * Sets successful
+     * Sets x
      *
-     * @param bool $successful True if successful, false otherwise
+     * @param int $x X location in 2D in the image, where 0 represents the left edge of the image
      *
      * @return $this
      */
-    public function setSuccessful($successful)
+    public function setX($x)
     {
-        $this->container['successful'] = $successful;
+        $this->container['x'] = $x;
 
         return $this;
     }
 
     /**
-     * Gets words
+     * Gets y
      *
-     * @return \Swagger\Client\Model\OcrWordElement[]
+     * @return int
      */
-    public function getWords()
+    public function getY()
     {
-        return $this->container['words'];
+        return $this->container['y'];
     }
 
     /**
-     * Sets words
+     * Sets y
      *
-     * @param \Swagger\Client\Model\OcrWordElement[] $words Word elements in the image
+     * @param int $y Y location in 2D in the image, where 0 represents the top edge of the image
      *
      * @return $this
      */
-    public function setWords($words)
+    public function setY($y)
     {
-        $this->container['words'] = $words;
+        $this->container['y'] = $y;
 
         return $this;
     }

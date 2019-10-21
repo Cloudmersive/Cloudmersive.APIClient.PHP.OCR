@@ -63,6 +63,7 @@ class OcrPhotoTextElement implements ModelInterface, ArrayAccess
         'y_top' => 'int',
         'width' => 'int',
         'height' => 'int',
+        'bounding_points' => '\Swagger\Client\Model\Point[]',
         'confidence_level' => 'double'
     ];
 
@@ -77,6 +78,7 @@ class OcrPhotoTextElement implements ModelInterface, ArrayAccess
         'y_top' => 'int32',
         'width' => 'int32',
         'height' => 'int32',
+        'bounding_points' => null,
         'confidence_level' => 'double'
     ];
 
@@ -112,6 +114,7 @@ class OcrPhotoTextElement implements ModelInterface, ArrayAccess
         'y_top' => 'YTop',
         'width' => 'Width',
         'height' => 'Height',
+        'bounding_points' => 'BoundingPoints',
         'confidence_level' => 'ConfidenceLevel'
     ];
 
@@ -126,6 +129,7 @@ class OcrPhotoTextElement implements ModelInterface, ArrayAccess
         'y_top' => 'setYTop',
         'width' => 'setWidth',
         'height' => 'setHeight',
+        'bounding_points' => 'setBoundingPoints',
         'confidence_level' => 'setConfidenceLevel'
     ];
 
@@ -140,6 +144,7 @@ class OcrPhotoTextElement implements ModelInterface, ArrayAccess
         'y_top' => 'getYTop',
         'width' => 'getWidth',
         'height' => 'getHeight',
+        'bounding_points' => 'getBoundingPoints',
         'confidence_level' => 'getConfidenceLevel'
     ];
 
@@ -208,6 +213,7 @@ class OcrPhotoTextElement implements ModelInterface, ArrayAccess
         $this->container['y_top'] = isset($data['y_top']) ? $data['y_top'] : null;
         $this->container['width'] = isset($data['width']) ? $data['width'] : null;
         $this->container['height'] = isset($data['height']) ? $data['height'] : null;
+        $this->container['bounding_points'] = isset($data['bounding_points']) ? $data['bounding_points'] : null;
         $this->container['confidence_level'] = isset($data['confidence_level']) ? $data['confidence_level'] : null;
     }
 
@@ -352,6 +358,30 @@ class OcrPhotoTextElement implements ModelInterface, ArrayAccess
     public function setHeight($height)
     {
         $this->container['height'] = $height;
+
+        return $this;
+    }
+
+    /**
+     * Gets bounding_points
+     *
+     * @return \Swagger\Client\Model\Point[]
+     */
+    public function getBoundingPoints()
+    {
+        return $this->container['bounding_points'];
+    }
+
+    /**
+     * Sets bounding_points
+     *
+     * @param \Swagger\Client\Model\Point[] $bounding_points Points that form the bounding polygon around the text
+     *
+     * @return $this
+     */
+    public function setBoundingPoints($bounding_points)
+    {
+        $this->container['bounding_points'] = $bounding_points;
 
         return $this;
     }

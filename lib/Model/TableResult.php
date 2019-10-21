@@ -1,6 +1,6 @@
 <?php
 /**
- * ImageToWordsWithLocationResult
+ * TableResult
  *
  * PHP version 5
  *
@@ -33,15 +33,15 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * ImageToWordsWithLocationResult Class Doc Comment
+ * TableResult Class Doc Comment
  *
  * @category Class
- * @description Result of an image to words-with-location OCR operation
+ * @description The result of reading a table via OCR from a form
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
+class TableResult implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ImageToWordsWithLocationResult';
+    protected static $swaggerModelName = 'TableResult';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,8 +58,8 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'successful' => 'bool',
-        'words' => '\Swagger\Client\Model\OcrWordElement[]'
+        'table_definition' => '\Swagger\Client\Model\FormTableDefinition',
+        'table_rows_result' => '\Swagger\Client\Model\TableRowResult[]'
     ];
 
     /**
@@ -68,8 +68,8 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'successful' => null,
-        'words' => null
+        'table_definition' => null,
+        'table_rows_result' => null
     ];
 
     /**
@@ -99,8 +99,8 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'successful' => 'Successful',
-        'words' => 'Words'
+        'table_definition' => 'TableDefinition',
+        'table_rows_result' => 'TableRowsResult'
     ];
 
     /**
@@ -109,8 +109,8 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'successful' => 'setSuccessful',
-        'words' => 'setWords'
+        'table_definition' => 'setTableDefinition',
+        'table_rows_result' => 'setTableRowsResult'
     ];
 
     /**
@@ -119,8 +119,8 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'successful' => 'getSuccessful',
-        'words' => 'getWords'
+        'table_definition' => 'getTableDefinition',
+        'table_rows_result' => 'getTableRowsResult'
     ];
 
     /**
@@ -183,8 +183,8 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['successful'] = isset($data['successful']) ? $data['successful'] : null;
-        $this->container['words'] = isset($data['words']) ? $data['words'] : null;
+        $this->container['table_definition'] = isset($data['table_definition']) ? $data['table_definition'] : null;
+        $this->container['table_rows_result'] = isset($data['table_rows_result']) ? $data['table_rows_result'] : null;
     }
 
     /**
@@ -213,49 +213,49 @@ class ImageToWordsWithLocationResult implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets successful
+     * Gets table_definition
      *
-     * @return bool
+     * @return \Swagger\Client\Model\FormTableDefinition
      */
-    public function getSuccessful()
+    public function getTableDefinition()
     {
-        return $this->container['successful'];
+        return $this->container['table_definition'];
     }
 
     /**
-     * Sets successful
+     * Sets table_definition
      *
-     * @param bool $successful True if successful, false otherwise
+     * @param \Swagger\Client\Model\FormTableDefinition $table_definition The input table definition for reference
      *
      * @return $this
      */
-    public function setSuccessful($successful)
+    public function setTableDefinition($table_definition)
     {
-        $this->container['successful'] = $successful;
+        $this->container['table_definition'] = $table_definition;
 
         return $this;
     }
 
     /**
-     * Gets words
+     * Gets table_rows_result
      *
-     * @return \Swagger\Client\Model\OcrWordElement[]
+     * @return \Swagger\Client\Model\TableRowResult[]
      */
-    public function getWords()
+    public function getTableRowsResult()
     {
-        return $this->container['words'];
+        return $this->container['table_rows_result'];
     }
 
     /**
-     * Sets words
+     * Sets table_rows_result
      *
-     * @param \Swagger\Client\Model\OcrWordElement[] $words Word elements in the image
+     * @param \Swagger\Client\Model\TableRowResult[] $table_rows_result Rows of data in the table
      *
      * @return $this
      */
-    public function setWords($words)
+    public function setTableRowsResult($table_rows_result)
     {
-        $this->container['words'] = $words;
+        $this->container['table_rows_result'] = $table_rows_result;
 
         return $this;
     }

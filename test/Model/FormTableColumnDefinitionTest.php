@@ -1,6 +1,6 @@
 <?php
 /**
- * FormDefinitionTemplateTest
+ * FormTableColumnDefinitionTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace Swagger\Client;
 
 /**
- * FormDefinitionTemplateTest Class Doc Comment
+ * FormTableColumnDefinitionTest Class Doc Comment
  *
  * @category    Class */
-// * @description Definition of a form template; use a form template definition to recognize the fields in a form with Cloudmersive OCR
+// * @description Definition of a column within a table for OCR data extraction from images
 /**
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class FormDefinitionTemplateTest extends \PHPUnit_Framework_TestCase
+class FormTableColumnDefinitionTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,23 +71,51 @@ class FormDefinitionTemplateTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "FormDefinitionTemplate"
+     * Test "FormTableColumnDefinition"
      */
-    public function testFormDefinitionTemplate()
+    public function testFormTableColumnDefinition()
     {
     }
 
     /**
-     * Test attribute "field_definitions"
+     * Test attribute "column_id"
      */
-    public function testPropertyFieldDefinitions()
+    public function testPropertyColumnId()
     {
     }
 
     /**
-     * Test attribute "table_definitions"
+     * Test attribute "top_anchor"
      */
-    public function testPropertyTableDefinitions()
+    public function testPropertyTopAnchor()
+    {
+    }
+
+    /**
+     * Test attribute "anchor_mode"
+     */
+    public function testPropertyAnchorMode()
+    {
+    }
+
+    /**
+     * Test attribute "data_type"
+     */
+    public function testPropertyDataType()
+    {
+    }
+
+    /**
+     * Test attribute "minimum_character_count"
+     */
+    public function testPropertyMinimumCharacterCount()
+    {
+    }
+
+    /**
+     * Test attribute "allow_numeric_digits"
+     */
+    public function testPropertyAllowNumericDigits()
     {
     }
 }

@@ -225,7 +225,7 @@ class PdfToLinesWithLocationResult implements ModelInterface, ArrayAccess
     /**
      * Sets successful
      *
-     * @param bool $successful successful
+     * @param bool $successful True if successful, false otherwise
      *
      * @return $this
      */
@@ -249,7 +249,7 @@ class PdfToLinesWithLocationResult implements ModelInterface, ArrayAccess
     /**
      * Sets ocr_pages
      *
-     * @param \Swagger\Client\Model\OcrPageResultWithLinesWithLocation[] $ocr_pages ocr_pages
+     * @param \Swagger\Client\Model\OcrPageResultWithLinesWithLocation[] $ocr_pages OCR results for each page
      *
      * @return $this
      */

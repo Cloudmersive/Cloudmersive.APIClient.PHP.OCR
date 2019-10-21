@@ -225,7 +225,7 @@ class ReceiptLineItem implements ModelInterface, ArrayAccess
     /**
      * Sets item_description
      *
-     * @param string $item_description item_description
+     * @param string $item_description Description of the item
      *
      * @return $this
      */
@@ -249,7 +249,7 @@ class ReceiptLineItem implements ModelInterface, ArrayAccess
     /**
      * Sets item_price
      *
-     * @param double $item_price item_price
+     * @param double $item_price Price of the item if available
      *
      * @return $this
      */

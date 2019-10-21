@@ -58,7 +58,8 @@ class FormDefinitionTemplate implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'field_definitions' => '\Swagger\Client\Model\FormFieldDefinition[]'
+        'field_definitions' => '\Swagger\Client\Model\FormFieldDefinition[]',
+        'table_definitions' => '\Swagger\Client\Model\FormTableDefinition[]'
     ];
 
     /**
@@ -67,7 +68,8 @@ class FormDefinitionTemplate implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'field_definitions' => null
+        'field_definitions' => null,
+        'table_definitions' => null
     ];
 
     /**
@@ -97,7 +99,8 @@ class FormDefinitionTemplate implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'field_definitions' => 'FieldDefinitions'
+        'field_definitions' => 'FieldDefinitions',
+        'table_definitions' => 'TableDefinitions'
     ];
 
     /**
@@ -106,7 +109,8 @@ class FormDefinitionTemplate implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'field_definitions' => 'setFieldDefinitions'
+        'field_definitions' => 'setFieldDefinitions',
+        'table_definitions' => 'setTableDefinitions'
     ];
 
     /**
@@ -115,7 +119,8 @@ class FormDefinitionTemplate implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'field_definitions' => 'getFieldDefinitions'
+        'field_definitions' => 'getFieldDefinitions',
+        'table_definitions' => 'getTableDefinitions'
     ];
 
     /**
@@ -179,6 +184,7 @@ class FormDefinitionTemplate implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['field_definitions'] = isset($data['field_definitions']) ? $data['field_definitions'] : null;
+        $this->container['table_definitions'] = isset($data['table_definitions']) ? $data['table_definitions'] : null;
     }
 
     /**
@@ -219,13 +225,37 @@ class FormDefinitionTemplate implements ModelInterface, ArrayAccess
     /**
      * Sets field_definitions
      *
-     * @param \Swagger\Client\Model\FormFieldDefinition[] $field_definitions field_definitions
+     * @param \Swagger\Client\Model\FormFieldDefinition[] $field_definitions Field definitions in the template; a field is comprised of a key/value pair
      *
      * @return $this
      */
     public function setFieldDefinitions($field_definitions)
     {
         $this->container['field_definitions'] = $field_definitions;
+
+        return $this;
+    }
+
+    /**
+     * Gets table_definitions
+     *
+     * @return \Swagger\Client\Model\FormTableDefinition[]
+     */
+    public function getTableDefinitions()
+    {
+        return $this->container['table_definitions'];
+    }
+
+    /**
+     * Sets table_definitions
+     *
+     * @param \Swagger\Client\Model\FormTableDefinition[] $table_definitions Table definitions in the template; a table is comprised of columns and rows and exists in a 2-dimensional layout; a common example of a table would be an invoice
+     *
+     * @return $this
+     */
+    public function setTableDefinitions($table_definitions)
+    {
+        $this->container['table_definitions'] = $table_definitions;
 
         return $this;
     }

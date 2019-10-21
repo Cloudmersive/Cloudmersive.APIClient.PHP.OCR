@@ -1,6 +1,6 @@
 <?php
 /**
- * FormDefinitionTemplateTest
+ * PointTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace Swagger\Client;
 
 /**
- * FormDefinitionTemplateTest Class Doc Comment
+ * PointTest Class Doc Comment
  *
  * @category    Class */
-// * @description Definition of a form template; use a form template definition to recognize the fields in a form with Cloudmersive OCR
+// * @description Point location in 2D in an image, where 0, 0 represents the top/left corner of the image
 /**
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class FormDefinitionTemplateTest extends \PHPUnit_Framework_TestCase
+class PointTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,23 +71,23 @@ class FormDefinitionTemplateTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "FormDefinitionTemplate"
+     * Test "Point"
      */
-    public function testFormDefinitionTemplate()
+    public function testPoint()
     {
     }
 
     /**
-     * Test attribute "field_definitions"
+     * Test attribute "x"
      */
-    public function testPropertyFieldDefinitions()
+    public function testPropertyX()
     {
     }
 
     /**
-     * Test attribute "table_definitions"
+     * Test attribute "y"
      */
-    public function testPropertyTableDefinitions()
+    public function testPropertyY()
     {
     }
 }
