@@ -127,6 +127,13 @@ class ReceiptRecognitionResultTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "receipt_sub_total"
+     */
+    public function testPropertyReceiptSubTotal()
+    {
+    }
+
+    /**
      * Test attribute "receipt_total"
      */
     public function testPropertyReceiptTotal()

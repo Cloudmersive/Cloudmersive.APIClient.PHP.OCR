@@ -65,6 +65,7 @@ class ReceiptRecognitionResult implements ModelInterface, ArrayAccess
         'address_string' => 'string',
         'phone_number' => 'string',
         'receipt_items' => '\Swagger\Client\Model\ReceiptLineItem[]',
+        'receipt_sub_total' => 'double',
         'receipt_total' => 'double'
     ];
 
@@ -81,6 +82,7 @@ class ReceiptRecognitionResult implements ModelInterface, ArrayAccess
         'address_string' => null,
         'phone_number' => null,
         'receipt_items' => null,
+        'receipt_sub_total' => 'double',
         'receipt_total' => 'double'
     ];
 
@@ -118,6 +120,7 @@ class ReceiptRecognitionResult implements ModelInterface, ArrayAccess
         'address_string' => 'AddressString',
         'phone_number' => 'PhoneNumber',
         'receipt_items' => 'ReceiptItems',
+        'receipt_sub_total' => 'ReceiptSubTotal',
         'receipt_total' => 'ReceiptTotal'
     ];
 
@@ -134,6 +137,7 @@ class ReceiptRecognitionResult implements ModelInterface, ArrayAccess
         'address_string' => 'setAddressString',
         'phone_number' => 'setPhoneNumber',
         'receipt_items' => 'setReceiptItems',
+        'receipt_sub_total' => 'setReceiptSubTotal',
         'receipt_total' => 'setReceiptTotal'
     ];
 
@@ -150,6 +154,7 @@ class ReceiptRecognitionResult implements ModelInterface, ArrayAccess
         'address_string' => 'getAddressString',
         'phone_number' => 'getPhoneNumber',
         'receipt_items' => 'getReceiptItems',
+        'receipt_sub_total' => 'getReceiptSubTotal',
         'receipt_total' => 'getReceiptTotal'
     ];
 
@@ -220,6 +225,7 @@ class ReceiptRecognitionResult implements ModelInterface, ArrayAccess
         $this->container['address_string'] = isset($data['address_string']) ? $data['address_string'] : null;
         $this->container['phone_number'] = isset($data['phone_number']) ? $data['phone_number'] : null;
         $this->container['receipt_items'] = isset($data['receipt_items']) ? $data['receipt_items'] : null;
+        $this->container['receipt_sub_total'] = isset($data['receipt_sub_total']) ? $data['receipt_sub_total'] : null;
         $this->container['receipt_total'] = isset($data['receipt_total']) ? $data['receipt_total'] : null;
     }
 
@@ -412,6 +418,30 @@ class ReceiptRecognitionResult implements ModelInterface, ArrayAccess
     public function setReceiptItems($receipt_items)
     {
         $this->container['receipt_items'] = $receipt_items;
+
+        return $this;
+    }
+
+    /**
+     * Gets receipt_sub_total
+     *
+     * @return double
+     */
+    public function getReceiptSubTotal()
+    {
+        return $this->container['receipt_sub_total'];
+    }
+
+    /**
+     * Sets receipt_sub_total
+     *
+     * @param double $receipt_sub_total Optional; if available, the monetary value of the receipt subtotal - typically not including specialized line items such as Tax. If this value is not available, it will be 0.
+     *
+     * @return $this
+     */
+    public function setReceiptSubTotal($receipt_sub_total)
+    {
+        $this->container['receipt_sub_total'] = $receipt_sub_total;
 
         return $this;
     }
