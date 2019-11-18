@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 **successful** | **bool** | True if the operation was successful, false otherwise | [optional] 
 **field_value_extraction_result** | [**\Swagger\Client\Model\FieldResult[]**](FieldResult.md) | Result of form field OCR data extraction | [optional] 
 **table_value_extraction_results** | [**\Swagger\Client\Model\TableResult[]**](TableResult.md) | Result of form table OCR data extraction | [optional] 
+**diagnostics** | **string[]** | Diagnostic images - default is null, enable diagnostics&#x3D;true to populate this parameter with one image per field | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

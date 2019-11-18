@@ -70,6 +70,8 @@ class FormFieldDefinition implements ModelInterface, ArrayAccess
         'horizontal_alignment_type' => 'string',
         'target_field_width_relative' => 'double',
         'target_field_height_relative' => 'double',
+        'target_field_horizontal_adjustment' => 'double',
+        'target_field_vertical_adjustment' => 'double',
         'ignore' => 'string[]'
     ];
 
@@ -91,6 +93,8 @@ class FormFieldDefinition implements ModelInterface, ArrayAccess
         'horizontal_alignment_type' => null,
         'target_field_width_relative' => 'double',
         'target_field_height_relative' => 'double',
+        'target_field_horizontal_adjustment' => 'double',
+        'target_field_vertical_adjustment' => 'double',
         'ignore' => null
     ];
 
@@ -133,6 +137,8 @@ class FormFieldDefinition implements ModelInterface, ArrayAccess
         'horizontal_alignment_type' => 'HorizontalAlignmentType',
         'target_field_width_relative' => 'TargetFieldWidth_Relative',
         'target_field_height_relative' => 'TargetFieldHeight_Relative',
+        'target_field_horizontal_adjustment' => 'TargetFieldHorizontalAdjustment',
+        'target_field_vertical_adjustment' => 'TargetFieldVerticalAdjustment',
         'ignore' => 'Ignore'
     ];
 
@@ -154,6 +160,8 @@ class FormFieldDefinition implements ModelInterface, ArrayAccess
         'horizontal_alignment_type' => 'setHorizontalAlignmentType',
         'target_field_width_relative' => 'setTargetFieldWidthRelative',
         'target_field_height_relative' => 'setTargetFieldHeightRelative',
+        'target_field_horizontal_adjustment' => 'setTargetFieldHorizontalAdjustment',
+        'target_field_vertical_adjustment' => 'setTargetFieldVerticalAdjustment',
         'ignore' => 'setIgnore'
     ];
 
@@ -175,6 +183,8 @@ class FormFieldDefinition implements ModelInterface, ArrayAccess
         'horizontal_alignment_type' => 'getHorizontalAlignmentType',
         'target_field_width_relative' => 'getTargetFieldWidthRelative',
         'target_field_height_relative' => 'getTargetFieldHeightRelative',
+        'target_field_horizontal_adjustment' => 'getTargetFieldHorizontalAdjustment',
+        'target_field_vertical_adjustment' => 'getTargetFieldVerticalAdjustment',
         'ignore' => 'getIgnore'
     ];
 
@@ -250,6 +260,8 @@ class FormFieldDefinition implements ModelInterface, ArrayAccess
         $this->container['horizontal_alignment_type'] = isset($data['horizontal_alignment_type']) ? $data['horizontal_alignment_type'] : null;
         $this->container['target_field_width_relative'] = isset($data['target_field_width_relative']) ? $data['target_field_width_relative'] : null;
         $this->container['target_field_height_relative'] = isset($data['target_field_height_relative']) ? $data['target_field_height_relative'] : null;
+        $this->container['target_field_horizontal_adjustment'] = isset($data['target_field_horizontal_adjustment']) ? $data['target_field_horizontal_adjustment'] : null;
+        $this->container['target_field_vertical_adjustment'] = isset($data['target_field_vertical_adjustment']) ? $data['target_field_vertical_adjustment'] : null;
         $this->container['ignore'] = isset($data['ignore']) ? $data['ignore'] : null;
     }
 
@@ -363,7 +375,7 @@ class FormFieldDefinition implements ModelInterface, ArrayAccess
     /**
      * Sets anchor_mode
      *
-     * @param string $anchor_mode Optional - the matching mode for the anchor.  Possible values are Complete (requires the entire anchor to match) and Partial (allows only part of the anchor to match).  Default is Partial.
+     * @param string $anchor_mode Optional - the matching mode for the anchor.  Possible values are Complete (requires the entire anchor to match) and Partial (allows only part of the anchor to match) and Horizontal (anchor must be laid out horizontally).  Default is Partial.
      *
      * @return $this
      */
@@ -562,6 +574,54 @@ class FormFieldDefinition implements ModelInterface, ArrayAccess
     public function setTargetFieldHeightRelative($target_field_height_relative)
     {
         $this->container['target_field_height_relative'] = $target_field_height_relative;
+
+        return $this;
+    }
+
+    /**
+     * Gets target_field_horizontal_adjustment
+     *
+     * @return double
+     */
+    public function getTargetFieldHorizontalAdjustment()
+    {
+        return $this->container['target_field_horizontal_adjustment'];
+    }
+
+    /**
+     * Sets target_field_horizontal_adjustment
+     *
+     * @param double $target_field_horizontal_adjustment Optional - horizontal adjestment in relative width of the field
+     *
+     * @return $this
+     */
+    public function setTargetFieldHorizontalAdjustment($target_field_horizontal_adjustment)
+    {
+        $this->container['target_field_horizontal_adjustment'] = $target_field_horizontal_adjustment;
+
+        return $this;
+    }
+
+    /**
+     * Gets target_field_vertical_adjustment
+     *
+     * @return double
+     */
+    public function getTargetFieldVerticalAdjustment()
+    {
+        return $this->container['target_field_vertical_adjustment'];
+    }
+
+    /**
+     * Sets target_field_vertical_adjustment
+     *
+     * @param double $target_field_vertical_adjustment Optional - vertical adjestment in relative height of the field
+     *
+     * @return $this
+     */
+    public function setTargetFieldVerticalAdjustment($target_field_vertical_adjustment)
+    {
+        $this->container['target_field_vertical_adjustment'] = $target_field_vertical_adjustment;
 
         return $this;
     }

@@ -97,4 +97,11 @@ class FormRecognitionResultTest extends \PHPUnit_Framework_TestCase
     public function testPropertyTableValueExtractionResults()
     {
     }
+
+    /**
+     * Test attribute "diagnostics"
+     */
+    public function testPropertyDiagnostics()
+    {
+    }
 }

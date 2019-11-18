@@ -162,6 +162,20 @@ class FormFieldDefinitionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "target_field_horizontal_adjustment"
+     */
+    public function testPropertyTargetFieldHorizontalAdjustment()
+    {
+    }
+
+    /**
+     * Test attribute "target_field_vertical_adjustment"
+     */
+    public function testPropertyTargetFieldVerticalAdjustment()
+    {
+    }
+
+    /**
      * Test attribute "ignore"
      */
     public function testPropertyIgnore()

@@ -60,7 +60,8 @@ class FormRecognitionResult implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'successful' => 'bool',
         'field_value_extraction_result' => '\Swagger\Client\Model\FieldResult[]',
-        'table_value_extraction_results' => '\Swagger\Client\Model\TableResult[]'
+        'table_value_extraction_results' => '\Swagger\Client\Model\TableResult[]',
+        'diagnostics' => 'string[]'
     ];
 
     /**
@@ -71,7 +72,8 @@ class FormRecognitionResult implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'successful' => null,
         'field_value_extraction_result' => null,
-        'table_value_extraction_results' => null
+        'table_value_extraction_results' => null,
+        'diagnostics' => null
     ];
 
     /**
@@ -103,7 +105,8 @@ class FormRecognitionResult implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'successful' => 'Successful',
         'field_value_extraction_result' => 'FieldValueExtractionResult',
-        'table_value_extraction_results' => 'TableValueExtractionResults'
+        'table_value_extraction_results' => 'TableValueExtractionResults',
+        'diagnostics' => 'Diagnostics'
     ];
 
     /**
@@ -114,7 +117,8 @@ class FormRecognitionResult implements ModelInterface, ArrayAccess
     protected static $setters = [
         'successful' => 'setSuccessful',
         'field_value_extraction_result' => 'setFieldValueExtractionResult',
-        'table_value_extraction_results' => 'setTableValueExtractionResults'
+        'table_value_extraction_results' => 'setTableValueExtractionResults',
+        'diagnostics' => 'setDiagnostics'
     ];
 
     /**
@@ -125,7 +129,8 @@ class FormRecognitionResult implements ModelInterface, ArrayAccess
     protected static $getters = [
         'successful' => 'getSuccessful',
         'field_value_extraction_result' => 'getFieldValueExtractionResult',
-        'table_value_extraction_results' => 'getTableValueExtractionResults'
+        'table_value_extraction_results' => 'getTableValueExtractionResults',
+        'diagnostics' => 'getDiagnostics'
     ];
 
     /**
@@ -191,6 +196,7 @@ class FormRecognitionResult implements ModelInterface, ArrayAccess
         $this->container['successful'] = isset($data['successful']) ? $data['successful'] : null;
         $this->container['field_value_extraction_result'] = isset($data['field_value_extraction_result']) ? $data['field_value_extraction_result'] : null;
         $this->container['table_value_extraction_results'] = isset($data['table_value_extraction_results']) ? $data['table_value_extraction_results'] : null;
+        $this->container['diagnostics'] = isset($data['diagnostics']) ? $data['diagnostics'] : null;
     }
 
     /**
@@ -286,6 +292,30 @@ class FormRecognitionResult implements ModelInterface, ArrayAccess
     public function setTableValueExtractionResults($table_value_extraction_results)
     {
         $this->container['table_value_extraction_results'] = $table_value_extraction_results;
+
+        return $this;
+    }
+
+    /**
+     * Gets diagnostics
+     *
+     * @return string[]
+     */
+    public function getDiagnostics()
+    {
+        return $this->container['diagnostics'];
+    }
+
+    /**
+     * Sets diagnostics
+     *
+     * @param string[] $diagnostics Diagnostic images - default is null, enable diagnostics=true to populate this parameter with one image per field
+     *
+     * @return $this
+     */
+    public function setDiagnostics($diagnostics)
+    {
+        $this->container['diagnostics'] = $diagnostics;
 
         return $this;
     }
