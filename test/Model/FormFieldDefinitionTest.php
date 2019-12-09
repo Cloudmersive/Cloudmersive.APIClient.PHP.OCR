@@ -99,6 +99,13 @@ class FormFieldDefinitionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "bottom_anchor"
+     */
+    public function testPropertyBottomAnchor()
+    {
+    }
+
+    /**
      * Test attribute "anchor_mode"
      */
     public function testPropertyAnchorMode()

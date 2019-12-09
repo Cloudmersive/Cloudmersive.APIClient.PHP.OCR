@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **field_value_extraction_result** | [**\Swagger\Client\Model\FieldResult[]**](FieldResult.md) | Result of form field OCR data extraction | [optional] 
 **table_value_extraction_results** | [**\Swagger\Client\Model\TableResult[]**](TableResult.md) | Result of form table OCR data extraction | [optional] 
 **diagnostics** | **string[]** | Diagnostic images - default is null, enable diagnostics&#x3D;true to populate this parameter with one image per field | [optional] 
+**best_match_form_setting_name** | **string** | Optional; populated when using photo/recognize/form/advanced with the Setting Name of the best-matching highest-relevance form | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

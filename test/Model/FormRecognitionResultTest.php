@@ -104,4 +104,11 @@ class FormRecognitionResultTest extends \PHPUnit_Framework_TestCase
     public function testPropertyDiagnostics()
     {
     }
+
+    /**
+     * Test attribute "best_match_form_setting_name"
+     */
+    public function testPropertyBestMatchFormSettingName()
+    {
+    }
 }

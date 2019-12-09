@@ -61,7 +61,8 @@ class FormRecognitionResult implements ModelInterface, ArrayAccess
         'successful' => 'bool',
         'field_value_extraction_result' => '\Swagger\Client\Model\FieldResult[]',
         'table_value_extraction_results' => '\Swagger\Client\Model\TableResult[]',
-        'diagnostics' => 'string[]'
+        'diagnostics' => 'string[]',
+        'best_match_form_setting_name' => 'string'
     ];
 
     /**
@@ -73,7 +74,8 @@ class FormRecognitionResult implements ModelInterface, ArrayAccess
         'successful' => null,
         'field_value_extraction_result' => null,
         'table_value_extraction_results' => null,
-        'diagnostics' => null
+        'diagnostics' => null,
+        'best_match_form_setting_name' => null
     ];
 
     /**
@@ -106,7 +108,8 @@ class FormRecognitionResult implements ModelInterface, ArrayAccess
         'successful' => 'Successful',
         'field_value_extraction_result' => 'FieldValueExtractionResult',
         'table_value_extraction_results' => 'TableValueExtractionResults',
-        'diagnostics' => 'Diagnostics'
+        'diagnostics' => 'Diagnostics',
+        'best_match_form_setting_name' => 'BestMatchFormSettingName'
     ];
 
     /**
@@ -118,7 +121,8 @@ class FormRecognitionResult implements ModelInterface, ArrayAccess
         'successful' => 'setSuccessful',
         'field_value_extraction_result' => 'setFieldValueExtractionResult',
         'table_value_extraction_results' => 'setTableValueExtractionResults',
-        'diagnostics' => 'setDiagnostics'
+        'diagnostics' => 'setDiagnostics',
+        'best_match_form_setting_name' => 'setBestMatchFormSettingName'
     ];
 
     /**
@@ -130,7 +134,8 @@ class FormRecognitionResult implements ModelInterface, ArrayAccess
         'successful' => 'getSuccessful',
         'field_value_extraction_result' => 'getFieldValueExtractionResult',
         'table_value_extraction_results' => 'getTableValueExtractionResults',
-        'diagnostics' => 'getDiagnostics'
+        'diagnostics' => 'getDiagnostics',
+        'best_match_form_setting_name' => 'getBestMatchFormSettingName'
     ];
 
     /**
@@ -197,6 +202,7 @@ class FormRecognitionResult implements ModelInterface, ArrayAccess
         $this->container['field_value_extraction_result'] = isset($data['field_value_extraction_result']) ? $data['field_value_extraction_result'] : null;
         $this->container['table_value_extraction_results'] = isset($data['table_value_extraction_results']) ? $data['table_value_extraction_results'] : null;
         $this->container['diagnostics'] = isset($data['diagnostics']) ? $data['diagnostics'] : null;
+        $this->container['best_match_form_setting_name'] = isset($data['best_match_form_setting_name']) ? $data['best_match_form_setting_name'] : null;
     }
 
     /**
@@ -316,6 +322,30 @@ class FormRecognitionResult implements ModelInterface, ArrayAccess
     public function setDiagnostics($diagnostics)
     {
         $this->container['diagnostics'] = $diagnostics;
+
+        return $this;
+    }
+
+    /**
+     * Gets best_match_form_setting_name
+     *
+     * @return string
+     */
+    public function getBestMatchFormSettingName()
+    {
+        return $this->container['best_match_form_setting_name'];
+    }
+
+    /**
+     * Sets best_match_form_setting_name
+     *
+     * @param string $best_match_form_setting_name Optional; populated when using photo/recognize/form/advanced with the Setting Name of the best-matching highest-relevance form
+     *
+     * @return $this
+     */
+    public function setBestMatchFormSettingName($best_match_form_setting_name)
+    {
+        $this->container['best_match_form_setting_name'] = $best_match_form_setting_name;
 
         return $this;
     }
