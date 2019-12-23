@@ -188,4 +188,11 @@ class FormFieldDefinitionTest extends \PHPUnit_Framework_TestCase
     public function testPropertyIgnore()
     {
     }
+
+    /**
+     * Test attribute "options"
+     */
+    public function testPropertyOptions()
+    {
+    }
 }

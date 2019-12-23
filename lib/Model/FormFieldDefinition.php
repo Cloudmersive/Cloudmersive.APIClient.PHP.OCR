@@ -73,7 +73,8 @@ class FormFieldDefinition implements ModelInterface, ArrayAccess
         'target_field_height_relative' => 'double',
         'target_field_horizontal_adjustment' => 'double',
         'target_field_vertical_adjustment' => 'double',
-        'ignore' => 'string[]'
+        'ignore' => 'string[]',
+        'options' => 'string'
     ];
 
     /**
@@ -97,7 +98,8 @@ class FormFieldDefinition implements ModelInterface, ArrayAccess
         'target_field_height_relative' => 'double',
         'target_field_horizontal_adjustment' => 'double',
         'target_field_vertical_adjustment' => 'double',
-        'ignore' => null
+        'ignore' => null,
+        'options' => null
     ];
 
     /**
@@ -142,7 +144,8 @@ class FormFieldDefinition implements ModelInterface, ArrayAccess
         'target_field_height_relative' => 'TargetFieldHeight_Relative',
         'target_field_horizontal_adjustment' => 'TargetFieldHorizontalAdjustment',
         'target_field_vertical_adjustment' => 'TargetFieldVerticalAdjustment',
-        'ignore' => 'Ignore'
+        'ignore' => 'Ignore',
+        'options' => 'Options'
     ];
 
     /**
@@ -166,7 +169,8 @@ class FormFieldDefinition implements ModelInterface, ArrayAccess
         'target_field_height_relative' => 'setTargetFieldHeightRelative',
         'target_field_horizontal_adjustment' => 'setTargetFieldHorizontalAdjustment',
         'target_field_vertical_adjustment' => 'setTargetFieldVerticalAdjustment',
-        'ignore' => 'setIgnore'
+        'ignore' => 'setIgnore',
+        'options' => 'setOptions'
     ];
 
     /**
@@ -190,7 +194,8 @@ class FormFieldDefinition implements ModelInterface, ArrayAccess
         'target_field_height_relative' => 'getTargetFieldHeightRelative',
         'target_field_horizontal_adjustment' => 'getTargetFieldHorizontalAdjustment',
         'target_field_vertical_adjustment' => 'getTargetFieldVerticalAdjustment',
-        'ignore' => 'getIgnore'
+        'ignore' => 'getIgnore',
+        'options' => 'getOptions'
     ];
 
     /**
@@ -269,6 +274,7 @@ class FormFieldDefinition implements ModelInterface, ArrayAccess
         $this->container['target_field_horizontal_adjustment'] = isset($data['target_field_horizontal_adjustment']) ? $data['target_field_horizontal_adjustment'] : null;
         $this->container['target_field_vertical_adjustment'] = isset($data['target_field_vertical_adjustment']) ? $data['target_field_vertical_adjustment'] : null;
         $this->container['ignore'] = isset($data['ignore']) ? $data['ignore'] : null;
+        $this->container['options'] = isset($data['options']) ? $data['options'] : null;
     }
 
     /**
@@ -676,6 +682,30 @@ class FormFieldDefinition implements ModelInterface, ArrayAccess
     public function setIgnore($ignore)
     {
         $this->container['ignore'] = $ignore;
+
+        return $this;
+    }
+
+    /**
+     * Gets options
+     *
+     * @return string
+     */
+    public function getOptions()
+    {
+        return $this->container['options'];
+    }
+
+    /**
+     * Sets options
+     *
+     * @param string $options Optional - additional options that can be set for this field definition, separated by commas.  Possible values are AllowMultiMatch (allow the same anchor to be matched to multiple fields)
+     *
+     * @return $this
+     */
+    public function setOptions($options)
+    {
+        $this->container['options'] = $options;
 
         return $this;
     }
