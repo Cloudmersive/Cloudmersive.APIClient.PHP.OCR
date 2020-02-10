@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **left_anchor** | **string** | Optional - the left-hand anchor of the field | [optional] 
 **top_anchor** | **string** | Optional - the top anchor of the field | [optional] 
 **bottom_anchor** | **string** | Optional - the bottom anchor of the field | [optional] 
+**alternate_anchor** | **string** | Optional - alterate match text for the specified anchor | [optional] 
 **anchor_mode** | **string** | Optional - the matching mode for the anchor.  Possible values are Complete (requires the entire anchor to match) and Partial (allows only part of the anchor to match) and Horizontal (anchor must be laid out horizontally).  Default is Partial. | [optional] 
 **data_type** | **string** | The data type of the field; possible values are INTEGER (Integer value), STRING (Arbitrary string value, spaces are permitted), DATE (Date in a structured format), DECIMAL (Decimal number), ALPHANUMERIC (Continuous alphanumeric string with no spaces), STRINGNOWHITESPACE (A string that contains no whitespace characters), SERIALNUMBER (A serial-number style string that contains letters and numbers, and certain symbols; must contain at least one number), ALPHAONLY (Alphabet characters only, no numbers or symbols or whitespace) | [optional] 
 **target_digit_count** | **int** | Optional - the target number of digits in the field; useful for fixed-length fields | [optional] 

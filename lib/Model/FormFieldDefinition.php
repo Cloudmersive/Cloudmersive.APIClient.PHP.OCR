@@ -62,6 +62,7 @@ class FormFieldDefinition implements ModelInterface, ArrayAccess
         'left_anchor' => 'string',
         'top_anchor' => 'string',
         'bottom_anchor' => 'string',
+        'alternate_anchor' => 'string',
         'anchor_mode' => 'string',
         'data_type' => 'string',
         'target_digit_count' => 'int',
@@ -87,6 +88,7 @@ class FormFieldDefinition implements ModelInterface, ArrayAccess
         'left_anchor' => null,
         'top_anchor' => null,
         'bottom_anchor' => null,
+        'alternate_anchor' => null,
         'anchor_mode' => null,
         'data_type' => null,
         'target_digit_count' => 'int32',
@@ -133,6 +135,7 @@ class FormFieldDefinition implements ModelInterface, ArrayAccess
         'left_anchor' => 'LeftAnchor',
         'top_anchor' => 'TopAnchor',
         'bottom_anchor' => 'BottomAnchor',
+        'alternate_anchor' => 'AlternateAnchor',
         'anchor_mode' => 'AnchorMode',
         'data_type' => 'DataType',
         'target_digit_count' => 'TargetDigitCount',
@@ -158,6 +161,7 @@ class FormFieldDefinition implements ModelInterface, ArrayAccess
         'left_anchor' => 'setLeftAnchor',
         'top_anchor' => 'setTopAnchor',
         'bottom_anchor' => 'setBottomAnchor',
+        'alternate_anchor' => 'setAlternateAnchor',
         'anchor_mode' => 'setAnchorMode',
         'data_type' => 'setDataType',
         'target_digit_count' => 'setTargetDigitCount',
@@ -183,6 +187,7 @@ class FormFieldDefinition implements ModelInterface, ArrayAccess
         'left_anchor' => 'getLeftAnchor',
         'top_anchor' => 'getTopAnchor',
         'bottom_anchor' => 'getBottomAnchor',
+        'alternate_anchor' => 'getAlternateAnchor',
         'anchor_mode' => 'getAnchorMode',
         'data_type' => 'getDataType',
         'target_digit_count' => 'getTargetDigitCount',
@@ -262,6 +267,7 @@ class FormFieldDefinition implements ModelInterface, ArrayAccess
         $this->container['left_anchor'] = isset($data['left_anchor']) ? $data['left_anchor'] : null;
         $this->container['top_anchor'] = isset($data['top_anchor']) ? $data['top_anchor'] : null;
         $this->container['bottom_anchor'] = isset($data['bottom_anchor']) ? $data['bottom_anchor'] : null;
+        $this->container['alternate_anchor'] = isset($data['alternate_anchor']) ? $data['alternate_anchor'] : null;
         $this->container['anchor_mode'] = isset($data['anchor_mode']) ? $data['anchor_mode'] : null;
         $this->container['data_type'] = isset($data['data_type']) ? $data['data_type'] : null;
         $this->container['target_digit_count'] = isset($data['target_digit_count']) ? $data['target_digit_count'] : null;
@@ -394,6 +400,30 @@ class FormFieldDefinition implements ModelInterface, ArrayAccess
     public function setBottomAnchor($bottom_anchor)
     {
         $this->container['bottom_anchor'] = $bottom_anchor;
+
+        return $this;
+    }
+
+    /**
+     * Gets alternate_anchor
+     *
+     * @return string
+     */
+    public function getAlternateAnchor()
+    {
+        return $this->container['alternate_anchor'];
+    }
+
+    /**
+     * Sets alternate_anchor
+     *
+     * @param string $alternate_anchor Optional - alterate match text for the specified anchor
+     *
+     * @return $this
+     */
+    public function setAlternateAnchor($alternate_anchor)
+    {
+        $this->container['alternate_anchor'] = $alternate_anchor;
 
         return $this;
     }
