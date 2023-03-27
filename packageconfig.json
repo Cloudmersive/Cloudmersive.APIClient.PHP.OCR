@@ -1,9 +1,9 @@
 ﻿{
-  "artifactVersion": "1.6.7",
-  "gitUserId": "Cloudmersive",
-  "gitRepoId": "Cloudmersive.APIClient.PHP.OCR",
-  "composerVendorName": "cloudmersive",
-  "composerProjectName": "cloudmersive_ocr_api_client",
-  "packagePath": "cloudmersive_ocr_api_client"
-  
-}  
+    "artifactVersion": "2.0.1",
+    "gitUserId": "Cloudmersive",
+    "gitRepoId": "Cloudmersive.APIClient.PHP.OCR",
+    "composerVendorName": "cloudmersive",
+    "composerProjectName": "cloudmersive_ocr_api_client",
+    "packagePath": "cloudmersive_ocr_api_client"
+
+}

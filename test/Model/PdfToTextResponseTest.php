@@ -90,4 +90,18 @@ class PdfToTextResponseTest extends \PHPUnit_Framework_TestCase
     public function testPropertyOcrPages()
     {
     }
+
+    /**
+     * Test attribute "async_job_id"
+     */
+    public function testPropertyAsyncJobId()
+    {
+    }
+
+    /**
+     * Test attribute "async_job_status"
+     */
+    public function testPropertyAsyncJobStatus()
+    {
+    }
 }

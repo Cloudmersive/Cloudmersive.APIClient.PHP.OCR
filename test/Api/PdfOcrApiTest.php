@@ -72,6 +72,16 @@ class PdfOcrApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for pdfOcrGetAsyncJobStatus
+     *
+     * Returns the result of the Async Job - possible states can be STARTED or COMPLETED.
+     *
+     */
+    public function testPdfOcrGetAsyncJobStatus()
+    {
+    }
+
+    /**
      * Test case for pdfOcrPdfToLinesWithLocation
      *
      * Convert a PDF into text lines with location.

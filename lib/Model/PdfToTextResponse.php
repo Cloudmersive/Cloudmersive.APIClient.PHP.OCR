@@ -59,7 +59,9 @@ class PdfToTextResponse implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'successful' => 'bool',
-        'ocr_pages' => '\Swagger\Client\Model\OcrPageResult[]'
+        'ocr_pages' => '\Swagger\Client\Model\OcrPageResult[]',
+        'async_job_id' => 'string',
+        'async_job_status' => 'string'
     ];
 
     /**
@@ -69,7 +71,9 @@ class PdfToTextResponse implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'successful' => null,
-        'ocr_pages' => null
+        'ocr_pages' => null,
+        'async_job_id' => null,
+        'async_job_status' => null
     ];
 
     /**
@@ -100,7 +104,9 @@ class PdfToTextResponse implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'successful' => 'Successful',
-        'ocr_pages' => 'OcrPages'
+        'ocr_pages' => 'OcrPages',
+        'async_job_id' => 'AsyncJobID',
+        'async_job_status' => 'AsyncJobStatus'
     ];
 
     /**
@@ -110,7 +116,9 @@ class PdfToTextResponse implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'successful' => 'setSuccessful',
-        'ocr_pages' => 'setOcrPages'
+        'ocr_pages' => 'setOcrPages',
+        'async_job_id' => 'setAsyncJobId',
+        'async_job_status' => 'setAsyncJobStatus'
     ];
 
     /**
@@ -120,7 +128,9 @@ class PdfToTextResponse implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'successful' => 'getSuccessful',
-        'ocr_pages' => 'getOcrPages'
+        'ocr_pages' => 'getOcrPages',
+        'async_job_id' => 'getAsyncJobId',
+        'async_job_status' => 'getAsyncJobStatus'
     ];
 
     /**
@@ -185,6 +195,8 @@ class PdfToTextResponse implements ModelInterface, ArrayAccess
     {
         $this->container['successful'] = isset($data['successful']) ? $data['successful'] : null;
         $this->container['ocr_pages'] = isset($data['ocr_pages']) ? $data['ocr_pages'] : null;
+        $this->container['async_job_id'] = isset($data['async_job_id']) ? $data['async_job_id'] : null;
+        $this->container['async_job_status'] = isset($data['async_job_status']) ? $data['async_job_status'] : null;
     }
 
     /**
@@ -256,6 +268,54 @@ class PdfToTextResponse implements ModelInterface, ArrayAccess
     public function setOcrPages($ocr_pages)
     {
         $this->container['ocr_pages'] = $ocr_pages;
+
+        return $this;
+    }
+
+    /**
+     * Gets async_job_id
+     *
+     * @return string
+     */
+    public function getAsyncJobId()
+    {
+        return $this->container['async_job_id'];
+    }
+
+    /**
+     * Sets async_job_id
+     *
+     * @param string $async_job_id When the job exceeds 25 pages, an Async Job ID is returned.  Use the CheckPdfOcrJobStatus API to check on the status of this job using the AsyncJobID and get the result when it finishes
+     *
+     * @return $this
+     */
+    public function setAsyncJobId($async_job_id)
+    {
+        $this->container['async_job_id'] = $async_job_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets async_job_status
+     *
+     * @return string
+     */
+    public function getAsyncJobStatus()
+    {
+        return $this->container['async_job_status'];
+    }
+
+    /**
+     * Sets async_job_status
+     *
+     * @param string $async_job_status Returns the job status of the Async Job, if applicable.  Possible states are STARTED and COMPLETED
+     *
+     * @return $this
+     */
+    public function setAsyncJobStatus($async_job_status)
+    {
+        $this->container['async_job_status'] = $async_job_status;
 
         return $this;
     }
