@@ -14,5 +14,7 @@ Remove-Item –path ./cloudmersive_ocr_api_client –recurse
 (Get-Content ./composer.json).replace('https://github.com/swagger-api/swagger-codegen', 'https://cloudmersive.com') | Set-Content ./composer.json
 (Get-Content ./composer.json).replace('http://swagger.io', 'https://cloudmersive.com') | Set-Content ./composer.json
 #(Get-Content ./composer.json).replace('~1.12', '~2.14.2') | Set-Content ./composer.json
+(Get-Content ./composer.json).replace('^6.2', '^7.5') | Set-Content ./composer.json
+(Get-Content ./composer.json).replace('5.5', '7.2.5') | Set-Content ./composer.json
 
 & C:\tools\php71\php C:\ProgramData\ComposerSetup\bin\composer.phar install
