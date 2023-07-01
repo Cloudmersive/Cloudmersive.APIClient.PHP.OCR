@@ -212,7 +212,7 @@ $apiInstance = new Swagger\Client\Api\ImageOcrApi(
     $config
 );
 $image_file = "/path/to/file.txt"; // \SplFileObject | Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.
-$form_template_definition = "form_template_definition_example"; // string | Form field definitions
+$form_template_definition = new \stdClass; // object | Form field definitions
 $recognition_mode = "recognition_mode_example"; // string | Optional, enable advanced recognition mode by specifying 'Advanced', enable handwriting recognition by specifying 'EnableHandwriting'.  Default is disabled.
 $preprocessing = "preprocessing_example"; // string | Optional, preprocessing mode, default is 'Auto'.  Possible values are None (no preprocessing of the image), and Auto (automatic image enhancement of the image - including automatic unrotation of the image - before OCR is applied; this is recommended).  Set this to 'None' if you do not want to use automatic image unrotation and enhancement.
 $diagnostics = "diagnostics_example"; // string | Optional, diagnostics mode, default is 'false'.  Possible values are 'true' (will set DiagnosticImage to a diagnostic PNG image in the result), and 'false' (no diagnostics are enabled; this is recommended for best performance).
@@ -232,7 +232,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **image_file** | **\SplFileObject**| Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported. |
- **form_template_definition** | **string**| Form field definitions | [optional]
+ **form_template_definition** | [**object**](../Model/.md)| Form field definitions | [optional]
  **recognition_mode** | **string**| Optional, enable advanced recognition mode by specifying &#39;Advanced&#39;, enable handwriting recognition by specifying &#39;EnableHandwriting&#39;.  Default is disabled. | [optional]
  **preprocessing** | **string**| Optional, preprocessing mode, default is &#39;Auto&#39;.  Possible values are None (no preprocessing of the image), and Auto (automatic image enhancement of the image - including automatic unrotation of the image - before OCR is applied; this is recommended).  Set this to &#39;None&#39; if you do not want to use automatic image unrotation and enhancement. | [optional]
  **diagnostics** | **string**| Optional, diagnostics mode, default is &#39;false&#39;.  Possible values are &#39;true&#39; (will set DiagnosticImage to a diagnostic PNG image in the result), and &#39;false&#39; (no diagnostics are enabled; this is recommended for best performance). | [optional]
