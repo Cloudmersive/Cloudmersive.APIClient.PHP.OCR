@@ -17,4 +17,4 @@ Remove-Item –path ./cloudmersive_ocr_api_client –recurse
 (Get-Content ./composer.json).replace('^6.2', '^7.5') | Set-Content ./composer.json
 (Get-Content ./composer.json).replace('5.5', '7.2.5') | Set-Content ./composer.json
 
-& C:\tools\php71\php C:\ProgramData\ComposerSetup\bin\composer.phar install
+& php C:\Users\adm101\composer.phar install
